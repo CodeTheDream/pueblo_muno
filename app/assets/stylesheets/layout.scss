@@ -1,0 +1,45 @@
+@import "sass";
+body {
+  margin: 0;
+}
+header {
+  height: 80px;
+  line-height: 80px;
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  @include mobile {
+    font-size: 16px;
+    background: blue;
+  }
+}
+.right {
+  float: right;
+}
+.right-2{
+  position: absolute;
+  right: 0;
+}
+.inline {
+  display: inline;
+}
+.white {
+  color: white;
+}
+.container {
+  padding: 1em;
+}
+.pad-right {
+  padding-right: 1em;
+}
+.desktop-only {
+  @include mobile {
+    display: none;
+  }
+}
+.mobile-only {
+  @include immobile {
+    display: none;
+  }
+}

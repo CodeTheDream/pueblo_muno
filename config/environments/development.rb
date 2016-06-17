@@ -38,4 +38,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # You can whitelist single IP's or whole networks. Say you want to share your console with 192.168.0.100. You can do this:
+  # config.web_console.whitelisted_ips = '192.168.0.100'
+
+  # If you want to whitelist the whole private network, you can do:
+  # config.web_console.whitelisted_ips = '192.168.0.0/16'
+
+  # When a console cannot be shown for a given IP address or content type, a messages like the following is printed in the server logs:
+  # Cannot render console from 192.168.1.133! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  # If you don't wanna see this message anymore, set this option to false
+  config.web_console.whiny_requests = false
 end

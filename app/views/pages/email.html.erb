@@ -1,0 +1,7 @@
+<div class="container">
+  <h2><%= t 'email' %></h2>
+  <%= form_for @user do |f| %>
+    <%= f.email_field :email, placeholder: 'Email' %>
+    <%= f.submit 'Go' %>
+  <% end %>
+</div>

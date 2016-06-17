@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  root 'pages#email'
+
+  get 'menu' => 'pages#menu'
+
+  get 'pages/thank_you'
+
+  resource :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

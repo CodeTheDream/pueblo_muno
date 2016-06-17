@@ -1,0 +1,55 @@
+// sass media query sizes
+$phone-width: 768px;
+$tablet-width: 992px;
+$desktop-width: 1200px;
+
+// sass image sizes
+// $l-img-size: 230px;
+// $m-img-size: 160px;
+// $s-img-size: 100px;
+// $thumb-img-size: 50px;
+// $xs-img-size: 28px;
+//
+// sass variables
+// $border-color: #ccc; // applies to all form elements
+// $border-radius: 0px; // applies to all form elements
+// $transition: .5s ease; // apply to anything we want to have on hover transition effect, like buttons, etc
+// $hover-bg: #fff;
+
+// sass mixins
+@mixin mobile {
+  @media only screen and (min-width: 1px) and  (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$phone-width + 1}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$tablet-width + 1}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width + 1}) {
+    @content;
+  }
+}
+
+@mixin immobile {
+  @media (min-width: #{$phone-width + 1}) {
+    @content;
+  }
+}
+
+// @mixin background-size($size) {
+//   -webkit-background-size: $size;
+//   -moz-background-size: $size;
+//   -o-background-size: $size;
+//   background-size: $size;
+// }
