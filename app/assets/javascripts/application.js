@@ -13,3 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function otherCheckBox() {
+  $('#user_connection_other').change(function() {
+    $('input[type="text"]').prop('disabled', !this.checked);
+  });
+};
+
+function formSubmit() {
+  $("form").submit(function() {
+    length = $('input:checked').length;
+    if (length == 0) {
+      alert('Please choose one checkbox')
+      return false;
+    }
+  });
+}
+
+$(formSubmit);
+$(otherCheckBox);

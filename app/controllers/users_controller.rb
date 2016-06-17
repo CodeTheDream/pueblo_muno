@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def create
+    # byebug
+    @connections = params[:user][:connections]
     if User.find_by_email(params[:user][:email])
       @user = User.find_by_email(params[:user][:email])
     else
@@ -18,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :language)
+    params.require(:user).permit(:email, :connection_other, connections: [])
   end
 end

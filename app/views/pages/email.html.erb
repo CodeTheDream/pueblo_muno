@@ -1,7 +1,57 @@
 <div class="container">
-  <h2><%= t 'email' %></h2>
+  <h2><%= t 'email' %>hello from the other side</h2>
   <%= form_for @user do |f| %>
     <%= f.email_field :email, placeholder: 'Email' %>
+    <h3><%= t 'connection_question' %></h3>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 1, nil %>
+      <%= f.label :connections_1, t('.one') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 2, nil %>
+      <%= f.label :connections_2, t('.two') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 3, nil %>
+      <%= f.label :connections_3, t('.three') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 4, nil %>
+      <%= f.label :connections_4, t('.four') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 5, nil %>
+      <%= f.label :connections_5, t('.five') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 6, nil %>
+      <%= f.label :connections_6, t('.six') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 7, nil %>
+      <%= f.label :connections_7, t('.seven') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 8, nil %>
+      <%= f.label :connections_8, t('.eight') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 9, nil %>
+      <%= f.label :connections_9, t('.nine') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 10, nil %>
+      <%= f.label :connections_10, t('.ten') %>
+    </div>
+    <div>
+      <%= f.check_box :connections, {multiple: true}, 11, nil %>
+      <%= f.label :connections_11, t('.eleven') %>
+    </div>
+    <div>
+      <%= f.check_box :connection_other, {}, 12, nil %>
+      <%= f.label :connection_other, t('.other') %>
+      <%= f.text_field :connection_other, disabled: true %>
+    </div>
     <%= f.submit 'Go' %>
   <% end %>
 </div>

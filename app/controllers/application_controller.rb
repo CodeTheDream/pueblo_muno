@@ -11,8 +11,17 @@ class ApplicationController < ActionController::Base
   end
 
   def set_language
+    # this code will run only when params[:lang] exists
     return unless params[:lang]
     language = params[:lang] || 'en'
-    I18n.locale = language
+    I18n.locale = session[:lang] = language
+
+    # this code will run everytime
+    # if params[:lang]
+    #   language = params[:lang] || 'en'
+    #   I18n.locale = session[:lang] = language
+    # else
+    #   I18n.locale = session[:lang]
+    # end
   end
 end

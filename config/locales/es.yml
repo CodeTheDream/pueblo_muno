@@ -1,3 +1,18 @@
 es:
   email: 'Por favor ingrese su correo electronico'
   menu: 'Menuuuuuu'
+  connection_question: "¿Cuál es su conexión con El Pueblo? (escoja todas las opciones que aplican)"
+  pages:
+    email:
+      one: "Estoy participando o he participado en uno de los programas juveniles."
+      two: "Estoy participando o he participado en uno de los programas para adultos."
+      three: "He asistido a un evento de El Pueblo."
+      four: "He contribuido financieramente a El Pueblo (como individuo)."
+      five: "He contribuido financieramente a El Pueblo como parte de una institución o patrocinador/a de un evento."
+      six: "He sido exhibidor/a o vendedor/a en un evento de El Pueblo."
+      seven: "Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles."
+      eight: "Soy o he sido miembro de la junta directiva."
+      nine: "Soy o he sido miembro del personal."
+      ten: "Soy o he sido voluntario/a."
+      eleven: "Trabajo o trabajé en una organización que ha colaborado con El Pueblo."
+      other: "Otro: "

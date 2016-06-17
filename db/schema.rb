@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 20160616210950) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "connections"
+    t.string   "connection_other"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

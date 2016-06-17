@@ -1,24 +1,18 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   email: "Please give me your email"
   menu: "Menu"
+  connection_question: "What is your connection to El Pueblo? (pick all that apply, must choose 1)"
+  pages:
+    email:
+      one: "I am or have been a board member."
+      two: "I am or have been a funder or event sponsor."
+      three: "I am or have been a staff member."
+      four: "I am or have been a volunteer."
+      five: "I am or have been an individual donor."
+      six: "I have attended an El Pueblo event."
+      seven: "I have been an exhibitor or vendor at an El Pueblo event."
+      eight: "I participate or have participated in one of the programs for adults."
+      nine: "I participate or have participated in one of the programs for youth."
+      ten: "I work at an organization that has collaborated with El Pueblo."
+      eleven: "My child/children participate/s or has/have participated in one of the youth programs."
+      other: "Other: "
