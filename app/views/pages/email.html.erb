@@ -1,8 +1,8 @@
 <div class="container pure-form">
   <span class="req">* <%= t '.req' %></span>
-  <h3>1. <%= t 'email' %> <span class="req">*</span></h3>
+  <h3>1. <%= t 'email' %> <span class="req" >*</span></h3>
   <%= form_for @user do |f| %>
-    <%= f.email_field :email, placeholder: 'Email', :class => 'pure-form' %>
+    <%= f.email_field :email, placeholder: 'Email', :class => 'pure-input-1-3', :required => true %>
     <h3>2. <%= t '.c_question' %> <span class="req">*</span></h3>
     <div>
       <%= f.check_box :connections, {multiple: true}, 1, nil %>
