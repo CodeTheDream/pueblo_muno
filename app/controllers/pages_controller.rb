@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   end
 
   def menu
+    @dishes = Dish.dishes
+    @prices = Dish.prices
+    @places = Dish.places
   end
 
   def thank_you

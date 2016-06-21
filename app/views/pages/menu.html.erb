@@ -1,2 +1,21 @@
-<h1>Pages#<%= t 'menu' %></h1>
-<p>Find me in app/views/pages/menu.html.erb</p>
+<div style="background: gray; height: 40px;" class="flex-container white xy-center">TOTAL: $<%= total %></div>
+<div class="flex-container justify-between">
+  <div class="flex-container flex-column dish white xy-center">
+    <div class="flex-container xy-center" style="height: 40px;">
+      Entree: $<%= Dish.price entree: params[:entree].to_s %>
+    </div>
+    <%= render 'dish_options', priority: :entree, str: params[:entree].to_s %>
+  </div>
+  <div class="flex-container flex-column dish white xy-center">
+    <div class="flex-container xy-center" style="height: 40px;">
+      Dessert: $<%= Dish.price dessert: params[:dessert].to_s %>
+    </div>
+    <%= render 'dish_options', priority: :dessert, str: params[:dessert].to_s %>
+  </div>
+  <div class="flex-container flex-column dish white xy-center">
+    <div class="flex-container xy-center" style="height: 40px;">
+      Drink: $<%= Dish.price drink: params[:drink].to_s %>
+    </div>
+    <%= render 'dish_options', priority: :drink, str: params[:drink].to_s %>
+  </div>
+</div>

@@ -63,7 +63,12 @@ options = {
     }
   },
   'Referrals' => {
-    'entree' => {},
+    'entree' => {
+      'Raleigh' => 20,
+      'Wake County' => '+15',
+      'Wake + surrounding counties' => '+20',
+      'Statewide' => '+25'
+    },
     'dessert' => {
       'Raleigh' => 10,
       'Wake County' => '+10',
@@ -78,7 +83,12 @@ options = {
     }
   },
   'Cultural Diversity' => {
-    'entree' => {},
+    'entree' => {
+      'Raleigh' => 20,
+      'Wake County' => '+15',
+      'Wake + surrounding counties' => '+20',
+      'Statewide' => '+25'
+    },
     'dessert' => {
       'Raleigh' => 10,
       'Wake County' => '+10',

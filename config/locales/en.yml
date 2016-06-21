@@ -4,7 +4,7 @@ en:
   pages:
     email:
       req: Required
-      c_question: What is your connection to El Pueblo? (pick all that apply, must choose 1)
+      c_question: What is your connection to El Pueblo? (pick all that apply)
       c1: I am or have been a board member.
       c2: I am or have been a funder or event sponsor.
       c3: I am or have been a staff member.

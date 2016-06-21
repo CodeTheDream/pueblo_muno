@@ -49,3 +49,53 @@ header {
 .req {
   color: #c43b1d;
 }
+.dish {
+  // flex-grow: 1;
+  width: 33%;
+  border: 1px solid black;
+  color: black;
+}
+.option {
+  background: gray;
+  width: 90%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+// All flex related styling
+.flex-container {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-twin {
+  width: 48%;
+}
+.align-between {
+  align-content: space-between;
+}
+.align-around {
+  align-content: space-around;
+}
+.align-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-center {
+  justify-content: center;
+}
+.xy-center {
+  align-items: center;
+  justify-content: center;
+}
