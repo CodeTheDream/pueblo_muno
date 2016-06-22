@@ -15,6 +15,10 @@ header {
     background: blue;
   }
 }
+#total {
+  background: rgb(28, 184, 65); /* this is a green */
+  height: 30px;
+}
 .right {
   float: right;
 }
@@ -59,7 +63,7 @@ header {
 .option {
   background: gray;
   width: 90%;
-  height: 40px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,4 +103,19 @@ header {
 .xy-center {
   align-items: center;
   justify-content: center;
+}
+
+//PureCSS custom
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+  height: 30px;
+}
+.button-success,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
 }

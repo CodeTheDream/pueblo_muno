@@ -54,21 +54,21 @@ class Dish < ActiveRecord::Base
         entree: {
           raleigh: 35,
           wake: 55,
-          wake_and_more: 60,
+          "Wake and more": 60,
           statewide: 65,
           federal: 70
         },
         dessert: {
           raleigh: 25,
           wake: 40,
-          wake_and_more: 45,
+          "Wake and more": 45,
           statewide: 50,
           federal: 55
         },
         drink: {
           raleigh: 15,
           wake: 25,
-          wake_and_more: 30,
+          "Wake and more": 30,
           statewide: 35,
           federal: 40
         }
@@ -77,19 +77,19 @@ class Dish < ActiveRecord::Base
         entree: {
           raleigh: 25,
           wake: 45,
-          wake_and_more: 50,
+          "Wake and more": 50,
           statewide: 60
         },
         dessert: {
           raleigh: 15,
           wake: 30,
-          wake_and_more: 35,
+          "Wake and more": 35,
           statewide: 40
         },
         drink: {
           raleigh: 10,
           wake: 20,
-          wake_and_more: 25,
+          "Wake and more": 25,
           statewide: 30
         }
       },
@@ -97,19 +97,19 @@ class Dish < ActiveRecord::Base
         entree: {
           raleigh: 25,
           wake: 45,
-          wake_and_more: 50,
+          "Wake and more": 50,
           statewide: 60
         },
         dessert: {
           raleigh: 15,
           wake: 30,
-          wake_and_more: 35,
+          "Wake and more": 35,
           statewide: 40
         },
         drink: {
           raleigh: 10,
           wake: 20,
-          wake_and_more: 25,
+          "Wake and more": 25,
           statewide: 30
         }
       },
@@ -117,19 +117,19 @@ class Dish < ActiveRecord::Base
         entree: {
           raleigh: 20,
           wake: 35,
-          wake_and_more: 40,
+          "Wake and more": 40,
           statewide: 45
         },
         dessert: {
           raleigh: 10,
           wake: 20,
-          wake_and_more: 25,
+          "Wake and more": 25,
           statewide: 30
         },
         drink: {
           raleigh: 5,
           wake: 10,
-          wake_and_more: 15,
+          "Wake and more": 15,
           statewide: 20
         }
       },
@@ -137,19 +137,19 @@ class Dish < ActiveRecord::Base
         entree: {
           raleigh: 20,
           wake: 35,
-          wake_and_more: 40,
+          "Wake and more": 40,
           statewide: 45
         },
         dessert: {
           raleigh: 10,
           wake: 20,
-          wake_and_more: 25,
+          "Wake and more": 25,
           statewide: 30
         },
         drink: {
           raleigh: 5,
           wake: 10,
-          wake_and_more: 15,
+          "Wake and more": 15,
           statewide: 20
         }
       }
@@ -160,7 +160,7 @@ class Dish < ActiveRecord::Base
     {
       raleigh: 1,
       wake: 2,
-      wake_and_more: 3,
+      "Wake and more": 3,
       statewide: 4,
       federal: 5
     }

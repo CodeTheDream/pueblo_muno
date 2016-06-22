@@ -27,9 +27,9 @@ module ApplicationHelper
       drink: params[:drink]
     }
     big_hash.merge!(hash)
-    link_to dish[:name], big_hash, class: 'option'
+    link_to dish[:name], big_hash, class: 'option button-secondary'
   rescue TypeError, NoMethodError
-    link_to dish, big_hash, class: 'option'
+    link_to dish, big_hash, class: 'option button-secondary'
   end
 
   def votes(votes)
