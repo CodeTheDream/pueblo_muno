@@ -1,4 +1,18 @@
-class Dish
+class Dish < ActiveRecord::Base
+  def self.to_name(num)
+    num = num.to_i
+    dishes.find{|k,v| v[:num] == num}[1][:name]
+  end
+
+  def self.to_reach(arg)
+    if Symbol === arg
+      reaches[arg][:name]
+    else
+      num = arg.to_i
+      reaches.find{|k,v| v[:num] == num}[1][:name]
+    end
+  end
+
   def self.price(hash)
     priority = hash.keys.first
     return 0 unless hash[priority].size ==  2
@@ -149,6 +163,31 @@ class Dish
       wake_and_more: 3,
       statewide: 4,
       federal: 5
+    }
+  end
+
+  def self.reaches
+    {
+      raleigh: {
+        num: 1,
+        name: 'Raleigh'
+      },
+      wake: {
+        num: 2,
+        name: 'Wake County'
+      },
+      wake_and_more: {
+        num: 3,
+        name: 'Wake & surrounding counties'
+      },
+      statewide: {
+        num: 4,
+        name: 'North Carolina'
+      },
+      federal: {
+        num: 5,
+        name: 'United States'
+      }
     }
   end
 end

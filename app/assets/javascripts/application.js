@@ -21,10 +21,10 @@ function otherCheckBox() {
 };
 
 function formSubmit() {
-  $("form").submit(function() {
+  $("form#new_user").submit(function() {
     length = $('input:checked').length;
     if (length == 0) {
-      alert('Please choose one checkbox')
+      alert('Please choose one checkbox');
       return false;
     }
   });

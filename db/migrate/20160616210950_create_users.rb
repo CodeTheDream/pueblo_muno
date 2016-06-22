@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.text :connections
       t.string :connection_other
+      t.boolean :complete
 
       t.timestamps null: false
     end

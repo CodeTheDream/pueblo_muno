@@ -31,4 +31,18 @@ module ApplicationHelper
   rescue TypeError, NoMethodError
     link_to dish, big_hash, class: 'option'
   end
+
+  def votes(votes)
+    count = 0
+    votes.each do |vote|
+      count += 1 if vote.entree
+      count += 1 if vote.dessert
+      count += 1 if vote.drink
+    end
+    count
+  end
+
+  def people(votes)
+    votes.count
+  end
 end

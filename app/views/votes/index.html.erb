@@ -1,0 +1,28 @@
+<div>
+  Votes: <%= votes @votes %>
+</div>
+
+<div>People: <%= people @votes %></div>
+
+<div>Most popular</div>
+
+<table>
+  <thead>
+    <th>votes</th>
+    <th>dish</th>
+    <th>priority</th>
+    <th>range</th>
+  </thead>
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <% if dish.votes > 0 %>
+        <tr>
+          <td><%= dish.votes %></td>
+          <td><%= Dish.to_name dish.name %></td>
+          <td><%= dish.priority %></td>
+          <td><%= Dish.to_reach dish.reach %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

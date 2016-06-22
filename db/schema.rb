@@ -11,14 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616210950) do
+ActiveRecord::Schema.define(version: 20160622190657) do
+
+  create_table "dishes", force: :cascade do |t|
+    t.string  "priority"
+    t.string  "reach"
+    t.string  "name"
+    t.integer "price"
+    t.integer "votes",    default: 0
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.text     "connections"
     t.string   "connection_other"
+    t.boolean  "complete"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "entree"
+    t.string   "dessert"
+    t.string   "drink"
+    t.boolean  "tallied",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

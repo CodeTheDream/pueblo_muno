@@ -12,12 +12,12 @@
   <div>Geographic Reach</div>
 
   <% @prices[dish][priority].each do |h, v| %>
-    <%= option_link "#{h}: $#{v}", priority => "#{str}#{@places[h]}" %>
+    <%= option_link "#{Dish.to_reach h}: $#{v}", priority => "#{str}#{@places[h]}" %>
   <% end %>
 <% when 2 %>
   <% dish = @dishes.find{|k,v| v[:num] == str[0].to_i}[0] %>
-  <% range = @places.key(str[1].to_i) %>
+  <% range = Dish.reaches.find{|k,v| v[:num] == str[1].to_i} %>
   <%= option_link @dishes[dish], priority => nil %>
   <div>Geographic Reach</div>
-  <%= option_link "#{range}: $#{@prices[dish][priority][range]}", priority => str[0] %>
+  <%= option_link "#{range[1][:name]}: $#{@prices[dish][priority][range[0]]}", priority => str[0] %>
 <% end %>

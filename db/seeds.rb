@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Dish.prices.each do |dish, priorities|
+  priorities.each do |priority, ranges|
+    ranges.each do |range, price|
+      Dish.create(
+        name: "#{Dish.dishes[dish][:num]}",
+        priority: "#{priority}",
+        reach: "#{Dish.places[range]}",
+        price: price
+      )
+      # p "#{dish} #{priority} #{range} = #{price}"
+    end
+  end
+end
