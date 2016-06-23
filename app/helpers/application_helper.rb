@@ -1,22 +1,4 @@
 module ApplicationHelper
-  def total
-    entree = Dish.price entree: params[:entree].to_s
-    dessert = Dish.price dessert: params[:dessert].to_s
-    drink = Dish.price drink: params[:drink].to_s
-    entree + dessert + drink
-  end
-
-  def total_class
-    case total
-    when 0
-      "grayback"
-    when 1..100
-      "greenback"
-    else
-      "redback"
-    end
-  end
-
   def link_to_language(lang)
     if lang == 'English' && I18n.locale == :en
       output = <<-HTML.html_safe
@@ -38,9 +20,28 @@ module ApplicationHelper
       drink: params[:drink]
     }
     big_hash.merge!(hash)
-    link_to dish[:name], big_hash, class: 'option button-secondary'
+    link_to t(".#{dish[:name]}"), big_hash, class: 'option button-secondary'
   rescue TypeError, NoMethodError
     link_to dish, big_hash, class: 'option button-secondary'
+  end
+
+  def people(votes)
+    votes.count
+  end
+
+  def total
+    entree = Dish.price entree: params[:entree].to_s
+    dessert = Dish.price dessert: params[:dessert].to_s
+    drink = Dish.price drink: params[:drink].to_s
+    entree + dessert + drink
+  end
+
+  def total_class
+    case total
+    when 0 then "grayback"
+    when 1..100 then "greenback"
+    else "redback"
+    end
   end
 
   def votes(votes)
@@ -53,7 +54,4 @@ module ApplicationHelper
     count
   end
 
-  def people(votes)
-    votes.count
-  end
 end

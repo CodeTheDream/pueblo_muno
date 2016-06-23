@@ -17,4 +17,6 @@ es:
       c10: Trabajo o trabajé en una organización que ha colaborado con El Pueblo
       c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles
       other: 'Otro (Especifique): '
+    dish_options:
+      Policy Change: Cambiar Políticas
   submit: Enviar
