@@ -1,28 +1,27 @@
 module ApplicationHelper
   def link_to_language(lang)
+    options = food_options
     if lang == 'English' && I18n.locale == :en
       output = <<-HTML.html_safe
         <img src="/es.png"></img> <span class="desktop-only">Haz click aqui para Espanol</span>
       HTML
-      link_to output, {lang: 'es'}, class: 'white no-decor'
+      options.merge!(lang: 'es')
+      link_to output, options, class: 'white no-decor'
     elsif lang == 'Español' && I18n.locale == :es
       output = <<-HTML.html_safe
         <img src="/en.png"></img> <span class="desktop-only">Click here for English version</span>
       HTML
-      link_to output, {lang: 'en'}, class: 'white no-decor'
+      options.merge!(lang: 'en')
+      link_to output, options, class: 'white no-decor'
     end
   end
 
   def option_link(dish, hash)
-    big_hash = {
-      entree: params[:entree],
-      dessert: params[:dessert],
-      drink: params[:drink]
-    }
-    big_hash.merge!(hash)
-    link_to t(".#{dish[:name]}"), big_hash, class: 'option button-secondary'
+    options = food_options
+    options.merge!(hash)
+    link_to t(".#{dish[:name]}"), options, class: 'option button-secondary'
   rescue TypeError, NoMethodError
-    link_to dish, big_hash, class: 'option button-secondary'
+    link_to dish, options, class: 'option button-secondary'
   end
 
   def people(votes)
@@ -54,4 +53,11 @@ module ApplicationHelper
     count
   end
 
+  def food_options
+    {
+      entree: params[:entree],
+      dessert: params[:dessert],
+      drink: params[:drink]
+    }
+  end
 end

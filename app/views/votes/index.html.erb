@@ -1,30 +1,62 @@
 <div class="container">
-  <div>
-    Votes: <%= votes @votes %>
+  <div class="flex-container justify-between">
+    <div class="card" style="width:46%">
+      Votes: <%= votes @votes %>
+    </div>
+    <div class="card" style="width:46%">
+      <div>People: <%= people @votes %></div>
+    </div>
   </div>
 
-  <div>People: <%= people @votes %></div>
+  <div class="card">
+    <div>Most popular</div>
 
-  <div>Most popular</div>
-
-  <table>
-    <thead>
-      <th class="min-width">Votes</th>
-      <th>Dish</th>
-      <th>Priority</th>
-      <th>Geographic Range</th>
-    </thead>
-    <tbody>
-      <% @dishes.each do |dish| %>
-        <% if dish.votes > 0 %>
-          <tr>
-            <td class="center"><%= dish.votes %></td>
-            <td><%= Dish.to_name dish.name %></td>
-            <td><%= dish.priority %></td>
-            <td><%= Dish.to_reach dish.reach %></td>
-          </tr>
+    <table>
+      <thead>
+        <th class="min-width">Votes</th>
+        <th>Dish</th>
+        <th>Priority</th>
+        <th>Geographic Range</th>
+      </thead>
+      <tbody>
+        <% @dishes.each do |dish| %>
+          <% if dish.votes > 0 %>
+            <tr>
+              <td class="center"><%= dish.votes %></td>
+              <td><%= Dish.to_name dish.name %></td>
+              <td><%= dish.priority.titleize %></td>
+              <td><%= Dish.to_reach dish.reach %></td>
+            </tr>
+          <% end %>
         <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <% if @votes.any? %>
+    <div class="flex-container wrap">
+      <% @votes.each do |vote| %>
+        <div class="card mar-rig">
+          <div>
+            <%= vote.user.email %>. Total spent: $<%= Dish.price(entree: vote.entree) + Dish.price(dessert: vote.dessert) + Dish.price(drink: vote.drink) %>
+          </div>
+          <% if vote.entree %>
+            <div>
+              Entree: <%= Dish.to_name vote.entree %> - <%= Dish.to_reach vote.entree %>: $<%= Dish.price entree: vote.entree %><br/>
+            </div>
+          <% end %>
+          <% if vote.dessert %>
+            <div>
+              Dessert: <%= Dish.to_name vote.dessert %> - <%= Dish.to_reach vote.dessert %>: $<%= Dish.price dessert: vote.dessert %><br/>
+            </div>
+          <% end %>
+          <% if vote.drink %>
+            <div>
+              Drink: <%= Dish.to_name vote.drink %> - <%= Dish.to_reach vote.drink %>: $<%= Dish.price drink: vote.drink %><br/>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+  <% end %>
 </div>

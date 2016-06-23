@@ -35,6 +35,9 @@
   align-items: center;
   justify-content: center;
 }
+.wrap {
+  flex-wrap: wrap;
+}
 .wrap-mobile {
   @include mobile {
     flex-wrap: wrap;

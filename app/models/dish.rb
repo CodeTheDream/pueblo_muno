@@ -1,22 +1,21 @@
 class Dish < ActiveRecord::Base
   def self.to_name(num)
-    num = num.to_i
+    num = num.size == 2 ? num[0].to_i : num.to_i
     dishes.find{|k,v| v[:num] == num}[1][:name]
   end
 
   def self.to_reach(arg)
     if Symbol === arg
-      10.times{p arg}
       reaches[arg][:name]
     else
-      num = arg.to_i
+      num = arg.size == 2 ? arg[1].to_i : arg.to_i
       reaches.find{|k,v| v[:num] == num}[1][:name]
     end
   end
 
   def self.price(hash)
     priority = hash.keys.first
-    return 0 unless hash[priority].size ==  2
+    return 0 unless hash[priority].to_s.size ==  2
     dish = hash[priority][0]
     range = hash[priority][1]
     dish = dishes.find{|k,v| v[:num] == dish.to_i}[0]

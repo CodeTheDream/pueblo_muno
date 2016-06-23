@@ -31,9 +31,13 @@ header {
   color: white;
 }
 .container {
+  margin: 2.5%;
+}
+.card {
   background: white;
   padding: 1em;
   box-shadow: 0 1px 2px #ccc;
+  margin-bottom: 1em;
   @include mobile {
     margin: 2.5%;
   }
@@ -53,6 +57,12 @@ header {
 }
 .no-decor {
   text-decoration: none;
+}
+.mar-bot {
+  margin-bottom: 1em;
+}
+.mar-rig {
+  margin-right: 1em;
 }
 
 // table stuff
