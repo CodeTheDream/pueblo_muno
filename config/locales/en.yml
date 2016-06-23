@@ -1,20 +1,20 @@
 en:
-  email: Please give me your email
+  email: Please provide your email
   menu: Menu
   pages:
     email:
       req: Required
       c_question: What is your connection to El Pueblo? (pick all that apply)
-      c1: I am or have been a board member.
-      c2: I am or have been a funder or event sponsor.
-      c3: I am or have been a staff member.
-      c4: I am or have been a volunteer.
-      c5: I am or have been an individual donor.
-      c6: I have attended an El Pueblo event.
-      c7: I have been an exhibitor or vendor at an El Pueblo event.
-      c8: I participate or have participated in one of the programs for adults.
-      c9: I participate or have participated in one of the programs for youth.
-      c10: I work at an organization that has collaborated with El Pueblo.
-      c11: My child/children participate/s or has/have participated in one of the youth programs.
+      c1: I am or have been a board member
+      c2: I am or have been a funder or event sponsor
+      c3: I am or have been a staff member
+      c4: I am or have been a volunteer
+      c5: I am or have been an individual donor
+      c6: I have attended an El Pueblo event
+      c7: I have been an exhibitor or vendor at an El Pueblo event
+      c8: I participate or have participated in one of the programs for adults
+      c9: I participate or have participated in one of the programs for youth
+      c10: I work at an organization that has collaborated with El Pueblo
+      c11: My child/children participate/s or has/have participated in one of the youth programs
       other: 'Other: '
   submit: Submit

@@ -1,0 +1,42 @@
+@import "sass";
+
+// All flex related styling
+.flex-container {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-twin {
+  width: 48%;
+}
+.align-between {
+  align-content: space-between;
+}
+.align-around {
+  align-content: space-around;
+}
+.align-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.xy-center {
+  align-items: center;
+  justify-content: center;
+}
+.wrap-mobile {
+  @include mobile {
+    flex-wrap: wrap;
+  }
+}

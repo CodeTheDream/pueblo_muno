@@ -5,16 +5,16 @@ es:
     email:
       req: Necesario
       c_question: ¿Cuál es su conexión con El Pueblo? (escoja todas las opciones que aplican)
-      c1: Soy o he sido miembro de la junta directiva.
-      c2: He contribuido financieramente a El Pueblo como parte de una institución o patrocinador/a de un evento.
-      c3: Soy o he sido miembro del personal.
-      c4: Soy o he sido voluntario/a.
-      c5: He contribuido financieramente a El Pueblo (como individuo).
-      c6: He asistido a un evento de El Pueblo.
-      c7: He sido exhibidor/a o vendedor/a en un evento de El Pueblo.
-      c8: Estoy participando o he participado en uno de los programas para adultos.
-      c9: Estoy participando o he participado en uno de los programas juveniles.
-      c10: Trabajo o trabajé en una organización que ha colaborado con El Pueblo.
-      c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles.
+      c1: Soy o he sido miembro de la junta directiva
+      c2: He contribuido financieramente a El Pueblo como parte de una institución o patrocinador/a de un evento
+      c3: Soy o he sido miembro del personal
+      c4: Soy o he sido voluntario/a
+      c5: He contribuido financieramente a El Pueblo (como individuo)
+      c6: He asistido a un evento de El Pueblo
+      c7: He sido exhibidor/a o vendedor/a en un evento de El Pueblo
+      c8: Estoy participando o he participado en uno de los programas para adultos
+      c9: Estoy participando o he participado en uno de los programas juveniles
+      c10: Trabajo o trabajé en una organización que ha colaborado con El Pueblo
+      c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles
       other: 'Otro (Especifique): '
   submit: Enviar

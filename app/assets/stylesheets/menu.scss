@@ -1,0 +1,45 @@
+@import "sass";
+
+.dish {
+  // flex-grow: 1;
+  width: 32%;
+  color: black;
+  margin: 1em 0;
+  @include mobile {
+    width: 100%;
+    margin: 2.5%;
+    padding: 0 1em;
+  }
+  background: white;
+  box-shadow: 0 1px 2px #ccc;
+}
+.option {
+  background: gray;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  width: 90%;
+  @include mobile {
+    height: 45px;
+    width: 100%;
+  }
+}
+.grayback {
+  background: gray;
+}
+.greenback {
+  background: rgb(28, 184, 65);
+}
+.redback {
+  background: red;
+}
+.disabled {
+  cursor: not-allowed;
+}
+#total {
+  height: 40px;
+}

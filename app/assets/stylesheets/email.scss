@@ -1,0 +1,45 @@
+@import "sass";
+
+label {
+  @include mobile {
+    display: inline !important;
+  }
+}
+.email {
+  width: 33%;
+  @include mobile {
+    width: 100%;
+  }
+}
+.check-box {
+  margin-bottom: 1em;
+}
+.other {
+  width: 33%;
+  @include mobile {
+    width: 100%;
+  }
+}
+.req {
+  color: #c43b1d;
+}
+
+//PureCSS custom
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+  height: 30px;
+}
+.button-success,
+.button-secondary {
+  color: white;
+  border-radius: 8px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
+.pure-button {
+  @include mobile {
+    width: 100%;
+  }
+}

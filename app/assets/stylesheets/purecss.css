@@ -5,5 +5,5 @@
   =require purecss/grids
   =require purecss/grids-responsive
   =require purecss/menus
-  =require purecss/tables
+  require purecss/tables
 */

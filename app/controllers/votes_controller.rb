@@ -1,15 +1,12 @@
 class VotesController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: :create
 
   def index
     @votes = Vote.all
-    @dishes = Dish.order(votes: :desc)
+    @dishes = Dish.order votes: :desc
   end
 
   def create
-    # entree = params[:vote][:entree].size == 2 ?
-    # dessert = params[:vote][:dessert] ?
-    # drink = params[:vote][:drink] ?
     @vote = Vote.new(vote_params.merge(user: @user))
 
     if @vote.save
@@ -25,6 +22,6 @@ class VotesController < ApplicationController
   end
 
   def set_user
-    @user = User.find(session[:user])
+    @user = User.find session[:user]
   end
 end

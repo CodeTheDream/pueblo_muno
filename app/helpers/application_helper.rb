@@ -6,6 +6,17 @@ module ApplicationHelper
     entree + dessert + drink
   end
 
+  def total_class
+    case total
+    when 0
+      "grayback"
+    when 1..100
+      "greenback"
+    else
+      "redback"
+    end
+  end
+
   def link_to_language(lang)
     if lang == 'English' && I18n.locale == :en
       output = <<-HTML.html_safe

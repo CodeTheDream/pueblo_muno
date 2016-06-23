@@ -1,23 +1,21 @@
 @import "sass";
+
 body {
   margin: 0;
   background: #F2F2F2;
 }
 header {
   height: 80px;
-  line-height: 80px;
+  line-height: 80px; // Line height helps the langugage at the top right to stay in the middle`
   background: black;
   color: white;
   text-align: center;
   font-size: 1.2em;
   @include mobile {
+    height: 55px;
+    line-height: 55px;
     font-size: 16px;
-    background: blue;
   }
-}
-#total {
-  background: rgb(28, 184, 65); /* this is a green */
-  height: 30px;
 }
 .right {
   float: right;
@@ -33,7 +31,12 @@ header {
   color: white;
 }
 .container {
+  background: white;
   padding: 1em;
+  box-shadow: 0 1px 2px #ccc;
+  @include mobile {
+    margin: 2.5%;
+  }
 }
 .pad-right {
   padding-right: 1em;
@@ -51,71 +54,27 @@ header {
 .no-decor {
   text-decoration: none;
 }
-.req {
-  color: #c43b1d;
-}
-.dish {
-  // flex-grow: 1;
-  width: 33%;
-  border: 1px solid black;
-  color: black;
-}
-.option {
-  background: gray;
-  width: 90%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  color: white;
-  text-decoration: none;
-}
 
-// All flex related styling
-.flex-container {
-  display: flex;
+// table stuff
+table {
+  width: 100%;
+  border-collapse: collapse;
+  td {
+    padding: 4px 0;
+  }
+  td,
+  th {
+    @include mobile {
+      border-bottom: solid 1px #AAA;
+    }
+  }
+  tr:hover {
+    background: #f2f2f2;
+  }
 }
-.flex-column {
-  flex-direction: column;
+.min-width {
+  width: 1px;
 }
-.flex-twin {
-  width: 48%;
-}
-.align-between {
-  align-content: space-between;
-}
-.align-around {
-  align-content: space-around;
-}
-.align-center {
-  align-items: center;
-}
-.justify-between {
-  justify-content: space-between;
-}
-.justify-around {
-  justify-content: space-around;
-}
-.justify-center {
-  justify-content: center;
-}
-.xy-center {
-  align-items: center;
-  justify-content: center;
-}
-
-//PureCSS custom
-.button-success {
-  background: rgb(28, 184, 65); /* this is a green */
-  height: 30px;
-}
-.button-success,
-.button-secondary {
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-.button-secondary {
-  background: rgb(66, 184, 221); /* this is a light blue */
+.center {
+  text-align: center;
 }
