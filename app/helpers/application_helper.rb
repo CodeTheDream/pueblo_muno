@@ -16,12 +16,15 @@ module ApplicationHelper
     end
   end
 
-  def option_link(dish, hash)
+  def option_link(dish, hash, price: nil)
     options = food_options
     options.merge!(hash)
-    link_to t(".#{dish[:name]}"), options, class: 'option button-secondary'
-  rescue TypeError, NoMethodError
-    link_to dish, options, class: 'option button-secondary'
+    dish = t(".#{dish}")
+    if price
+      link_to "#{dish}: $#{price}", options, class: 'option button-secondary'
+    else
+      link_to dish, options, class: 'option button-secondary'
+    end
   end
 
   def people(votes)

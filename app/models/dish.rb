@@ -170,23 +170,23 @@ class Dish < ActiveRecord::Base
     {
       raleigh: {
         num: 1,
-        name: 'Raleigh'
+        name: 'raleigh'
       },
       wake: {
         num: 2,
-        name: 'Wake County'
+        name: 'wake'
       },
       wake_and_more: {
         num: 3,
-        name: 'Wake & surrounding counties'
+        name: 'wake_and_more'
       },
       statewide: {
         num: 4,
-        name: 'North Carolina'
+        name: 'statewide'
       },
       federal: {
         num: 5,
-        name: 'United States'
+        name: 'federal'
       }
     }
   end

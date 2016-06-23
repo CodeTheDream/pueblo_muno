@@ -3,23 +3,23 @@
 <% case str.size %>
 <% when 0 %>
   <% @dishes.each do |k, h| %>
-    <%= option_link h, priority => h[:num] %>
+    <%= option_link h[:name], priority => h[:num] %>
   <% end %>
 <% when 1 %>
   <% dish = @dishes.find{|k,v| v[:num] == str.to_i}[0] %>
-  <%= option_link @dishes[dish], priority => nil %>
+  <%= option_link @dishes[dish][:name], priority => nil %>
 
   <b>Geographic Reach</b>
 
   <% @prices[dish][priority].each do |h, v| %>
-    <%= option_link "#{Dish.to_reach h}: $#{v}", priority => "#{str}#{@places[h]}" %>
+    <%= option_link Dish.to_reach(h), {priority => "#{str}#{@places[h]}"}, price: v %>
   <% end %>
 <% when 2 %>
   <% dish = @dishes.find{|k,v| v[:num] == str[0].to_i}[0] %>
   <% range = Dish.reaches.find{|k,v| v[:num] == str[1].to_i} %>
-  <%= option_link @dishes[dish], priority => nil %>
+  <%= option_link @dishes[dish][:name], priority => nil %>
 
   <b>Geographic Reach</b>
-  
-  <%= option_link "#{range[1][:name]}: $#{@prices[dish][priority][range[0]]}", priority => str[0] %>
+
+  <%= option_link range[1][:name], {priority => str[0]}, price: @prices[dish][priority][range[0]] %>
 <% end %>
