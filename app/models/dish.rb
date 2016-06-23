@@ -28,15 +28,15 @@ class Dish < ActiveRecord::Base
     {
       policy: {
         num: 1,
-        name: 'Policy Change'
+        name: 'Policy'
       },
       growth: {
         num: 2,
-        name: 'Individual Growth'
+        name: 'IndGrowth'
       },
       growth_and_action: {
         num: 3,
-        name: 'Individual Growth and Take Action'
+        name: 'IndGrowthAction'
       },
       referrals: {
         num: 4,
@@ -44,7 +44,7 @@ class Dish < ActiveRecord::Base
       },
       diversity: {
         num: 5,
-        name: 'Cultural Diversity'
+        name: 'Diversity'
       }
     }
   end

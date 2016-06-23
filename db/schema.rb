@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160622190657) do
     t.string   "email"
     t.text     "connections"
     t.string   "connection_other"
-    t.boolean  "complete"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

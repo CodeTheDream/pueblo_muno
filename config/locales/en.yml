@@ -18,5 +18,9 @@ en:
       c11: My child/children participate/s or has/have participated in one of the youth programs
       other: 'Other: '
     dish_options:
-      Policy Change: Policy Change
+      Policy: Policy Change
+      IndGrowth: Individual Growth
+      IndGrowthAction: Individual Growth and Take Action
+      Referrals: Referrals
+      Diversity: Cultural Diversity
   submit: Submit
