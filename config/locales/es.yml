@@ -17,15 +17,14 @@ es:
       c10: Trabajo o trabajé en una organización que ha colaborado con El Pueblo
       c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles
       other: 'Otro (Especifique): '
-    dish_options:
-      Policy: Cambiar Políticas
-      IndGrowth: Crecimiento Personal
-      IndGrowthAction: Crecimiento Personal Y Tomar Acción
-      Referrals: Referencias
-      Diversity: Diversidad Cultural
-      raleigh: Raleigh
-      wake: Condado de Wake
-      wake_and_more: Condado de Wake y sus alrededores
-      statewide: Norte Carolina
-      federal: Estados Unidos
+  Policy: Cambiar Políticas
+  IndGrowth: Crecimiento Personal
+  IndGrowthAction: Crecimiento Personal Y Tomar Acción
+  Referrals: Referencias
+  Diversity: Diversidad Cultural
+  raleigh: Raleigh
+  wake: Condado de Wake
+  wake_and_more: Condado de Wake y sus alrededores
+  statewide: Norte Carolina
+  federal: Estados Unidos
   submit: Enviar

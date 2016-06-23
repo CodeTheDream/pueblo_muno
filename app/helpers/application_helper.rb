@@ -19,7 +19,7 @@ module ApplicationHelper
   def option_link(dish, hash, price: nil)
     options = food_options
     options.merge!(hash)
-    dish = t(".#{dish}")
+    dish = t("#{dish}")
     if price
       link_to "#{dish}: $#{price}", options, class: 'option button-secondary'
     else

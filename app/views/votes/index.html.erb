@@ -23,9 +23,9 @@
           <% if dish.votes > 0 %>
             <tr>
               <td class="center"><%= dish.votes %></td>
-              <td><%= Dish.to_name dish.name %></td>
+              <td><%= t("#{Dish.to_name dish.name}") %></td>
               <td><%= dish.priority.titleize %></td>
-              <td><%= Dish.to_reach dish.reach %></td>
+              <td><%= t("#{Dish.to_reach(dish.reach)}") %></td>
             </tr>
           <% end %>
         <% end %>
@@ -37,7 +37,7 @@
     <div class="flex-container wrap">
       <% @votes.each do |vote| %>
         <div class="card mar-rig">
-          <div>
+          <div class="card-header">
             <%= vote.user.email %>. Total spent: $<%= Dish.price(entree: vote.entree) + Dish.price(dessert: vote.dessert) + Dish.price(drink: vote.drink) %>
           </div>
           <% if vote.entree %>

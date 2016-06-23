@@ -17,15 +17,14 @@ en:
       c10: I work at an organization that has collaborated with El Pueblo
       c11: My child/children participate/s or has/have participated in one of the youth programs
       other: 'Other: '
-    dish_options:
-      Policy: Policy Change
-      IndGrowth: Individual Growth
-      IndGrowthAction: Individual Growth and Take Action
-      Referrals: Referrals
-      Diversity: Cultural Diversity
-      raleigh: Raleigh
-      wake: Wake County
-      wake_and_more: Wake & Surrounding Communities
-      statewide: North Carolina
-      federal: United States
+  Policy: Policy Change
+  IndGrowth: Individual Growth
+  IndGrowthAction: Individual Growth and Take Action
+  Referrals: Referrals
+  Diversity: Cultural Diversity
+  raleigh: Raleigh
+  wake: Wake County
+  wake_and_more: Wake & Surrounding Communities
+  statewide: North Carolina
+  federal: United States
   submit: Submit
