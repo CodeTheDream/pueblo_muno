@@ -4,19 +4,19 @@
   <div class="flex-container justify-between wrap-mobile">
     <div class="flex-container flex-column dish white xy-center">
       <h3 class="flex-container xy-center">
-        Entree: $<%= Dish.price entree: params[:entree].to_s %>
+        <%= t".entree" %> $<%= Dish.price entree: params[:entree].to_s %>
       </h3>
       <%= render 'dish_options', priority: :entree, str: params[:entree].to_s %>
     </div>
     <div class="flex-container flex-column dish white xy-center">
       <h3 class="flex-container xy-center">
-        Dessert: $<%= Dish.price dessert: params[:dessert].to_s %>
+        <%= t".dessert" %> $<%= Dish.price dessert: params[:dessert].to_s %>
       </h3>
       <%= render 'dish_options', priority: :dessert, str: params[:dessert].to_s %>
     </div>
     <div class="flex-container flex-column dish white xy-center">
       <h3 class="flex-container xy-center">
-        Drink: $<%= Dish.price drink: params[:drink].to_s %>
+        <%= t".drink" %> $<%= Dish.price drink: params[:drink].to_s %>
       </h3>
       <%= render 'dish_options', priority: :drink, str: params[:drink].to_s %>
     </div>

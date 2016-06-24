@@ -28,4 +28,9 @@ en:
       wake_and_more: Wake & Surrounding Communities
       statewide: North Carolina
       federal: United States
+      dish: 'Dish'
+    menu:
+      entree: 'Entree: '
+      dessert: 'Dessert: '
+      drink: 'Drink: '
   submit: Submit

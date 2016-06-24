@@ -1,6 +1,6 @@
 es:
   email: Por favor ingrese su correo electronico
-  menu: Menuuuuuu
+  menu: Menú
   pages:
     email:
       req: Necesario
@@ -18,14 +18,21 @@ es:
       c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles
       other: 'Otro (Especifique): '
     dish_options:
-      Policy: Cambiar Políticas
-      IndGrowth: Crecimiento Personal
-      IndGrowthAction: Crecimiento Personal Y Tomar Acción
-      Referrals: Referencias
+      Policy: Cambiar políticas
+      IndGrowth: Crecimiento individual
+      IndGrowthAction: Crecimiento y toma acción
+      Referrals: Referidos
       Diversity: Diversidad Cultural
+
       raleigh: Raleigh
       wake: Condado de Wake
-      wake_and_more: Condado de Wake y sus alrededores
-      statewide: Norte Carolina
+      wake_and_more: Wake y otros condados alredor
+      statewide: Carolina del Norte
       federal: Estados Unidos
+      Entree: Plato Principal
+      dish: 'Opciónes'
+    menu:
+      entree: 'Plato Principal: '
+      dessert: 'Postre: '
+      drink: 'Bebida: ' 
   submit: Enviar
