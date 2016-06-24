@@ -27,23 +27,28 @@ class Dish < ActiveRecord::Base
     {
       policy: {
         num: 1,
-        name: 'Policy'
+        name: 'Policy',
+        info: 'policy_info'
       },
       growth: {
         num: 2,
-        name: 'IndGrowth'
+        name: 'IndGrowth',
+        info: 'growth_info'
       },
       growth_and_action: {
         num: 3,
-        name: 'IndGrowthAction'
+        name: 'IndGrowthAction',
+        info: 'growth_action_info'
       },
       referrals: {
         num: 4,
-        name: 'Referrals'
+        name: 'Referrals',
+        info: 'referrals_info'
       },
       diversity: {
         num: 5,
-        name: 'Diversity'
+        name: 'Diversity',
+        info: 'diversity_info'
       }
     }
   end
@@ -170,23 +175,28 @@ class Dish < ActiveRecord::Base
     {
       raleigh: {
         num: 1,
-        name: 'raleigh'
+        name: 'raleigh',
+        info: 'raleigh_info'
       },
       wake: {
         num: 2,
-        name: 'wake'
+        name: 'wake',
+        info: 'wake_info'
       },
       wake_and_more: {
         num: 3,
-        name: 'wake_and_more'
+        name: 'wake_and_more',
+        info: 'wake_and_more_info'
       },
       statewide: {
         num: 4,
-        name: 'statewide'
+        name: 'statewide',
+        info: 'statewide_info'
       },
       federal: {
         num: 5,
-        name: 'federal'
+        name: 'federal',
+        info: 'federal_info'
       }
     }
   end

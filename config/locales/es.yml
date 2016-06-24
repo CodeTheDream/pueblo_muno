@@ -17,6 +17,17 @@ es:
       c10: Trabajo o trabajé en una organización que ha colaborado con El Pueblo
       c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles
       other: 'Otro (Especifique): '
+    dish_options:
+      policy_info: A lo mejor has probado esta opción antes con El Pueblo, en nuestros esfuerzos para hacer cabildeo para la reforma migratoria, pedir el veto de la HB 318, pasar una ley a que lxs estudiantes indocumentadxs paguen la misma matrícula que lxs demás estudiantes, abogar por programas de identificación comunitaria, lograr que las escuelas públicas de Wake provean mejor acceso a la educación sexual, etc.
+      growth_info: 'A lo mejor has probado esta opción antes con El Pueblo, en talleres informativos acerca de temas como: navegar el sistema de salud, prepararte para ir a la universidad, acceder a servicios para víctimas de violencia doméstica, aplicar para el programa de DACA, etc.'
+      growth_action_info: 'A lo mejor has probado esta opción antes con El Pueblo, en talleres informativos acerca de temas como: implementar una campaña de organización comunitaria, hablar con los medios de prensa para dar mensajes para una campaña, etc. Y también a través de oportunidades para poner en práctica tus habilidades, como por ejemplo: haciendo cabildeo en Washington DC o en Raleigh, hablando en un evento comunitario, etc.'
+      referrals_info: A lo mejor has probado esta opción antes con El Pueblo, si has llamado para hablar con un miembro del personal quien te ha puesto en contacto con otra agencia para recibir ayuda con respecto a un tema legal, un tema de salud, un tema de vivienda, etc.
+      diversity_info: A lo mejor has probado esta opción antes con El Pueblo, si has participado en La Fiesta del Pueblo, el evento de Día de los Muertos u otros eventos culturales.
+      raleigh_info: El precio básico implica un alcance geográfico del área de Raleigh. Si quieres un alcance geográfico más allá de Raleigh, tendrás que pagar un costo adicional.
+      wake_info: A nivel del Condado de Wake
+      wake_and_more_info: A nivel del Condado de Wake y algunos condados cercanos (ej. Johnston, Harnett, Nash, Franklin)
+      statewide_info: A nivel estatal
+      federal_info: A nivel federal (por ejemplo, el promover la reforma migratoria a nivel federal, el presionar a las autoridades federales a que paren las deportaciones, etc.)
   Policy: Cambiar Políticas
   IndGrowth: Crecimiento Personal
   IndGrowthAction: Crecimiento Personal Y Tomar Acción

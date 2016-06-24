@@ -28,7 +28,23 @@ function formSubmit() {
       return false;
     }
   });
-}
+};
+
+function moreInformation() {
+  $('.option span').click(function() {
+    var info = $(this).closest('a').next()
+
+    // $('span.option:visible').hide();
+    $('span.option:visible').slideUp('slow');
+
+    if (!info.is(':visible')) {
+      // clicked.next().show('slow');
+      info.slideDown('slow');
+    }
+    return false;
+  });
+};
 
 $(formSubmit);
 $(otherCheckBox);
+$(moreInformation);

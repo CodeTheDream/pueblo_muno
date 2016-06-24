@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @dishes = Dish.dishes
     @prices = Dish.prices
     @places = Dish.places
+    @reaches = Dish.reaches
     @vote = Vote.new
   end
 

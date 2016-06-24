@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def food_options
+    {
+      entree: params[:entree],
+      dessert: params[:dessert],
+      drink: params[:drink]
+    }
+  end
+
   def link_to_language(lang)
     options = food_options
     if lang == 'English' && I18n.locale == :en
@@ -16,14 +24,27 @@ module ApplicationHelper
     end
   end
 
+  def more_information(text)
+    <<-HTML.html_safe
+      <span class="option" style="display:none;">#{text}</span>
+    HTML
+  end
+
   def option_link(dish, hash, price: nil)
     options = food_options
     options.merge!(hash)
     dish = t("#{dish}")
     if price
-      link_to "#{dish}: $#{price}", options, class: 'option'
+      text = <<-HTML.html_safe
+      #{dish}: $#{price} <span>?</span>
+      HTML
+
+      link_to text, options, class: 'option'
     else
-      link_to dish, options, class: 'option'
+      text = <<-HTML.html_safe
+      #{dish} <span>?</span>
+      HTML
+      link_to text, options, class: 'option'
     end
   end
 
@@ -54,13 +75,5 @@ module ApplicationHelper
       count += 1 if vote.drink
     end
     count
-  end
-
-  def food_options
-    {
-      entree: params[:entree],
-      dessert: params[:dessert],
-      drink: params[:drink]
-    }
   end
 end
