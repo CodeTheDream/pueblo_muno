@@ -16,8 +16,14 @@
 .align-around {
   align-content: space-around;
 }
-.align-center {
+.align-center, .x-center {
   align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.self-start {
+  align-self: flex-start;
 }
 .justify-between {
   justify-content: space-between;

@@ -21,9 +21,9 @@ module ApplicationHelper
     options.merge!(hash)
     dish = t("#{dish}")
     if price
-      link_to "#{dish}: $#{price}", options, class: 'option button-secondary'
+      link_to "#{dish}: $#{price}", options, class: 'option'
     else
-      link_to dish, options, class: 'option button-secondary'
+      link_to dish, options, class: 'option'
     end
   end
 

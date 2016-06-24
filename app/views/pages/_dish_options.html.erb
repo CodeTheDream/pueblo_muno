@@ -1,5 +1,4 @@
-<b>Dish</b>
-
+<h3>Dish</h3>
 <% case str.size %>
 <% when 0 %>
   <% @dishes.each do |k, h| %>
@@ -7,9 +6,11 @@
   <% end %>
 <% when 1 %>
   <% dish = @dishes.find{|k,v| v[:num] == str.to_i}[0] %>
+
   <%= option_link @dishes[dish][:name], priority => nil %>
 
-  <b>Geographic Reach</b>
+  </div><div class="flex-container flex-column dish">
+  <h3>Geographic Reach</h3>
 
   <% @prices[dish][priority].each do |h, v| %>
     <%= option_link Dish.to_reach(h), {priority => "#{str}#{@places[h]}"}, price: v %>
@@ -17,9 +18,12 @@
 <% when 2 %>
   <% dish = @dishes.find{|k,v| v[:num] == str[0].to_i}[0] %>
   <% range = Dish.reaches.find{|k,v| v[:num] == str[1].to_i} %>
+
   <%= option_link @dishes[dish][:name], priority => nil %>
 
-  <b>Geographic Reach</b>
+  </div><div class="flex-container flex-column dish">
+
+  <h3>Geographic Reach</h3>
 
   <%= option_link range[1][:name], {priority => str[0]}, price: @prices[dish][priority][range[0]] %>
 <% end %>

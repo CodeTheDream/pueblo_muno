@@ -1,16 +1,16 @@
 <div class="container">
   <div class="flex-container justify-between">
-    <div class="card" style="width:46%">
+    <h3 class="card" style="width:46%">
       Votes: <%= votes @votes %>
-    </div>
-    <div class="card" style="width:46%">
+    </h3>
+    <h3 class="card" style="width:46%">
       <div>People: <%= people @votes %></div>
-    </div>
+    </h3>
   </div>
 
-  <div class="card">
-    <div>Most popular</div>
+  <div class="gray-text pad-bot">Most popular dishes</div>
 
+  <div class="card">
     <table>
       <thead>
         <th class="min-width">Votes</th>
@@ -34,12 +34,14 @@
   </div>
 
   <% if @votes.any? %>
+    <div class="gray-text pad-bot">Voters</div>
     <div class="flex-container wrap">
       <% @votes.each do |vote| %>
         <div class="card mar-rig">
-          <div class="card-header">
+          <div>
             <%= vote.user.email %>. Total spent: $<%= Dish.price(entree: vote.entree) + Dish.price(dessert: vote.dessert) + Dish.price(drink: vote.drink) %>
           </div>
+          <hr class="card-divider">
           <% if vote.entree %>
             <div>
               Entree: <%= Dish.to_name vote.entree %> - <%= Dish.to_reach vote.entree %>: $<%= Dish.price entree: vote.entree %><br/>

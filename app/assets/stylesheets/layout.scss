@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  background: #EEEEEE;
   background: #F2F2F2;
 }
 header {
@@ -30,6 +31,9 @@ header {
 .white {
   color: white;
 }
+.gray-text {
+  color: #777
+}
 .container {
   margin: 2.5%;
 }
@@ -37,18 +41,22 @@ header {
   background: white;
   padding: 1em;
   box-shadow: 0 1px 2px #ccc;
-  margin-bottom: 1em;
+  margin: 0 0 1em;
   @include mobile {
-    margin: 2.5%;
+    // margin: 2.5%;
   }
 }
-.card-header {
+.card-divider {
+  border: none;
   border-bottom: 1px solid #ebebeb;
-  margin: 0 -1em;
-  padding: 0 1em 1em;
+  margin: 0.5em -1em;
+  // padding: 0 1em 1em;
 }
 .pad-right {
   padding-right: 1em;
+}
+.pad-bot {
+  padding-bottom: 1em;
 }
 .desktop-only {
   @include mobile {
