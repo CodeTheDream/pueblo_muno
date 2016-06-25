@@ -1,4 +1,5 @@
-<h3>Dish</h3>
+<h3><%= t".dish" %></h3>
+
 <% case str.size %>
 <% when 0 %>
   <% @dishes.each do |k, h| %>
@@ -13,7 +14,8 @@
 
 
   </div><div class="flex-container flex-column dish">
-  <h3>Geographic Reach</h3>
+
+  <h3><%= t".reach" %></h3>
 
   <% @prices[dish][priority].each do |h, v| %>
     <%= option_link Dish.to_reach(h), {priority => "#{str}#{@places[h]}"}, price: v %>
@@ -28,7 +30,7 @@
 
   </div><div class="flex-container flex-column dish">
 
-  <h3>Geographic Reach</h3>
+  <h3><%= t".reach" %></h3>
 
   <%= option_link range[1][:name], {priority => str[0]}, price: @prices[dish][priority][range[0]] %>
   <%= more_information t(".#{@reaches[range[0]][:info]}") %>

@@ -1,6 +1,6 @@
 es:
   email: Por favor ingrese su correo electronico
-  menu: Menuuuuuu
+  menu: Menú
   pages:
     email:
       req: Necesario
@@ -28,6 +28,13 @@ es:
       wake_and_more_info: A nivel del Condado de Wake y algunos condados cercanos (ej. Johnston, Harnett, Nash, Franklin)
       statewide_info: A nivel estatal
       federal_info: A nivel federal (por ejemplo, el promover la reforma migratoria a nivel federal, el presionar a las autoridades federales a que paren las deportaciones, etc.)
+      dish: Platillo # Opciónes
+      Entree: Plato Principal
+      reach: Alcance Geográfico
+    menu:
+      entree: Plato Principal
+      dessert: Postre
+      drink: Bebida
   Policy: Cambiar Políticas
   IndGrowth: Crecimiento Personal
   IndGrowthAction: Crecimiento Personal Y Tomar Acción
