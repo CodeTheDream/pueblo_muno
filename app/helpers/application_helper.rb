@@ -11,13 +11,13 @@ module ApplicationHelper
     options = food_options
     if lang == 'English' && I18n.locale == :en
       output = <<-HTML.html_safe
-        <img src="/es.png"></img> <span class="desktop-only">Haz click aqui para Espanol</span>
+        <img src="/es.png"></img> <span class="desktop-only">Click para Espanol</span>
       HTML
       options.merge!(lang: 'es')
       link_to output, options, class: 'no-decor'
     elsif lang == 'Español' && I18n.locale == :es
       output = <<-HTML.html_safe
-        <img src="/en.png"></img> <span class="desktop-only">Click here for English version</span>
+        <img src="/en.png"></img> <span class="desktop-only">Click for English</span>
       HTML
       options.merge!(lang: 'en')
       link_to output, options, class: 'no-decor'
@@ -65,6 +65,12 @@ module ApplicationHelper
     when 1..100 then "greenback"
     else "redback"
     end
+  end
+
+  def total_header
+    <<-HTML.html_safe
+      <div id="total" class="flex-container white xy-center #{total_class}">TOTAL: $#{total}</div>
+    HTML
   end
 
   def votes(votes)

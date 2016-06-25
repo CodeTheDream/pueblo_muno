@@ -35,11 +35,11 @@ es:
       entree: Plato Principal
       dessert: Postre
       drink: Bebida
-  Policy: Cambiar Políticas
-  IndGrowth: Crecimiento Personal
-  IndGrowthAction: Crecimiento Personal Y Tomar Acción
-  Referrals: Referencias
-  Diversity: Diversidad Cultural
+  policy: Cambiar Políticas
+  growth: Crecimiento Personal
+  growth_action: Crecimiento Personal Y Tomar Acción
+  referrals: Referencias
+  diversity: Diversidad Cultural
   raleigh: Raleigh
   wake: Condado de Wake
   wake_and_more: Condado de Wake y sus alrededores

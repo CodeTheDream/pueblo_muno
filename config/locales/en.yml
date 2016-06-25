@@ -34,11 +34,11 @@ en:
       entree: Entree
       dessert: Dessert
       drink: Drink
-  Policy: Policy Change
-  IndGrowth: Individual Growth
-  IndGrowthAction: Individual Growth and Take Action
-  Referrals: Referrals
-  Diversity: Cultural Diversity
+  policy: Policy Change
+  growth: Individual Growth
+  growth_action: Individual Growth and Take Action
+  referrals: Referrals
+  diversity: Cultural Diversity
   raleigh: Raleigh
   wake: Wake County
   wake_and_more: Wake & Surrounding Communities
