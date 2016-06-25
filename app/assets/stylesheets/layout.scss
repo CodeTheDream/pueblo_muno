@@ -9,13 +9,28 @@ header {
   height: 80px;
   line-height: 80px; // Line height helps the langugage at the top right to stay in the middle`
   background: black;
+  background: white;
   color: white;
+  color: #4C4C4C;
   text-align: center;
   font-size: 1.2em;
+  span {
+    color: #4C4C4C;
+  }
   @include mobile {
     height: 55px;
     line-height: 55px;
     font-size: 16px;
+  }
+}
+#logo {
+  position: absolute;
+  left: 0;
+  height: 40px;
+  margin: 20px 0 20px 1em;
+  @include mobile {
+    height: 30px;
+    margin: 12.5px 0 12.5px 1em;
   }
 }
 .right {

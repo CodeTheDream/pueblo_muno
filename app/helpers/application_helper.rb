@@ -14,19 +14,19 @@ module ApplicationHelper
         <img src="/es.png"></img> <span class="desktop-only">Haz click aqui para Espanol</span>
       HTML
       options.merge!(lang: 'es')
-      link_to output, options, class: 'white no-decor'
+      link_to output, options, class: 'no-decor'
     elsif lang == 'Español' && I18n.locale == :es
       output = <<-HTML.html_safe
         <img src="/en.png"></img> <span class="desktop-only">Click here for English version</span>
       HTML
       options.merge!(lang: 'en')
-      link_to output, options, class: 'white no-decor'
+      link_to output, options, class: 'no-decor'
     end
   end
 
   def more_information(text)
     <<-HTML.html_safe
-      <span class="option" style="display:none;">#{text}</span>
+      <span class="info">#{text}</span>
     HTML
   end
 

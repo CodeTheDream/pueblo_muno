@@ -7,7 +7,6 @@ Dish.prices.each do |dish, priorities|
         reach: "#{Dish.places[range]}",
         price: price
       )
-      # p "#{dish} #{priority} #{range} = #{price}"
     end
   end
 end
