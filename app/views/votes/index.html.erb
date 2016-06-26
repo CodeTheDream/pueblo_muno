@@ -1,22 +1,23 @@
 <div class="container">
   <div class="flex-container justify-between">
-    <h3 class="card" style="width:46%">
+    <h3 class="card fro" style="margin-right: 1em;">
       Votes: <%= votes @votes %>
     </h3>
-    <h3 class="card" style="width:46%">
+    <h3 class="card fro">
       <div>People: <%= people @votes %></div>
     </h3>
   </div>
 
-  <div class="gray-text pad-bot">Most popular dishes</div>
+  <div class="bg-txt">Most popular dishes</div>
 
-  <div class="card">
+  <div class="x-scroll">
     <table>
       <thead>
         <th class="min-width">Votes</th>
         <th>Dish</th>
         <th>Priority</th>
         <th>Geographic Range</th>
+        <th class="min-width">Price</th>
       </thead>
       <tbody>
         <% @dishes.each do |dish| %>
@@ -26,6 +27,7 @@
               <td><%= t("#{Dish.to_name dish.name}") %></td>
               <td><%= dish.priority.titleize %></td>
               <td><%= t("#{Dish.to_reach(dish.reach)}") %></td>
+              <td class="center">$<%= dish.price %></td>
             </tr>
           <% end %>
         <% end %>
@@ -34,7 +36,8 @@
   </div>
 
   <% if @votes.any? %>
-    <div class="gray-text pad-bot">Voters</div>
+    <div class="bg-txt">Voters</div>
+
     <div class="flex-container wrap">
       <% @votes.each do |vote| %>
         <div class="card mar-rig">

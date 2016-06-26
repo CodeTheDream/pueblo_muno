@@ -12,7 +12,7 @@
   }
   h3 {
     margin: 0;
-    padding: 5%;
+    padding: 16px;
     border-bottom: 1px solid #ebebeb;
   }
 }
@@ -24,40 +24,71 @@
   }
 }
 .option {
-  background: white;
   border-bottom: 1px solid #ebebeb;
-  color: gray;
-  padding: 5% 7% 5% 5%;
-  position: relative;
-  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: gray;
+    padding: 1em;
+    text-decoration: none;
+    flex-grow: 1;
+    &:hover {
+      background: #f2f2f2;
+    }
+  }
+}
+
+// Flippy stuff
+.icon-container {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 50px;
   &:hover {
     background: #f2f2f2;
   }
-  span {
-    padding: 5%;
-    position: absolute;
-    right: 0;
-    top: 0;
+}
+.info-btn {
+  height: 17px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+  width: 19px;
+  &.active {
+    transform: rotateY(180deg);
   }
 }
+.front, .back {
+  @include backface(hidden);
+  position: absolute;
+  text-align: center;
+  width: 19px;
+  height: 21px;
+}
+.back {
+  transform: rotateY(180deg);
+}
+// end flippy stuff
+
 .info {
   border-bottom: 1px solid #ebebeb;
   display: none;
   line-height: 1.5em;
-  padding: 5%;
+  padding: 1em;
 }
 .grayback {
-  background: gray;
-  background: #bdc3c7;
-  background: #D3D6DB;
+  // background: gray;
+  // background: #bdc3c7;
+  // background: #D3D6DB;
   background: #aaa;
 }
 .greenback {
-  background: #1CB841;
+  // background: #1CB841;
   background: #0F9D58;
 }
 .redback {
-  background: red;
+  // background: red;
   background: #DB4437;
 }
 .disabled {

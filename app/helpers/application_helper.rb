@@ -11,7 +11,7 @@ module ApplicationHelper
     options = food_options
     if lang == 'English' && I18n.locale == :en
       output = <<-HTML.html_safe
-        <img src="/es.png"></img> <span class="desktop-only">Click para Espanol</span>
+        <img src="/es.png"></img> <span class="desktop-only">Click para Español</span>
       HTML
       options.merge!(lang: 'es')
       link_to output, options, class: 'no-decor'
@@ -34,18 +34,19 @@ module ApplicationHelper
     options = food_options
     options.merge!(hash)
     dish = t("#{dish}")
-    if price
-      text = <<-HTML.html_safe
-      #{dish}: $#{price} <span>?</span>
-      HTML
-
-      link_to text, options, class: 'option'
-    else
-      text = <<-HTML.html_safe
-      #{dish} <span>?</span>
-      HTML
-      link_to text, options, class: 'option'
-    end
+    text = price ? "#{dish}: $#{price}" : dish
+    link = link_to text, options
+    info_btn = <<-HTML
+      <div class="icon-container">
+        <div class="info-btn">
+            <i class="fa fa-question-circle-o fa-lg front" aria-hidden="true"></i>
+            <i class="fa fa-times-circle fa-lg back" aria-hidden="true"></i>
+        </div>
+      </div>
+    HTML
+    <<-HTML.html_safe
+      <div class="option">#{link}#{info_btn}</div>
+    HTML
   end
 
   def people(votes)

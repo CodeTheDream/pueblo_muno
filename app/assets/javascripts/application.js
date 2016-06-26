@@ -33,13 +33,14 @@ function formSubmit() {
 };
 
 function moreInformation() {
-  $('.option span').click(function() {
+  $('.icon-container').click(function() {
     $('.info:visible').slideUp('fast');
-    var info = $(this).closest('a').next();
+    $('.info-btn.active').removeClass('active');
+    var info = $(this).closest('.option').next();
     if (!info.is(':visible')) {
+      $(this).children('.info-btn').toggleClass('active');
       info.slideDown('fast');
     };
-    return false;
   });
 };
 

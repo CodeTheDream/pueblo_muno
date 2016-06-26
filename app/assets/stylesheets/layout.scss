@@ -92,22 +92,46 @@ header {
 .mar-rig {
   margin-right: 1em;
 }
+.bg-txt {
+  color: #777;
+  font-size: 18px;
+  padding-bottom: 1em;
+  @include mobile {
+    font-size: 16px;
+  }
+}
+.x-scroll {
+  box-shadow: 0 1px 2px #ccc;
+  margin-bottom: 1em;
+  @include mobile {
+    overflow-x: scroll;
+  }
+}
 
 // table stuff
 table {
+  background: white;
   width: 100%;
-  border-collapse: collapse;
-  td {
-    padding: 4px 0;
+  white-space: nowrap;
+  th {
+    background: #F3F3F3;
+    font-weight: normal;
+    padding: 4px 8px;
   }
   td,
   th {
+    border: 1px solid #DADADA;
+  }
+  td {
+    padding: 4px 4px 3px;
     @include mobile {
-      border-bottom: solid 1px #AAA;
+      padding: 3px 6px;
     }
   }
-  tr:hover {
-    background: #f2f2f2;
+  tr {
+    &:hover {
+      background: #f2f2f2;
+    }
   }
 }
 .min-width {

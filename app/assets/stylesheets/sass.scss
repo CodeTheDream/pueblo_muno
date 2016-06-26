@@ -47,6 +47,11 @@ $desktop-width: 1200px;
   }
 }
 
+@mixin backface($property) {
+  -webkit-backface-visibility: $property; /* Chrome, Safari, Opera */
+  backface-visibility: $property;
+}
+
 // @mixin background-size($size) {
 //   -webkit-background-size: $size;
 //   -moz-background-size: $size;
