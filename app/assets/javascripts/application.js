@@ -34,12 +34,16 @@ function formSubmit() {
 
 function moreInformation() {
   $('.icon-container').click(function() {
-    $('.info:visible').slideUp('fast');
+
+    // Hide info and deactivate button
+    $('.info:visible').slideUp('slow');
     $('.info-btn.active').removeClass('active');
+
     var info = $(this).closest('.option').next();
     if (!info.is(':visible')) {
+      // Show info and activate button
       $(this).children('.info-btn').toggleClass('active');
-      info.slideDown('fast');
+      info.slideDown('slow');
     };
   });
 };
