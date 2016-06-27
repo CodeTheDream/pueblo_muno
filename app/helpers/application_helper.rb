@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def connection_helper(num_str)
+    t "pages.email.c#{num_str}"
+  end
+
   def food_options
     {
       entree: params[:entree],

@@ -1,37 +1,38 @@
 @import "sass";
 
+$card-pad: 14px 16px;
+$info-btn-width: nth($card-pad, 1) * 2 + 18;
+
 .dish {
   align-self: flex-start;
   background: white;
-  box-shadow: 0 1px 2px #ccc;
-  color: gray;
+  box-shadow: $card-shadow;
   margin-bottom: 1em;
-  width: 100%;
-  @include mobile {
-    width: auto;
-  }
   h3 {
     margin: 0;
-    padding: 16px;
-    border-bottom: 1px solid #ebebeb;
+    padding: $card-pad;
+    border-bottom: $thin-line;
   }
 }
 .dish-container {
-  padding-top: 1em;
+  color: #777;
   width: 32%;
+  a {
+    color: #777;
+  }
   @include mobile {
     width: 100%;
   }
 }
 .option {
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: $thin-line;
   display: flex;
   justify-content: space-between;
   a {
-    color: gray;
-    padding: 1em;
-    text-decoration: none;
     flex-grow: 1;
+    padding: $card-pad;
+    padding-right: 0;
+    text-decoration: none;
     &:hover {
       background: #f2f2f2;
     }
@@ -44,7 +45,7 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-  width: 50px;
+  width: $info-btn-width;
   &:hover {
     background: #f2f2f2;
   }
@@ -53,7 +54,7 @@
   height: 17px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  transition: transform 0.9s;
   width: 19px;
   &.active {
     transform: rotateY(180deg);
@@ -72,7 +73,7 @@
 // end flippy stuff
 
 .info {
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: $thin-line;
   display: none;
   line-height: 1.5em;
   padding: 1em;

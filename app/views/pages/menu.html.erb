@@ -5,7 +5,7 @@
 
     <div class="dish-container">
 
-      <div class="gray-text pad-bot">
+      <div class="pad-bot pad-top">
         <%= t".entree" %>: $<%= Dish.price entree: params[:entree].to_s %>
       </div>
 
@@ -18,7 +18,7 @@
 
     <div class="dish-container">
 
-      <div class="gray-text pad-bot">
+      <div class="gray-text pad-bot pad-top">
         <%= t".dessert" %>: $<%= Dish.price dessert: params[:dessert].to_s %>
       </div>
 
@@ -30,7 +30,7 @@
 
     <div class="dish-container">
 
-      <div class="gray-text pad-bot">
+      <div class="gray-text pad-bot pad-top">
         <%= t".drink" %>: $<%= Dish.price drink: params[:drink].to_s %>
       </div>
 

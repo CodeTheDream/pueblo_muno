@@ -33,6 +33,10 @@ header {
     margin: 12.5px 0 12.5px 1em;
   }
 }
+#google {
+  height: 18px;
+  padding-left: 0.3em;
+}
 .right {
   float: right;
 }
@@ -55,23 +59,17 @@ header {
 .card {
   background: white;
   padding: 1em;
-  box-shadow: 0 1px 2px #ccc;
+  box-shadow: $card-shadow;
   margin: 0 0 1em;
-  @include mobile {
-    // margin: 2.5%;
-  }
-}
-.card-divider {
-  border: none;
-  border-bottom: 1px solid #ebebeb;
-  margin: 0.5em -1em;
-  // padding: 0 1em 1em;
 }
 .pad-right {
   padding-right: 1em;
 }
 .pad-bot {
   padding-bottom: 1em;
+}
+.pad-top {
+  padding-top: 1em;
 }
 .desktop-only {
   @include mobile {
@@ -90,7 +88,9 @@ header {
   margin-bottom: 1em;
 }
 .mar-rig {
-  margin-right: 1em;
+  @include immobile {
+    margin-right: 1em;
+  }
 }
 .bg-txt {
   color: #777;
@@ -101,42 +101,9 @@ header {
   }
 }
 .x-scroll {
-  box-shadow: 0 1px 2px #ccc;
+  box-shadow: $card-shadow;
   margin-bottom: 1em;
   @include mobile {
     overflow-x: scroll;
   }
-}
-
-// table stuff
-table {
-  background: white;
-  width: 100%;
-  white-space: nowrap;
-  th {
-    background: #F3F3F3;
-    font-weight: normal;
-    padding: 4px 8px;
-  }
-  td,
-  th {
-    border: 1px solid #DADADA;
-  }
-  td {
-    padding: 4px 4px 3px;
-    @include mobile {
-      padding: 3px 6px;
-    }
-  }
-  tr {
-    &:hover {
-      background: #f2f2f2;
-    }
-  }
-}
-.min-width {
-  width: 1px;
-}
-.center {
-  text-align: center;
 }

@@ -40,26 +40,34 @@
 
     <div class="flex-container wrap">
       <% @votes.each do |vote| %>
-        <div class="card mar-rig">
-          <div>
-            <%= vote.user.email %>. Total spent: $<%= Dish.price(entree: vote.entree) + Dish.price(dessert: vote.dessert) + Dish.price(drink: vote.drink) %>
+        <div class="user-card">
+          <div class="card-header">
+            <%= mail_to vote.user.email, vote.user.email, class: 'user' %><br/>
+            <% vote.user.connections.each do |connection| %>
+              <div class="green"><%= connection_helper connection %></div>
+            <% end %>
+            <% if vote.user.connection_other %>
+              <div class="green">Other: <%= vote.user.connection_other %></div>
+            <% end %>
           </div>
-          <hr class="card-divider">
-          <% if vote.entree %>
-            <div>
-              Entree: <%= Dish.to_name vote.entree %> - <%= Dish.to_reach vote.entree %>: $<%= Dish.price entree: vote.entree %><br/>
-            </div>
-          <% end %>
-          <% if vote.dessert %>
-            <div>
-              Dessert: <%= Dish.to_name vote.dessert %> - <%= Dish.to_reach vote.dessert %>: $<%= Dish.price dessert: vote.dessert %><br/>
-            </div>
-          <% end %>
-          <% if vote.drink %>
-            <div>
-              Drink: <%= Dish.to_name vote.drink %> - <%= Dish.to_reach vote.drink %>: $<%= Dish.price drink: vote.drink %><br/>
-            </div>
-          <% end %>
+          <div class="card-body">
+            Total spent: $<%= Dish.price(entree: vote.entree) + Dish.price(dessert: vote.dessert) + Dish.price(drink: vote.drink) %>
+            <% if vote.entree %>
+              <div>
+                Entree: <%= Dish.to_name vote.entree %> - <%= Dish.to_reach vote.entree %>: $<%= Dish.price entree: vote.entree %><br/>
+              </div>
+            <% end %>
+            <% if vote.dessert %>
+              <div>
+                Dessert: <%= Dish.to_name vote.dessert %> - <%= Dish.to_reach vote.dessert %>: $<%= Dish.price dessert: vote.dessert %><br/>
+              </div>
+            <% end %>
+            <% if vote.drink %>
+              <div>
+                Drink: <%= Dish.to_name vote.drink %> - <%= Dish.to_reach vote.drink %>: $<%= Dish.price drink: vote.drink %><br/>
+              </div>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>

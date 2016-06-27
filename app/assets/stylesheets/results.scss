@@ -1,0 +1,71 @@
+@import "sass";
+
+.user-card {
+  background: white;
+  box-shadow: $card-shadow;
+  margin: 0 0 1em;
+  @include immobile {
+    align-self: flex-start;
+    flex-grow: 1;
+    margin-right: 1em;
+    max-width: 33%;
+    width: 31%;
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+  @include mobile {
+    width: 100%;
+  }
+  .card-header {
+    padding: 11px 16px;
+    border-bottom: $thin-line;
+  }
+  .card-body {
+    color: #545454;
+    font-size: 15px;
+    padding: 11px 16px;
+  }
+  .user {
+    color: #1a0dab;
+    font-size: 18px;
+  }
+  .green {
+    color: #006621;
+    font-size: 16px;
+  }
+}
+
+// table stuff
+table {
+  background: white;
+  color: #545454;
+  width: 100%;
+  white-space: nowrap;
+  th {
+    background: #F3F3F3;
+    font-weight: normal;
+    padding: 4px 8px;
+  }
+  td,
+  th {
+    border: 1px solid #DADADA;
+  }
+  td {
+    padding: 4px 4px 3px;
+    @include mobile {
+      padding: 3px 6px;
+    }
+  }
+  tr {
+    &:hover {
+      background: #f2f2f2;
+    }
+  }
+}
+.min-width {
+  width: 1px;
+}
+.center {
+  text-align: center;
+}

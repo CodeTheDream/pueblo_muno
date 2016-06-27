@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   private
 
   def authenticate_user
-    redirect_to root_path unless session[:user]
+    redirect_to(root_path) && return unless session[:user]
     @user = User.find session[:user]
   end
 end
