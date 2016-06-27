@@ -65,16 +65,17 @@ module ApplicationHelper
   end
 
   def total_class
-    case total
-    when 0 then "grayback"
-    when 1..100 then "greenback"
+    case 100 - total
+    when 0..100 then "greenback"
     else "redback"
     end
   end
 
   def total_header
+    balance = I18n.locale == :en ? 'BALANCE' : 'SALDO'
+    # balance = I18n.locale == :en ? 'LEFT TO SPEND' : 'SALDO'
     <<-HTML.html_safe
-      <div id="total" class="flex-container white xy-center #{total_class}">TOTAL: $#{total}</div>
+      <div id="total" class="flex-container white xy-center #{total_class}">#{balance}: $#{100 - total}</div>
     HTML
   end
 
