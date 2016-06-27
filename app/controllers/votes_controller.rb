@@ -3,7 +3,10 @@ class VotesController < ApplicationController
 
   def index
     @votes = Vote.all
-    @dishes = Dish.order votes: :desc
+    @dishes = Dish.order(votes: :desc).limit 10
+    @entrees = Dish.where(priority: 'entree').order(votes: :desc).limit 10
+    @desserts = Dish.where(priority: 'dessert').order(votes: :desc).limit 10
+    @drinks = Dish.where(priority: 'drink').order(votes: :desc).limit 10
   end
 
   def create

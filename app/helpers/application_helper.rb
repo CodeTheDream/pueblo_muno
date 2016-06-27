@@ -57,10 +57,16 @@ module ApplicationHelper
     votes.count
   end
 
-  def total
-    entree = Dish.price entree: params[:entree].to_s
-    dessert = Dish.price dessert: params[:dessert].to_s
-    drink = Dish.price drink: params[:drink].to_s
+  def total(vote = nil)
+    if vote
+      entree = Dish.price entree: vote.entree
+      dessert = Dish.price dessert: vote.dessert
+      drink = Dish.price drink: vote.drink
+    else
+      entree = Dish.price entree: params[:entree].to_s
+      dessert = Dish.price dessert: params[:dessert].to_s
+      drink = Dish.price drink: params[:drink].to_s
+    end
     entree + dessert + drink
   end
 

@@ -26,4 +26,8 @@ class Vote < ActiveRecord::Base
     end
     update(tallied: true)
   end
+
+  def dishes
+    {entree: entree, dessert: dessert, drink: drink}
+  end
 end

@@ -35,6 +35,12 @@
     </table>
   </div>
 
+  <%= render 'table', collection: @entrees %>
+
+  <%= render 'table', collection: @desserts %>
+
+  <%= render 'table', collection: @drinks %>
+
   <% if @votes.any? %>
     <div class="bg-txt">Voters</div>
 
@@ -51,21 +57,13 @@
             <% end %>
           </div>
           <div class="card-body">
-            Total spent: $<%= Dish.price(entree: vote.entree) + Dish.price(dessert: vote.dessert) + Dish.price(drink: vote.drink) %>
-            <% if vote.entree %>
-              <div>
-                Entree: <%= Dish.to_name vote.entree %> - <%= Dish.to_reach vote.entree %>: $<%= Dish.price entree: vote.entree %><br/>
-              </div>
-            <% end %>
-            <% if vote.dessert %>
-              <div>
-                Dessert: <%= Dish.to_name vote.dessert %> - <%= Dish.to_reach vote.dessert %>: $<%= Dish.price dessert: vote.dessert %><br/>
-              </div>
-            <% end %>
-            <% if vote.drink %>
-              <div>
-                Drink: <%= Dish.to_name vote.drink %> - <%= Dish.to_reach vote.drink %>: $<%= Dish.price drink: vote.drink %><br/>
-              </div>
+            <%= t "total_spent" %>: $<%= total vote %>
+            <% vote.dishes.each do |priority, dish| %>
+              <% if dish %>
+                <div>
+                  <%= t "pages.menu.#{priority}" %>: <%= Dish.to_name dish %> - <%= Dish.to_reach dish %>: $<%= Dish.price priority => dish %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         </div>
