@@ -18,11 +18,11 @@ es:
       c11: Mi(s) hijo(s) está(n) participando o ha(n) participado en uno de los programas juveniles
       other: 'Otro (Especifique): '
     dish_options:
-      policy_info: A lo mejor has probado esta opción antes con El Pueblo, en nuestros esfuerzos para hacer cabildeo para la reforma migratoria, pedir el veto de la HB 318, pasar una ley a que lxs estudiantes indocumentadxs paguen la misma matrícula que lxs demás estudiantes, abogar por programas de identificación comunitaria, lograr que las escuelas públicas de Wake provean mejor acceso a la educación sexual, etc.
-      growth_info: 'A lo mejor has probado esta opción antes con El Pueblo, en talleres informativos acerca de temas como: navegar el sistema de salud, prepararte para ir a la universidad, acceder a servicios para víctimas de violencia doméstica, aplicar para el programa de DACA, etc.'
-      growth_action_info: 'A lo mejor has probado esta opción antes con El Pueblo, en talleres informativos acerca de temas como: implementar una campaña de organización comunitaria, hablar con los medios de prensa para dar mensajes para una campaña, etc. Y también a través de oportunidades para poner en práctica tus habilidades, como por ejemplo: haciendo cabildeo en Washington DC o en Raleigh, hablando en un evento comunitario, etc.'
-      referrals_info: 'A lo mejor has probado esta opción antes con El Pueblo: has llamado para hablar con un miembro del personal quien te ha puesto en contacto con otra agencia para recibir ayuda con respecto a un tema legal, un tema de salud, un tema de vivienda, etc.'
-      diversity_info: 'A lo mejor has probado esta opción antes con El Pueblo: has participado en La Fiesta del Pueblo, el evento de Día de los Muertos u otros eventos culturales.'
+      policy_info: Cambiar políticas que impactan a la comunidad.<br/><i>A lo mejor has probado esta opción antes con El Pueblo, en nuestros esfuerzos para hacer cabildeo para la reforma migratoria, pedir el veto de la HB 318, pasar una ley a que lxs estudiantes indocumentadxs paguen la misma matrícula que lxs demás estudiantes, abogar por programas de identificación comunitaria, lograr que las escuelas públicas de Wake provean mejor acceso a la educación sexual, etc.</i>
+      growth_info: 'Crear oportunidades de crecimiento individual para miembros de nuestra comunidad en términos de cosas que les pueden ayudar en su vida diaria.<br/><i>A lo mejor has probado esta opción antes con El Pueblo, en talleres informativos acerca de temas como: navegar el sistema de salud, prepararte para ir a la universidad, acceder a servicios para víctimas de violencia doméstica, aplicar para el programa de DACA, etc.</i>'
+      growth_action_info: 'Crear oportunidades de crecimiento individual para miembros de nuestra comunidad en términos de su conciencia política, temas progresistas y habilidades que se relacionan específicamente a tomar acción a través de campañas de organización comunitaria.<br/><i>A lo mejor has probado esta opción antes con El Pueblo, en talleres informativos acerca de temas como: implementar una campaña de organización comunitaria, hablar con los medios de prensa para dar mensajes para una campaña, etc. Y también a través de oportunidades para poner en práctica tus habilidades, como por ejemplo: haciendo cabildeo en Washington DC o en Raleigh, hablando en un evento comunitario, etc.</i>'
+      referrals_info: 'Referir miembros de la comunidad a otras organizaciones para que puedan recibir servicios directos en momentos de necesidad o crisis.<br/><i>A lo mejor has probado esta opción antes con El Pueblo: has llamado para hablar con un miembro del personal quien te ha puesto en contacto con otra agencia para recibir ayuda con respecto a un tema legal, un tema de salud, un tema de vivienda, etc.</i>'
+      diversity_info: 'Crear conciencia en la comunidad no-latina acerca de la realidad de la comunidad latina y celebrar la diversidad cultural.<br/><i>A lo mejor has probado esta opción antes con El Pueblo: has participado en La Fiesta del Pueblo, el evento de Día de los Muertos u otros eventos culturales.</i>'
       raleigh_info: El precio básico implica un alcance geográfico del área de Raleigh. Si quieres un alcance geográfico más allá de Raleigh, tendrás que pagar un costo adicional.
       wake_info: A nivel del Condado de Wake
       wake_and_more_info: A nivel del Condado de Wake y algunos condados cercanos (ej. Johnston, Harnett, Nash, Franklin)
@@ -35,6 +35,12 @@ es:
       entree: Plato Principal
       dessert: Postre
       drink: Bebida
+  votes:
+    index:
+      votes: Votos
+      voters: Votantes
+      popular_dishes: Platos populares
+      price: Precio
   policy: Cambiar Políticas
   growth: Crecimiento Personal
   growth_action: Crecimiento Personal Y Acción

@@ -37,6 +37,12 @@ $card-shadow: 0 1px 2px #ccc;
   }
 }
 
+@mixin tablet-plus {
+  @media (min-width: #{$tablet-width + 1}) {
+    @content;
+  }
+}
+
 @mixin backface($property) {
   -webkit-backface-visibility: $property; /* Chrome, Safari, Opera */
   backface-visibility: $property;

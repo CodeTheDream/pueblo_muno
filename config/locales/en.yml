@@ -18,11 +18,11 @@ en:
       c11: My child/children participate/s or has/have participated in one of the youth programs
       other: 'Other: '
     dish_options:
-      policy_info: You may have tried this dish before with El Pueblo, through efforts like our lobbying for immigration reform, calling for the veto of HB 318, working to pass legislation for in-state tuition for undocumented students, advocating for community identification programs, improving comprehensive sexual education in Wake County, etc.
-      growth_info: 'You may have tried this dish before with El Pueblo at informational workshops about topics like: how to navigate the health care system, how to prepare yourself to go to college, how to access services for victims of domestic violence, how to apply for DACA, etc.'
-      growth_action_info: 'You may have tried this dish before with El Pueblo at informational workshops about topics like: how to implement a community organizing campaign, how to speak with the press to share campaign messages, etc. And through opportunities to put these skills into practice for example: lobbying in Washington DC or Raleigh, speaking at a community event, etc.'
-      referrals_info: You may have tried this “dish” before with El Pueblo, if you have called to speak with a staff member who has put you in touch with another agency to receive help with a legal issue, a health need, or a housing need, etc.
-      diversity_info: You may have tried this dish before with El Pueblo if you have participated in La Fiesta del Pueblo, our Day of the Dead event, or other cultural events.
+      policy_info: Change policies that impact the community.<br/><i>You may have tried this dish before with El Pueblo, through efforts like our lobbying for immigration reform, calling for the veto of HB 318, working to pass legislation for in-state tuition for undocumented students, advocating for community identification programs, improving comprehensive sexual education in Wake County, etc.</i>
+      growth_info: 'Create individual leadership development opportunities for community members with regards to things that can help them in their daily lives.<br/><i>You may have tried this dish before with El Pueblo at informational workshops about topics like: how to navigate the health care system, how to prepare yourself to go to college, how to access services for victims of domestic violence, how to apply for DACA, etc.</i>'
+      growth_action_info: 'Create individual leadership development opportunities for community members with regards to political education, progressive topics, and skills that are directly related to participating in community organizing campaigns.<br/><i>You may have tried this dish before with El Pueblo at informational workshops about topics like: how to implement a community organizing campaign, how to speak with the press to share campaign messages, etc. And through opportunities to put these skills into practice for example: lobbying in Washington DC or Raleigh, speaking at a community event, etc.</i>'
+      referrals_info: Referring community members to other organizations so that they can receive direct services in moments of need or crisis.<br/><i>You may have tried this “dish” before with El Pueblo, if you have called to speak with a staff member who has put you in touch with another agency to receive help with a legal issue, a health need, or a housing need, etc.</i>
+      diversity_info: Build consciousness in the non-Latinx community about the reality of the Latinx community and celebrate cultural diversity.<br/><i>You may have tried this dish before with El Pueblo if you have participated in La Fiesta del Pueblo, our Day of the Dead event, or other cultural events.</i>
       raleigh_info: The basic price includes a geographic reach limited to Raleigh. If you want to select a geographic reach that goes beyond Raleigh, there is an additional cost.
       wake_info: Within Wake County
       wake_and_more_info: Within Wake County and some surrounding counties (e.g. Johnston, Harnett, Nash, Franklin)
@@ -34,6 +34,12 @@ en:
       entree: Entree
       dessert: Dessert
       drink: Drink
+  votes:
+    index:
+      votes: Votes
+      voters: Voters
+      popular_dishes: Most popular dishes
+      price: Price
   policy: Policy Change
   growth: Individual Growth
   growth_action: Individual Growth and Action

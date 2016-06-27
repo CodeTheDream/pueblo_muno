@@ -1,23 +1,23 @@
 <div class="container">
   <div class="flex-container justify-between">
     <h3 class="card fro" style="margin-right: 1em;">
-      Votes: <%= votes @votes %>
+      <%= t ".votes" %>: <%= votes @votes %>
     </h3>
     <h3 class="card fro">
-      <div>People: <%= people @votes %></div>
+      <%= t ".voters" %>: <%= people @votes %>
     </h3>
   </div>
 
-  <div class="bg-txt">Most popular dishes</div>
+  <div class="bg-txt"><%= t ".popular_dishes" %></div>
 
   <div class="x-scroll">
     <table>
       <thead>
-        <th class="min-width">Votes</th>
-        <th>Dish</th>
+        <th class="min-width"><%= t ".votes" %></th>
+        <th><%= t "pages.dish_options.dish" %></th>
         <th>Priority</th>
-        <th>Geographic Range</th>
-        <th class="min-width">Price</th>
+        <th><%= t "pages.dish_options.reach" %></th>
+        <th class="min-width"><%= t ".price" %></th>
       </thead>
       <tbody>
         <% @dishes.each do |dish| %>
@@ -41,33 +41,5 @@
 
   <%= render 'table', collection: @drinks %>
 
-  <% if @votes.any? %>
-    <div class="bg-txt">Voters</div>
-
-    <div class="flex-container wrap">
-      <% @votes.each do |vote| %>
-        <div class="user-card">
-          <div class="card-header">
-            <%= mail_to vote.user.email, vote.user.email, class: 'user' %><br/>
-            <% vote.user.connections.each do |connection| %>
-              <div class="green"><%= connection_helper connection %></div>
-            <% end %>
-            <% if vote.user.connection_other %>
-              <div class="green">Other: <%= vote.user.connection_other %></div>
-            <% end %>
-          </div>
-          <div class="card-body">
-            <%= t "total_spent" %>: $<%= total vote %>
-            <% vote.dishes.each do |priority, dish| %>
-              <% if dish %>
-                <div>
-                  <%= t "pages.menu.#{priority}" %>: <%= Dish.to_name dish %> - <%= Dish.to_reach dish %>: $<%= Dish.price priority => dish %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render 'voters' if @votes.any? %>
 </div>

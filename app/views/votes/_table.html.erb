@@ -5,10 +5,10 @@
 <div class="x-scroll">
   <table>
     <thead>
-      <th class="min-width">Votes</th>
-      <th>Dish</th>
-      <th>Geographic Range</th>
-      <th class="min-width">Price</th>
+      <th class="min-width"><%= t "votes.index.votes" %></th>
+      <th><%= t "pages.dish_options.dish" %></th>
+      <th><%= t "pages.dish_options.reach" %></th>
+      <th class="min-width"><%= t "votes.index.price" %></th>
     </thead>
     <tbody>
       <% collection.each do |dish| %>
