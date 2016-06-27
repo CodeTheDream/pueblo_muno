@@ -80,3 +80,9 @@ table {
 .center {
   text-align: center;
 }
+.card.fro {
+  width: 40%;
+  &:first-child {
+    margin-right: 1em;
+  }
+}
