@@ -2,11 +2,11 @@ class VotesController < ApplicationController
   before_action :set_user, only: :create
 
   def index
-    @votes = Vote.all
+    @votes = Vote.all.reverse
     @dishes = Dish.order(votes: :desc).limit 10
-    @entrees = Dish.where(priority: 'entree').order(votes: :desc).limit 10
-    @desserts = Dish.where(priority: 'dessert').order(votes: :desc).limit 10
-    @drinks = Dish.where(priority: 'drink').order(votes: :desc).limit 10
+    @entrees = Dish.where(priority: 'entree').where.not(votes: 0).order(votes: :desc).limit 10
+    @desserts = Dish.where(priority: 'dessert').where.not(votes: 0).order(votes: :desc).limit 10
+    @drinks = Dish.where(priority: 'drink').where.not(votes: 0).order(votes: :desc).limit 10
   end
 
   def create

@@ -35,11 +35,11 @@
     </table>
   </div>
 
-  <%= render 'table', collection: @entrees %>
+  <%= render 'table', collection: @entrees if @entrees.any? %>
 
-  <%= render 'table', collection: @desserts %>
+  <%= render 'table', collection: @desserts if @desserts.any? %>
 
-  <%= render 'table', collection: @drinks %>
+  <%= render 'table', collection: @drinks if @drinks.any? %>
 
   <%= render 'voters' if @votes.any? %>
 </div>

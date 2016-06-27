@@ -1,9 +1,11 @@
 es:
-  email: Por favor ingrese su correo electronico
   menu: Menú
   pages:
     email:
       req: Necesario
+      notice: ¡Favor comparte tu nombre e información de contacto si te gustaría participar en una rifa para ganar una tarjeta de regalo de Target! Tu nombre no será asociado con las opiniones que expresas en el menú.
+      name: Ingrese su nombre
+      email: Ingrese su correo electronico
       c_question: ¿Cuál es su conexión con El Pueblo? (escoja todas las opciones que aplican)
       c1: Soy o he sido miembro de la junta directiva
       c2: He contribuido financieramente a El Pueblo como parte de una institución o patrocinador/a de un evento

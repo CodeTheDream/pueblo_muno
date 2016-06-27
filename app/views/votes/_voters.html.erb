@@ -4,7 +4,7 @@
   <% @votes.each do |vote| %>
     <div class="user-card">
       <div class="card-header">
-        <%= mail_to vote.user.email, vote.user.email, class: 'user' %><br/>
+        <%= user vote %>
         <% vote.user.connections.each do |connection| %>
           <div class="green"><%= connection_helper connection %></div>
         <% end %>

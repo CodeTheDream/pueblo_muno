@@ -1,9 +1,11 @@
 en:
-  email: Please provide your email
   menu: Menu
   pages:
     email:
       req: Required
+      notice: Please share your name and contact information if you would like to be entered into a raffle to win a Target gift card! Your name will not be associated with the opinions you express on the menu.
+      name: Enter your name
+      email: Enter your email
       c_question: What is your connection to El Pueblo? (pick all that apply)
       c1: I am or have been a board member
       c2: I am or have been a funder or event sponsor

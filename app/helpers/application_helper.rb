@@ -85,6 +85,18 @@ module ApplicationHelper
     HTML
   end
 
+  def user(vote)
+    if vote.user.name.present? && vote.user.email.present?
+      mail_to vote.user.email, vote.user.name, class: 'user'
+    elsif vote.user.email.present?
+      mail_to vote.user.email, vote.user.email, class: 'user'
+    elsif vote.user.name.present?
+      "<span class='user-bl'>#{vote.user.name}</span>".html_safe
+    else
+      '<span class="user-bl">Anonymous</span>'.html_safe
+    end
+  end
+
   def votes(votes)
     count = 0
     votes.each do |vote|

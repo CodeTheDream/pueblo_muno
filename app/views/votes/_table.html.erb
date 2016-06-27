@@ -12,14 +12,12 @@
     </thead>
     <tbody>
       <% collection.each do |dish| %>
-        <% if dish.votes > 0 %>
-          <tr>
-            <td class="center"><%= dish.votes %></td>
-            <td><%= t("#{Dish.to_name dish.name}") %></td>
-            <td><%= t("#{Dish.to_reach(dish.reach)}") %></td>
-            <td class="center">$<%= dish.price %></td>
-          </tr>
-        <% end %>
+        <tr>
+          <td class="center"><%= dish.votes %></td>
+          <td><%= t("#{Dish.to_name dish.name}") %></td>
+          <td><%= t("#{Dish.to_reach(dish.reach)}") %></td>
+          <td class="center">$<%= dish.price %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def create
-    # byebug
     @connections = params[:user][:connections]
     if User.find_by_email(params[:user][:email])
       @user = User.find_by_email(params[:user][:email])
@@ -13,13 +12,13 @@ class UsersController < ApplicationController
       session[:user] = @user.id
       redirect_to menu_path
     else
-      redirect_to 'pages#email'
+      redirect_to '/'
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :connection_other, connections: [])
+    params.require(:user).permit(:name, :email, :connection_other, connections: [])
   end
 end
