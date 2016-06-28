@@ -1,7 +1,11 @@
 <div class="container">
   <h1>Home</h1>
   <div class="flex-container justify-between">
-    <%= link_to 'Take Survey', start_path, class: 'card fro home-link', disabled: true %>
+    <% if @user %>
+      <%= link_to 'Take Survey', start_path, class: 'card fro home-link', disabled: @user.votes.count > 0 %>
+    <% else %>
+      <%= link_to 'Take Survey', start_path, class: 'card fro home-link' %>
+    <% end %>
     <%= link_to 'Results', results_path, class: 'card fro home-link' %>
   </div>
 </div>
