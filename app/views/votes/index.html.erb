@@ -15,7 +15,7 @@
       <thead>
         <th class="min-width"><%= t ".votes" %></th>
         <th><%= t "pages.dish_options.dish" %></th>
-        <th>Priority</th>
+        <th><%= t "Priority" %></th>
         <th><%= t "pages.dish_options.reach" %></th>
         <th class="min-width"><%= t ".price" %></th>
       </thead>
@@ -25,7 +25,7 @@
             <tr>
               <td class="center"><%= dish.votes %></td>
               <td><%= t("#{Dish.to_name dish.name}") %></td>
-              <td><%= dish.priority.titleize %></td>
+              <td><%= t("pages.menu.#{dish.priority}") %></td>
               <td><%= t("#{Dish.to_reach(dish.reach)}") %></td>
               <td class="center">$<%= dish.price %></td>
             </tr>
