@@ -58,6 +58,10 @@ header {
   &:hover {
     text-decoration: underline;
   }
+  &[disabled] {
+    opacity: 0.5;
+    z-index: -1;
+  }
 }
 .container {
   margin: 2.5%;

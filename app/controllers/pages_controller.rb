@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: [:home, :menu]
+  before_action :set_user, only: [:home, :menu, :thank_you]
   before_action :authenticate_user, only: :menu
   before_action :already_voted, only: [:menu]
 
@@ -17,6 +17,11 @@ class PagesController < ApplicationController
   end
 
   def thank_you
+    if @user.votes.count > 0
+      @message = "You have already voted."
+    else
+      @message = "Your answers have been recorded. You may leave this page now."
+    end
   end
 
   private
