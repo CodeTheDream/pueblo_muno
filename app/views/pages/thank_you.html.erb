@@ -1,6 +1,10 @@
 <div class="container">
   <div class="card">
     <h1>Thank you</h1>
-    <p>Your answers have been recorded. You may leave this page now.</p>
+    <% if notice %>
+      <p><%= notice %></p>
+    <% else %>
+      <p>Your answers have been recorded. You may leave this page now.</p>
+    <% end %>
   </div>
 </div>

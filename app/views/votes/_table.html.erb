@@ -1,5 +1,5 @@
 <div class="bg-txt">
-  Most popular <%= collection.first.priority.pluralize %>
+  <%= t "pages.menu.#{collection.first.priority}s" %>
 </div>
 
 <div class="x-scroll">
@@ -14,8 +14,8 @@
       <% collection.each do |dish| %>
         <tr>
           <td class="center"><%= dish.votes %></td>
-          <td><%= t("#{Dish.to_name dish.name}") %></td>
-          <td><%= t("#{Dish.to_reach(dish.reach)}") %></td>
+          <td><%= t "#{Dish.to_name dish.name}" %></td>
+          <td><%= t "#{Dish.to_reach(dish.reach)}" %></td>
           <td class="center">$<%= dish.price %></td>
         </tr>
       <% end %>

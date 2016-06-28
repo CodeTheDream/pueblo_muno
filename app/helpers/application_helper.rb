@@ -24,7 +24,7 @@ module ApplicationHelper
         <img src="/en.png"></img> <span class="desktop-only">Click for English</span>
       HTML
       options.merge!(lang: 'en')
-      link_to output, options, class: 'no-decor'
+      link_to output, options
     end
   end
 

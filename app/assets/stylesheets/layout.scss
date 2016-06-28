@@ -6,21 +6,20 @@ body {
   background: #F2F2F2;
 }
 header {
+  background: white;
+  color: #4C4C4C;
+  font-size: 1.2em;
   height: 80px;
   line-height: 80px; // Line height helps the langugage at the top right to stay in the middle`
-  background: black;
-  background: white;
-  color: white;
-  color: #4C4C4C;
   text-align: center;
-  font-size: 1.2em;
-  span {
+  a {
     color: #4C4C4C;
+    text-decoration: none;
   }
   @include mobile {
+    font-size: 16px;
     height: 55px;
     line-height: 55px;
-    font-size: 16px;
   }
 }
 #logo {
@@ -52,6 +51,13 @@ header {
 }
 .gray-text {
   color: #777
+}
+.home-link {
+  color: #1a0dab;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .container {
   margin: 2.5%;

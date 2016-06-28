@@ -1,13 +1,14 @@
 class PagesController < ApplicationController
+  before_action :set_user, only: [:home, :menu]
   before_action :authenticate_user, only: :menu
+  before_action :already_voted, only: [:menu]
 
-  def email
+  def start
     session[:user] = nil
     @user = User.new
   end
 
   def menu
-    redirect_to thank_you_path, notice: 'You have already voted lmao' if @user.votes.count > 0
     @dishes = Dish.dishes
     @prices = Dish.prices
     @places = Dish.places
@@ -21,7 +22,18 @@ class PagesController < ApplicationController
   private
 
   def authenticate_user
-    redirect_to(root_path) && return unless session[:user]
+    redirect_to(thank_you_path) && return unless session[:user]
+  end
+
+  def already_voted
+    if @user.votes.count > 0
+      redirect_to thank_you_path, notice: 'You have already voted'
+    end
+  end
+
+  def set_user
     @user = User.find session[:user]
+  rescue ActiveRecord::RecordNotFound
+    @user = nil
   end
 end

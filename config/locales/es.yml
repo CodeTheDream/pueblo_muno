@@ -1,7 +1,7 @@
 es:
   menu: Menú
   pages:
-    email:
+    start:
       req: Necesario
       notice: ¡Favor comparte tu nombre e información de contacto si te gustaría participar en una rifa para ganar una tarjeta de regalo de Target! Tu nombre no será asociado con las opiniones que expresas en el menú.
       name: Ingrese su nombre
@@ -37,6 +37,9 @@ es:
       entree: Plato Principal
       dessert: Postre
       drink: Bebida
+      entrees: Platos Principales populares
+      desserts: Postres populares
+      drinks: Bebidas populares
   votes:
     index:
       votes: Votos

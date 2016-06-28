@@ -1,7 +1,7 @@
 en:
   menu: Menu
   pages:
-    email:
+    start:
       req: Required
       notice: Please share your name and contact information if you would like to be entered into a raffle to win a Target gift card! Your name will not be associated with the opinions you express on the menu.
       name: Enter your name
@@ -36,6 +36,9 @@ en:
       entree: Entree
       dessert: Dessert
       drink: Drink
+      entrees: Most popular Entrees
+      desserts: Most popular Desserts
+      drinks: Most popular Drinks
   votes:
     index:
       votes: Votes
