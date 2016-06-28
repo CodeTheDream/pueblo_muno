@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def create
     @connections = params[:user][:connections]
-    if User.find_by_email(params[:user][:email])
+    if params[:user][:email].present? && User.find_by_email(params[:user][:email])
       @user = User.find_by_email(params[:user][:email])
     else
       @user = User.new(user_params)
