@@ -38,7 +38,7 @@ module ApplicationHelper
     options = food_options
     options.merge!(hash)
     dish_name = t dish
-    text = price ? "#{dish}: $#{price}" : dish_name
+    text = price ? "#{dish_name}: $#{price}" : dish_name
 
     classes = dish_background dish
     classes << "selected" if selected
