@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone_number
       t.text :connections
       t.string :connection_other
+      t.string :language
       t.boolean :complete
 
       t.timestamps null: false

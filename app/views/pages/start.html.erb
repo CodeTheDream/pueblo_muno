@@ -5,6 +5,7 @@
       <i><%= t '.notice' %></i>
     </div>
     <%= form_for @user do |f| %>
+    <%= f.hidden_field :language, value: I18n.locale.to_s %>
       <h3>1. <%= t '.name' %></h3>
       <%= f.text_field :name, placeholder: 'Name', class: 'email' %>
       <h3>2. <%= t '.email' %></h3>
