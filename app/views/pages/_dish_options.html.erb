@@ -9,7 +9,7 @@
 <% when 1 %>
   <% dish = @dishes.find{|k,v| v[:num] == str.to_i}[0] %>
 
-  <%= option_link @dishes[dish][:name], priority => nil %>
+  <%= option_link @dishes[dish][:name], {priority => nil}, selected: true %>
   <%= more_information t(".#{@dishes[dish][:info]}") %>
 
 
@@ -25,14 +25,14 @@
   <% dish = @dishes.find{|k,v| v[:num] == str[0].to_i}[0] %>
   <% range = Dish.reaches.find{|k,v| v[:num] == str[1].to_i} %>
 
-  <%= option_link @dishes[dish][:name], priority => nil %>
+  <%= option_link @dishes[dish][:name], {priority => nil}, selected: true %>
   <%= more_information t(".#{@dishes[dish][:info]}") %>
 
   </div><div class="flex-container flex-column dish">
 
   <h3><%= t '.reach' %></h3>
 
-  <%= option_link range[1][:name], {priority => str[0]}, price: @prices[dish][priority][range[0]] %>
+  <%= option_link range[1][:name], {priority => str[0]}, price: @prices[dish][priority][range[0]], selected: true %>
   <%= more_information t(".#{@reaches[range[0]][:info]}") %>
 
 <% end %>

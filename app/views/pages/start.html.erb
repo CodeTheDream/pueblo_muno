@@ -9,7 +9,9 @@
       <%= f.text_field :name, placeholder: 'Name', class: 'email' %>
       <h3>2. <%= t '.email' %></h3>
       <%= f.email_field :email, placeholder: 'Email', class: 'email' %>
-      <h3>3. <%= t '.c_question' %><span class="req">*</span></h3>
+      <h3>3. <%= t '.phone_number' %></h3>
+      <%= f.text_field :phone_number, placeholder: 'Phone number', class: 'email' %>
+      <h3>4. <%= t '.c_question' %><span class="req">*</span></h3>
       <div class="check-box">
         <%= f.check_box :connections, {multiple: true}, 1, nil %>
         <%= f.label :connections_1, t('.c1') %>

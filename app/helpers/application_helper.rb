@@ -34,12 +34,13 @@ module ApplicationHelper
     HTML
   end
 
-  def option_link(dish, hash, price: nil)
+  def option_link(dish, hash, price: nil, selected: false)
     options = food_options
     options.merge!(hash)
-    dish = t("#{dish}")
+    dish = t dish
     text = price ? "#{dish}: $#{price}" : dish
-    link = link_to text, options
+    link = link_to text, options, class: ('selected' if selected)
+
     info_btn = <<-HTML
       <div class="icon-container">
         <div class="info-btn">
@@ -48,6 +49,7 @@ module ApplicationHelper
         </div>
       </div>
     HTML
+    
     <<-HTML.html_safe
       <div class="option">#{link}#{info_btn}</div>
     HTML
