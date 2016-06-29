@@ -14,10 +14,11 @@ class ApplicationController < ActionController::Base
     # this code will run only when params[:lang] exists
     return unless params[:lang]
     language = params[:lang]
-    I18n.locale = session[:lang] = language
     if session[:user]
       user = User.find session[:user]
       user.update(language: language)
+      langauge = user.language
     end
+    I18n.locale = language
   end
 end
