@@ -12,18 +12,16 @@ class ApplicationController < ActionController::Base
 
   def set_language
     # this code will run only when params[:lang] exists
-    return unless params[:lang]
-    language = params[:lang]
-    if session[:user]
-      user = User.find session[:user]
-      user.update(language: language)
-      language = user.language
-      # 5.times{p session[:user]}
-      # 5.times{p language}
-      # 5.times{p user}
+    if params[:lang]
+      language = params[:lang]
+      if session[:user]
+        user = User.find session[:user]
+        user.update(language: language)
+        language = user.language
+      end
+      I18n.locale = session[:lang] = language
+    else
+      I18n.locale = session[:lang]
     end
-    I18n.locale = language
-    # @user_lang = language
-    # @lang = I18n.locale
   end
 end
