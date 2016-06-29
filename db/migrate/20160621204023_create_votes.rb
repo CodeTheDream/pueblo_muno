@@ -6,6 +6,7 @@ class CreateVotes < ActiveRecord::Migration
       t.string :dessert
       t.string :drink
       t.boolean :tallied, default: false
+      t.text :comments
 
       t.timestamps null: false
     end

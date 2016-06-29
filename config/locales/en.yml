@@ -39,6 +39,10 @@ en:
       entrees: Most popular Entrees
       desserts: Most popular Desserts
       drinks: Most popular Drinks
+    comments:
+      comments_info: If you have any comments to add about your process, for example, why you're choosing these options, feel free to do so in the box below.
+      update_vote: Update order
+      no_thanks: No thanks
   votes:
     index:
       votes: Votes
@@ -57,3 +61,4 @@ en:
   federal: United States
   submit: Submit
   total_spent: Total spent
+  comments: If you have any comments to add about your process, for example, why you're choosing these options, feel free to do so in the box below.

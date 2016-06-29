@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160622190657) do
     t.string   "dessert"
     t.string   "drink"
     t.boolean  "tallied",    default: false
+    t.text     "comments"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
