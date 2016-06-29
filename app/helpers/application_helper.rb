@@ -39,7 +39,7 @@ module ApplicationHelper
     options.merge!(hash)
     dish_name = t dish
     text = price ? "#{dish_name}: $#{price}" : dish_name
-
+    
     classes = dish_background dish
     classes << "selected" if selected
 
@@ -67,7 +67,12 @@ module ApplicationHelper
       "growth" => "bg-blk",
       "growth_action" => "bg-blu",
       "referrals" => "bg-grn",
-      "diversity" => "bg-prp"
+      "diversity" => "bg-prp",
+      "raleigh" => "bg-red",
+      "wake" => "bg-prp",
+      "wake_and_more" => "bg-org",
+      "statewide" => "bg-grn",
+      "federal" => "bg-blu"
     }
     [hash[dish]]
   end

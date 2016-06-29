@@ -138,8 +138,15 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     background: transparentize($ggl-form-purple, .787) !important;
   }
 }
+.bg-org {
+  background: transparentize($ggl-slides-yellow, .83) !important;
+  &:hover {
+    background: transparentize($ggl-slides-yellow, .49) !important;
+  }
+}
 
 // body {
 //   -webkit-filter: grayscale(100%);
 //   filter: grayscale(100%);
+//   background: antiquewhite;
 // }
