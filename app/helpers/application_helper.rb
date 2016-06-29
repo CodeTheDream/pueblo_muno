@@ -37,9 +37,15 @@ module ApplicationHelper
   def option_link(dish, hash, price: nil, selected: false)
     options = food_options
     options.merge!(hash)
-    dish = t dish
-    text = price ? "#{dish}: $#{price}" : dish
-    link = link_to text, options, class: ('selected' if selected)
+    dish_name = t dish
+    text = price ? "#{dish}: $#{price}" : dish_name
+
+    classes = dish_background dish
+    classes << "selected" if selected
+
+    # p "dish: #{dish}; bg: #{classes}"
+
+    link = link_to text, options, class: classes.join(' ')
 
     info_btn = <<-HTML
       <div class="icon-container">
@@ -49,10 +55,21 @@ module ApplicationHelper
         </div>
       </div>
     HTML
-    
+
     <<-HTML.html_safe
       <div class="option">#{link}#{info_btn}</div>
     HTML
+  end
+
+  def dish_background(dish)
+    hash = {
+      "policy" => "bg-red",
+      "growth" => "bg-blk",
+      "growth_action" => "bg-blu",
+      "referrals" => "bg-grn",
+      "diversity" => "bg-prp"
+    }
+    [hash[dish]]
   end
 
   def people(votes)
