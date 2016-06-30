@@ -34,10 +34,11 @@ module ApplicationHelper
     HTML
   end
 
-  def option_link(dish, hash, price: nil, selected: false)
+  def option_link(dish, hash, price: nil, selected: false, info: nil)
     options = food_options
     options.merge!(hash)
     dish_name = t dish
+    info = more_information info
     text = price ? "#{dish_name}: $#{price}" : dish_name
     if selected
       text = '<i class="fa fa-minus" aria-hidden="true"></i> ' + text
@@ -47,8 +48,6 @@ module ApplicationHelper
 
     classes = dish_background dish
     classes << "selected" if selected
-
-    # p "dish: #{dish}; bg: #{classes}"
 
     link = link_to text.html_safe, options, class: classes.join(' ')
 
@@ -62,7 +61,12 @@ module ApplicationHelper
     HTML
 
     <<-HTML.html_safe
-      <div class="option">#{link}#{info_btn}</div>
+      <div class="option">
+        <div class="flex-container justify-between dish-header">
+          #{link}#{info_btn}
+        </div>
+        #{info}
+      </div>
     HTML
   end
 

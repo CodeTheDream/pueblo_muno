@@ -25,9 +25,11 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   }
 }
 .option {
-  border-bottom: $thin-line;
   display: flex;
-  justify-content: space-between;
+  flex-flow: column;
+  .dish-header {
+    border-bottom: $thin-line;
+  }
   a {
     flex-grow: 1;
     padding: $card-pad;
@@ -78,9 +80,10 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 
 .info {
   border-bottom: $thin-line;
-  display: none;
+  // display: none;
   line-height: 1.5em;
   padding: 1em;
+  flex-grow: 1;
 }
 .grayback {
   // background: gray;

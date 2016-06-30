@@ -33,13 +33,17 @@ function formSubmit() {
 };
 
 function moreInformation() {
+  // $('.selected').closest('.dish-header').next('.info').show();
+
   $('.icon-container').click(function() {
+    // var target = $('.info:visible') // all visible information
+    var target = $(this).closest('.dish-header').next('.info'); // Just the one info
 
     // Hide info and deactivate button
-    $('.info:visible').slideUp('slow');
+    target.slideUp('slow');
     $('.info-btn.active').removeClass('active');
 
-    var info = $(this).closest('.option').next();
+    var info = $(this).closest('.dish-header').next('.info');
     if (!info.is(':visible')) {
       // Show info and activate button
       $(this).children('.info-btn').toggleClass('active');
