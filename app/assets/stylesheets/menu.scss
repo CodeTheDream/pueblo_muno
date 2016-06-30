@@ -109,41 +109,24 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 }
 
 .bg-red {
-  background: transparentize($ggl-drawings-red-3, .935) !important;
-  &:hover {
-    background: transparentize($ggl-drawings-red-3, .81) !important;
-  }
+  color: transparentize($ggl-drawings-red-3, .335) !important;
 }
 .bg-blk {
-  background: $hover;
-  &:hover {
-    background: darken($hover, 10%) !important;
-  }
+  color: #777 !important;
 }
 .bg-blu {
-  background: transparentize($ggl-form-blue, .89) !important;
-  &:hover {
-    background: transparentize($ggl-form-blue, .675) !important;
-  }
+  color: $ggl-form-blue !important;
 }
 .bg-grn {
-  background: transparentize($ggl-sheets-green, .9) !important;
-  &:hover {
-    background: transparentize($ggl-sheets-green, .715) !important;
-  }
+  color: $ggl-sheets-green !important;
 }
 .bg-prp {
-  background: transparentize($ggl-form-purple, .925) !important;
-  &:hover {
-    background: transparentize($ggl-form-purple, .787) !important;
-  }
+  color: transparentize($ggl-form-purple, .24) !important;
 }
 .bg-org {
-  background: transparentize($ggl-slides-yellow, .83) !important;
-  &:hover {
-    background: transparentize($ggl-slides-yellow, .49) !important;
-  }
+  color: $ggl-slides-yellow !important;
 }
+
 
 // body {
 //   -webkit-filter: grayscale(100%);
