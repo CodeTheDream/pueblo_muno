@@ -16,14 +16,6 @@ class PagesController < ApplicationController
     @vote = Vote.new
   end
 
-  def thank_you
-    # if @user.votes.count > 0
-    #   @message = "You have already voted."
-    # else
-      @message = "Your answers have been recorded. You may leave this page now."
-    # end
-  end
-
   def comments
     @vote = @user.votes.first
   end
