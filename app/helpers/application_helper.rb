@@ -39,13 +39,18 @@ module ApplicationHelper
     options.merge!(hash)
     dish_name = t dish
     text = price ? "#{dish_name}: $#{price}" : dish_name
-    
+    if selected
+      text = '<i class="fa fa-minus" aria-hidden="true"></i> ' + text
+    else
+      text = '<i class="fa fa-plus" aria-hidden="true"></i> ' + text
+    end
+
     classes = dish_background dish
     classes << "selected" if selected
 
     # p "dish: #{dish}; bg: #{classes}"
 
-    link = link_to text, options, class: classes.join(' ')
+    link = link_to text.html_safe, options, class: classes.join(' ')
 
     info_btn = <<-HTML
       <div class="icon-container">
