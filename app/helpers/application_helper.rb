@@ -111,10 +111,12 @@ module ApplicationHelper
   end
 
   def total_header
-    balance = I18n.locale == :en ? 'BALANCE' : 'SALDO'
+    s = total
+    a = 100 - s
+    balance = I18n.locale == :en ? "AVAILABLE: $#{a} SPENT: $#{s}" : "DISPONIBLE: $#{a} GASTADO: $#{s}"
     # balance = I18n.locale == :en ? 'LEFT TO SPEND' : 'SALDO'
     <<-HTML.html_safe
-      <div id="total" class="flex-container white xy-center #{total_class}">#{balance}: $#{100 - total}</div>
+      <div id="total" class="flex-container white xy-center #{total_class}">#{balance}</div>
     HTML
   end
 
