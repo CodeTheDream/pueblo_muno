@@ -117,3 +117,13 @@ header {
     overflow-x: scroll;
   }
 }
+.txt-area {
+  width: 100%;
+  resize: vertical;
+}
+.ft-lg {
+  font-size: 1.3em;
+  @include mobile {
+    font-size: 1em;
+  }
+}

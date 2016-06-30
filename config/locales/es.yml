@@ -40,6 +40,10 @@ es:
       entrees: Platos Principales populares
       desserts: Postres populares
       drinks: Bebidas populares
+    comments:
+      comments_info: Si usted tieno qualquier commentario sobre el proceso, por ejemplo, la razon porque escojiste estas opciones, hazlo saber aqui.
+      update_vote: Actualizar order
+      no_thanks: No gracias
   votes:
     index:
       votes: Votos

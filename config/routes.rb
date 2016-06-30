@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'menu' => 'pages#menu'
   get 'thank_you' => 'pages#thank_you'
   get 'results' => 'votes#index'
+  get 'comments' => 'pages#comments'
 
   resource :users
-  resources :votes, only: [:index, :create]
+  resources :votes, only: [:index, :create, :update]
 end

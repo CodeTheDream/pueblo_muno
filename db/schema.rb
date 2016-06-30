@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160622190657) do
     t.string   "phone_number"
     t.text     "connections"
     t.string   "connection_other"
+    t.string   "language"
     t.boolean  "complete"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160622190657) do
     t.string   "dessert"
     t.string   "drink"
     t.boolean  "tallied",    default: false
+    t.text     "comments"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

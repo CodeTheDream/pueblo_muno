@@ -21,6 +21,11 @@
             </div>
           <% end %>
         <% end %>
+        <% if vote.comments.present? %>
+        <div>
+          Comments: <%= vote.comments %>
+        </div>
+        <% end %>
       </div>
     </div>
   <% end %>

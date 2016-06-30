@@ -107,3 +107,46 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     width: 100%;
   }
 }
+
+.bg-red {
+  background: transparentize($ggl-drawings-red-3, .935) !important;
+  &:hover {
+    background: transparentize($ggl-drawings-red-3, .81) !important;
+  }
+}
+.bg-blk {
+  background: $hover;
+  &:hover {
+    background: darken($hover, 10%) !important;
+  }
+}
+.bg-blu {
+  background: transparentize($ggl-form-blue, .89) !important;
+  &:hover {
+    background: transparentize($ggl-form-blue, .675) !important;
+  }
+}
+.bg-grn {
+  background: transparentize($ggl-sheets-green, .9) !important;
+  &:hover {
+    background: transparentize($ggl-sheets-green, .715) !important;
+  }
+}
+.bg-prp {
+  background: transparentize($ggl-form-purple, .925) !important;
+  &:hover {
+    background: transparentize($ggl-form-purple, .787) !important;
+  }
+}
+.bg-org {
+  background: transparentize($ggl-slides-yellow, .83) !important;
+  &:hover {
+    background: transparentize($ggl-slides-yellow, .49) !important;
+  }
+}
+
+// body {
+//   -webkit-filter: grayscale(100%);
+//   filter: grayscale(100%);
+//   background: antiquewhite;
+// }
