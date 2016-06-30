@@ -44,7 +44,12 @@
 
   </div>
 
-  <div class="flex-container justify-end">
+  <div class="flex-container justify-between">
+    <% if I18n.locale == :en %>
+      <%= link_to "FAQ", "http://www.elpueblomenu.org/faq-2/", class: 'card home-link self-start' %>
+    <% else %>
+      <%= link_to "Preguntas", "http://www.elpueblomenu.org/faq/", class: 'card home-link self-start' %>
+    <% end %>
     <%= form_for @vote do |f| %>
       <%= f.hidden_field :entree, value: params[:entree].to_s %>
       <%= f.hidden_field :dessert, value: params[:dessert].to_s %>
