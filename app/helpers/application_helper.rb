@@ -40,16 +40,17 @@ module ApplicationHelper
     dish_name = t dish
     info = more_information info
     text = price ? "#{dish_name}: $#{price}" : dish_name
-    if selected
-      text = '<i class="fa fa-minus" aria-hidden="true"></i> ' + text
-    else
-      text = '<i class="fa fa-plus" aria-hidden="true"></i> ' + text
-    end
+    # if selected
+    #   text = '<i class="fa fa-minus" aria-hidden="true"></i> ' + text
+    # else
+    #   text = '<i class="fa fa-plus" aria-hidden="true"></i> ' + text
+    # end
 
     classes = dish_background dish
+    classes << I18n.locale
     classes << "selected" if selected
 
-    link = link_to text.html_safe, options, class: classes.join(' ')
+    link = link_to text.html_safe, options, class: classes.join(' '), style: ':hover{content: "smd"}'
 
     info_btn = <<-HTML
       <div class="icon-container">

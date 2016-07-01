@@ -67,5 +67,14 @@
       </div>
     <% end %>
   </div>
-
+  <% if false && I18n.locale == :es %>
+    <style>
+      .option a.selected:before {
+        content: 'Eliminar  ';
+      }
+      .option a:before {
+        content: 'Añadir  '
+      }
+    </style>
+  <% end %>
 </div>

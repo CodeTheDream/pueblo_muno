@@ -38,13 +38,55 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     &:hover {
       background: $hover;
     }
-    &.selected {
-      border-left: 3px solid #4D90FE;
-      padding-left: nth($card-pad, 2) - 3;
+  }
+}
+.expand {
+  &:before {
+    font-size: 0;
+    transition: all 0.6s;
+    vertical-align: middle;
+  }
+  &:hover {
+    &:before {
+      font-size: 1em;
     }
   }
 }
-
+.en,
+.es {
+  @extend .expand;
+  &.selected {
+    @extend .expand;
+  }
+}
+.en {
+  &:before {
+    content: 'Add  ';
+    // content: '\f067  '; // for + icon
+    // font: 0 FontAwesome; // for + icon
+  }
+  &.selected {
+    &:before {
+      content: 'Remove  ';
+      // content: '\f068  '; // for - icon
+      // font: 0 FontAwesome; // for - icon
+    }
+  }
+}
+.es {
+  &:before {
+    content: 'Añadir  ';
+    // content: '\f067  '; // for + icon
+    // font: 0 FontAwesome; // for + icon
+  }
+  &.selected {
+    &:before {
+      content: 'Eliminar  ';
+      // content: '\f068  '; // for - icon
+      // font: 0 FontAwesome; // for - icon
+    }
+  }
+}
 // Flippy stuff
 .icon-container {
   align-items: center;
@@ -62,7 +104,7 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   transform-style: preserve-3d;
   transition: transform 0.9s;
   width: 19px;
-  &.active {
+  &.flip {
     transform: rotateY(180deg);
   }
 }
@@ -78,13 +120,48 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 }
 // end flippy stuff
 
-.info {
-  border-bottom: $thin-line;
-  // display: none;
-  line-height: 1.5em;
+// .info { // Method 1
+//   border-bottom: $thin-line;
+//   display: none;
+//   line-height: 1.5em;
+//   padding: 1em;
+//   flex-grow: 1;
+// }
+.info { // Method 2
   padding: 1em;
-  flex-grow: 1;
+  line-height: 1.5em;
+  display: inline-block;
+  overflow: hidden;
+  height: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: height 0.6s, padding 0.6s;
+  &.active {
+    border-bottom: $thin-line;
+    padding: 1em;
+  }
 }
+// .info { // Method 3
+//   padding: 1em;
+//   border-bottom: $thin-line;
+//   &:not(.active) {
+//     font-size: 0;
+//     margin: 0;
+//     opacity: 0;
+//     padding: 0;
+//     /* fade out, then shrink */
+//     transition: opacity .25s,
+//                 font-size .5s .25s,
+//                 margin .5s .25s,
+//                 padding .5s .25s;
+//   }
+//   &.active {
+//     /* unshrink, then fade in */
+//     transition: font-size .25s,
+//                 margin .25s,
+//                 padding .25s,
+//                 opacity .5s .25s;  }
+// }
 .grayback {
   // background: gray;
   // background: #bdc3c7;
@@ -133,7 +210,6 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 .bg-org {
   color: $ggl-slides-yellow !important;
 }
-
 
 // body {
 //   -webkit-filter: grayscale(100%);
