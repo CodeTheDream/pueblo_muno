@@ -38,6 +38,10 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     &:hover {
       background: $hover;
     }
+    &.selected {
+      border-left: 3px solid #4D90FE;
+      padding-left: nth($card-pad, 2) - 3;
+    }
   }
 }
 .expand {
