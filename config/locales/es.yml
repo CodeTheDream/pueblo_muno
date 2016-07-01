@@ -6,6 +6,7 @@ es:
       notice: ¡Favor comparte tu nombre e información de contacto si te gustaría participar en una rifa para ganar una tarjeta de regalo de Target! Tu nombre no será asociado con las opiniones que expresas en el menú.
       name: Ingrese su nombre
       email: Ingrese su correo electronico
+      phone_number: Numero de telefono
       c_question: ¿Cuál es su conexión con El Pueblo? (escoja todas las opciones que aplican)
       c1: Soy o he sido miembro de la junta directiva
       c2: He contribuido financieramente a El Pueblo como parte de una institución o patrocinador/a de un evento
@@ -41,7 +42,7 @@ es:
       desserts: Postres populares
       drinks: Bebidas populares
     comments:
-      comments_info: Si usted tieno qualquier commentario sobre el proceso, por ejemplo, la razon porque escojiste estas opciones, hazlo saber aqui.
+      comments_info: Por favor comparte con nosotrxs cualquier comentario que tengas acerca de este proceso.
       update_vote: Actualizar order
       no_thanks: No gracias
   votes:
@@ -67,6 +68,5 @@ es:
   important: El más importante
   important2: Segundo más importante
   important3: Tercer más importante
-
   thank: Gracias
   message: "Tus respuestas han sido guardadas. Puedes cerrar esta pagina."
