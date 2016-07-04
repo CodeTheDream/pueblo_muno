@@ -42,8 +42,7 @@ en:
       nothing: You have selected nothing
       broke: You do not have enough money
     comments:
-      comments_info: If you have any comments to add about your process, for example, why you're choosing these options, feel free to do so in the box below.
-      update_vote: Update order
+      comments_info: Please share with us any comments you have about this process.
       no_thanks: No thanks
     thank_you:
       thanks: Thank you
