@@ -12,14 +12,12 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     margin: 0;
     padding: $card-pad;
     border-bottom: $thin-line;
+    font-weight: 400;
   }
 }
 .dish-container {
   color: #777;
   width: 32%;
-  a {
-    color: #777;
-  }
   @include mobile {
     width: 100%;
   }
@@ -38,10 +36,10 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     &:hover {
       background: $hover;
     }
-    &.selected {
-      border-left: 3px solid #4D90FE;
-      padding-left: nth($card-pad, 2) - 3;
-    }
+    // &.selected {
+    //   border-left: 3px solid #4D90FE;
+    //   padding-left: nth($card-pad, 2) - 3;
+    // }
   }
 }
 .expand {
@@ -80,14 +78,10 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 .es {
   &:before {
     content: 'Añadir  ';
-    // content: '\f067  '; // for + icon
-    // font: 0 FontAwesome; // for + icon
   }
   &.selected {
     &:before {
       content: 'Eliminar  ';
-      // content: '\f068  '; // for - icon
-      // font: 0 FontAwesome; // for - icon
     }
   }
 }
@@ -124,27 +118,25 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 }
 // end flippy stuff
 
-// .info { // Method 1
-//   border-bottom: $thin-line;
-//   display: none;
-//   line-height: 1.5em;
-//   padding: 1em;
-//   flex-grow: 1;
-// }
-.info { // Method 2
-  padding: 1em;
+.info { // Method 1
+  border-bottom: $thin-line;
+  display: none;
   line-height: 1.5em;
-  display: inline-block;
-  overflow: hidden;
-  height: 0px;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: height 0.6s, padding 0.6s;
-  &.active {
-    border-bottom: $thin-line;
-    padding: 1em;
-  }
+  padding: 1em;
+  flex-grow: 1;
 }
+// .info { // Method 2
+//   padding: 0 1em;
+//   line-height: 1.5em;
+//   display: inline-block;
+//   overflow: hidden;
+//   height: 0px;
+//   transition: height 0.6s, padding 0.6s;
+//   &.active {
+//     border-bottom: $thin-line;
+//     padding: 1em;
+//   }
+// }
 // .info { // Method 3
 //   padding: 1em;
 //   border-bottom: $thin-line;
@@ -195,24 +187,31 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     width: 100%;
   }
 }
-
+@mixin side-border($color) {
+  color: $color;
+  &.selected {
+    border-left: 3px solid $color;
+    padding-left: nth($card-pad, 2) - 3;
+  }
+}
 .bg-red {
-  color: transparentize($ggl-drawings-red-3, .335) !important;
+  $color: transparentize($ggl-drawings-red-3, .335);
+  @include side-border($color);
 }
 .bg-blk {
-  color: #777 !important;
+  @include side-border(#777);
 }
 .bg-blu {
-  color: $ggl-form-blue !important;
+  @include side-border($ggl-form-blue);
 }
 .bg-grn {
-  color: $ggl-sheets-green !important;
+  @include side-border($ggl-sheets-green);
 }
 .bg-prp {
-  color: transparentize($ggl-form-purple, .24) !important;
+  @include side-border(transparentize($ggl-form-purple, .24));
 }
 .bg-org {
-  color: $ggl-slides-yellow !important;
+  @include side-border($ggl-slides-yellow);
 }
 
 // body {

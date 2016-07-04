@@ -1,12 +1,16 @@
 <%= total_header %>
 
 <div class="container">
-  <div>
+  <div class="flex-container justify-between">
     <% if I18n.locale == :en %>
       <%= link_to "FAQ", "http://www.elpueblomenu.org/faq-2/", class: 'home-link' %>
     <% else %>
       <%= link_to "Preguntas", "http://www.elpueblomenu.org/faq/", class: 'home-link' %>
     <% end %>
+    <div class="gray-text">
+      <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+      = More information
+    </div>
   </div>
 
   <div class="flex-container justify-between wrap-mobile flex-start pad-bot">
@@ -14,7 +18,7 @@
     <div class="dish-container">
 
       <div class="pad-bot pad-top">
-        <%= t".entree" %>: $<%= Dish.price entree: params[:entree].to_s %> | <%= t"important" %>
+        <%= t '.entree' %>: $<%= Dish.price entree: params[:entree].to_s %> | <%= t 'important' %>
       </div>
 
       <div class="flex-container flex-column dish">
@@ -27,8 +31,7 @@
     <div class="dish-container">
 
       <div class="gray-text pad-bot pad-top">
-        <%= t".dessert" %>: $<%= Dish.price dessert: params[:dessert].to_s %> | <%= t"important2" %>
-
+        <%= t '.dessert' %>: $<%= Dish.price dessert: params[:dessert].to_s %> | <%= t 'important2' %>
       </div>
 
       <div class="flex-container flex-column dish">
@@ -40,7 +43,7 @@
     <div class="dish-container">
 
       <div class="gray-text pad-bot pad-top">
-        <%= t".drink" %>: $<%= Dish.price drink: params[:drink].to_s %> | <%= t"important3" %>
+        <%= t '.drink' %>: $<%= Dish.price drink: params[:drink].to_s %> | <%= t 'important3' %>
       </div>
 
       <div class="flex-container flex-column dish">
@@ -58,23 +61,13 @@
       <%= f.hidden_field :drink, value: params[:drink].to_s %>
       <div class="flex-container card wide-mobile">
         <% if total == 0 %>
-          <%= f.submit 'Submit', class: 'pure-button pure-button-primary', title: 'You have chosen nothing', disabled: true %>
+          <%= f.submit t('submit'), class: 'pure-button pure-button-primary', title: t('.nothing'), disabled: true %>
         <% elsif total > 100 %>
-          <%= f.submit 'Submit', class: 'pure-button pure-button-primary', title: 'Too expensive', disabled: true %>
+          <%= f.submit t('submit'), class: 'pure-button pure-button-primary', title: t('.broke'), disabled: true %>
         <% else %>
           <%= f.submit t('submit'), data: {confirm: t('confirm'), disable_with: 'Please wait...'}, class: 'pure-button pure-button-primary' %>
         <% end %>
       </div>
     <% end %>
   </div>
-  <% if false && I18n.locale == :es %>
-    <style>
-      .option a.selected:before {
-        content: 'Eliminar  ';
-      }
-      .option a:before {
-        content: 'Añadir  '
-      }
-    </style>
-  <% end %>
 </div>

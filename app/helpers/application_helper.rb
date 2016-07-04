@@ -40,17 +40,12 @@ module ApplicationHelper
     dish_name = t dish
     info = more_information info
     text = price ? "#{dish_name}: $#{price}" : dish_name
-    # if selected
-    #   text = '<i class="fa fa-minus" aria-hidden="true"></i> ' + text
-    # else
-    #   text = '<i class="fa fa-plus" aria-hidden="true"></i> ' + text
-    # end
 
     classes = dish_background dish
     classes << I18n.locale
-    classes << "selected" if selected
+    classes << 'selected' if selected
 
-    link = link_to text.html_safe, options, class: classes.join(' '), style: ':hover{content: "smd"}'
+    link = link_to text.html_safe, options, class: classes.join(' ')
 
     info_btn = <<-HTML
       <div class="icon-container">
@@ -73,16 +68,16 @@ module ApplicationHelper
 
   def dish_background(dish)
     hash = {
-      "policy" => "bg-red",
-      "growth" => "bg-blk",
-      "growth_action" => "bg-blu",
-      "referrals" => "bg-grn",
-      "diversity" => "bg-prp",
-      "raleigh" => "bg-red",
-      "wake" => "bg-prp",
-      "wake_and_more" => "bg-org",
-      "statewide" => "bg-grn",
-      "federal" => "bg-blu"
+      'policy' => 'bg-red',
+      'growth' => 'bg-blk',
+      'growth_action' => 'bg-blu',
+      'referrals' => 'bg-grn',
+      'diversity' => 'bg-prp',
+      'raleigh' => 'bg-red',
+      'wake' => 'bg-prp',
+      'wake_and_more' => 'bg-org',
+      'statewide' => 'bg-grn',
+      'federal' => 'bg-blu'
     }
     [hash[dish]]
   end
@@ -105,10 +100,7 @@ module ApplicationHelper
   end
 
   def total_class
-    case 100 - total
-    when 0..100 then "greenback"
-    else "redback"
-    end
+    total <= 100 ? 'greenback' : 'redback'
   end
 
   def total_header

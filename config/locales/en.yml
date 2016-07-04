@@ -30,7 +30,7 @@ en:
       wake_and_more_info: Within Wake County and some surrounding counties (e.g. Johnston, Harnett, Nash, Franklin)
       statewide_info: Statewide
       federal_info: On the federal level (e.g. promoting immigration reform on the federal level, pressuring federal authorities to stop deportations, etc.)
-      dish: Dish
+      options: Options
       reach: Geographic Reach
     menu:
       entree: Entree
@@ -39,10 +39,15 @@ en:
       entrees: Most popular Entrees
       desserts: Most popular Desserts
       drinks: Most popular Drinks
+      nothing: You have selected nothing
+      broke: You do not have enough money
     comments:
       comments_info: If you have any comments to add about your process, for example, why you're choosing these options, feel free to do so in the box below.
       update_vote: Update order
       no_thanks: No thanks
+    thank_you:
+      thanks: Thank you
+      message: Your answers have been recorded. If you have more questions about this strategic planning process, you can speak with Angeline at 919-835-1525 ext. 103 or send her an email at angeline@elpueblo.org.
   votes:
     index:
       votes: Votes
@@ -66,5 +71,3 @@ en:
   important2: Second Most Important
   important3: Third Most Important
   comments: If you have any comments to add about your process, for example, why you're choosing these options, feel free to do so in the box below.
-  thank: Thank you
-  message: Your answers have been recorded. You may leave this page now.

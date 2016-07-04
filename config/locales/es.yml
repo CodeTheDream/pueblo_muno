@@ -31,7 +31,7 @@ es:
       wake_and_more_info: A nivel del Condado de Wake y algunos condados cercanos (ej. Johnston, Harnett, Nash, Franklin)
       statewide_info: A nivel estatal
       federal_info: A nivel federal (por ejemplo, el promover la reforma migratoria a nivel federal, el presionar a las autoridades federales a que paren las deportaciones, etc.)
-      dish: Platillo # Opciónes
+      options: Opciónes
       Entree: Plato Principal
       reach: Alcance Geográfico
     menu:
@@ -41,10 +41,15 @@ es:
       entrees: Platos Principales populares
       desserts: Postres populares
       drinks: Bebidas populares
+      nothing: You have selected nothing
+      broke: No tienes suficiente dinero
     comments:
       comments_info: Por favor comparte con nosotrxs cualquier comentario que tengas acerca de este proceso.
       update_vote: Actualizar order
       no_thanks: No gracias
+    thank_you:
+      thanks: Gracias
+      message: Tus respuestas han sido guardadas. Si usted tiene más preguntas acerca del proceso de planificación estratégica, puede llamar a Angeline al 919-835-1525, ext. 103 o mandarle un correo electrónico a angeline@elpueblo.org
   votes:
     index:
       votes: Votos
@@ -68,5 +73,3 @@ es:
   important: El más importante
   important2: Segundo más importante
   important3: Tercer más importante
-  thank: Gracias
-  message: "Tus respuestas han sido guardadas. Puedes cerrar esta pagina."

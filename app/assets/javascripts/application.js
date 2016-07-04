@@ -47,26 +47,26 @@ function moreInformation() {
     icon.toggleClass('flip');
 
     // Metnod 1
-    // info.slideToggle('slow');
+    info.slideToggle('slow');
 
     // Method 2, use with setInfoheight function
-    info.toggleClass('active').height(icon.is('.flip') ? info.attr('h') : 0);
+    // info.toggleClass('active').height(icon.is('.flip') ? info.attr('h') : 0);
 
     // Method 3
     // info.toggleClass('active');
   });
 };
 
-function setInfoHeight() {
-  $(window).on('load resize', function() {
-    $('.info').each(function () {
-      var current = $(this);
-      var closed = $(this).height() == 0;
-      current.height('auto').attr('h', current.height() );
-      current.height(closed ? '0' : current.height());
-    });
-  });
-};
+// function setInfoHeight() {
+//   $(window).on('load resize', function() {
+//     $('.info').each(function () {
+//       var current = $(this);
+//       var closed = $(this).height() == 0;
+//       current.height('auto').attr('h', current.height() );
+//       current.height(closed ? '0' : current.height());
+//     });
+//   });
+// };
 
 $(formSubmit);
 $(otherCheckBox);
