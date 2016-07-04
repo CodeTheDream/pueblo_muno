@@ -195,8 +195,7 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   }
 }
 .bg-red {
-  $color: transparentize($ggl-drawings-red-3, .335);
-  @include side-border($color);
+  @include side-border(transparentize($ggl-drawings-red-3, .335));
 }
 .bg-blk {
   @include side-border(#777);
