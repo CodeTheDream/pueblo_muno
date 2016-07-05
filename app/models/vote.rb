@@ -13,7 +13,7 @@ class Vote < ActiveRecord::Base
   def self.to_csv(lang)
     I18n.locale = lang
     CSV.generate do |csv|
-      ary = %w(pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection)
+      ary = %w(pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection connection_other)
       ary.map!{|item| I18n.translate item}
       csv << ary
       all.each do |vote|
@@ -24,7 +24,8 @@ class Vote < ActiveRecord::Base
         data << I18n.translate(Dish.to_reach vote.dessert_name)
         data << I18n.translate(Dish.to_name vote.drink_name)
         data << I18n.translate(Dish.to_reach vote.drink_name)
-        data << vote.user.connections
+        data << vote.user.connections.map{|x| I18n.translate("pages.start.c#{x}")}.join("\n")
+        data << vote.user.connection_other
         csv << data
       end
     end
