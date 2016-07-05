@@ -206,8 +206,7 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   @include side-border($ggl-slides-yellow);
 }
 
-// body {
+body {
 //   -webkit-filter: grayscale(100%);
 //   filter: grayscale(100%);
-//   background: antiquewhite;
-// }
+}
