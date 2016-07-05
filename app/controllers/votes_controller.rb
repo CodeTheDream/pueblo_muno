@@ -3,14 +3,14 @@ class VotesController < ApplicationController
   before_action :set_vote, only: :update
 
   def index
-    @votes = Vote.all.reverse
+    @votes = Vote.all
     @dishes = Dish.all
     @entrees = Dish.where(priority: 'entree').where.not(votes: 0).order(votes: :desc).limit 10
     @desserts = Dish.where(priority: 'dessert').where.not(votes: 0).order(votes: :desc).limit 10
     @drinks = Dish.where(priority: 'drink').where.not(votes: 0).order(votes: :desc).limit 10
     respond_to do |format|
       format.html
-      format.csv { render text: @dishes.to_csv(request.path[9..10])}
+      format.csv { render text: @votes.to_csv(request.path[9..10])}
     end
   end
 

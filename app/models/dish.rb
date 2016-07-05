@@ -28,11 +28,13 @@ class Dish < ActiveRecord::Base
   end
 
   def self.to_name(num)
+    return 'none' unless num
     num = num.size == 2 ? num[0].to_i : num.to_i
     dishes.find{|k,v| v[:num] == num}[1][:name]
   end
 
   def self.to_reach(arg)
+    return 'none' unless arg
     if Symbol === arg
       reaches[arg][:name]
     else

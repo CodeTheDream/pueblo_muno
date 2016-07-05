@@ -10,6 +10,56 @@ class Vote < ActiveRecord::Base
     self.drink = drink.size == 2 ? drink : nil if drink
   end
 
+  def self.to_csv(lang)
+    I18n.locale = lang
+    CSV.generate do |csv|
+      ary = %w(pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection)
+      ary.map!{|item| I18n.translate item}
+      csv << ary
+      all.each do |vote|
+        data = []
+        data << I18n.translate(Dish.to_name vote.entree_name)
+        data << I18n.translate(Dish.to_reach vote.entree_reach)
+        data << I18n.translate(Dish.to_name vote.dessert_name)
+        data << I18n.translate(Dish.to_reach vote.dessert_name)
+        data << I18n.translate(Dish.to_name vote.drink_name)
+        data << I18n.translate(Dish.to_reach vote.drink_name)
+        data << vote.user.connections
+        csv << data
+      end
+    end
+  end
+
+  def entree_name
+    return nil unless entree
+    entree[0]
+  end
+
+  def entree_reach
+    return nil unless entree
+    entree[1]
+  end
+
+  def dessert_name
+    return nil unless dessert
+    dessert[0]
+  end
+
+  def dessert_reach
+    return nil unless dessert
+    dessert[1]
+  end
+
+  def drink_name
+    return nil unless drink
+    drink[0]
+  end
+
+  def drink_reach
+    return nil unless drink
+    drink[1]
+  end
+
   def add_tallies
     return if tallied
     if entree
