@@ -48,7 +48,7 @@ es:
       no_thanks: No gracias
     thank_you:
       thanks: Gracias
-      message: Tus respuestas han sido guardadas. Si usted tiene más preguntas acerca del proceso de planificación estratégica, puede llamar a Angeline al 919-835-1525, ext. 103 o mandarle un correo electrónico a angeline@elpueblo.org
+      message: Tus respuestas han sido guardadas. Si usted tiene más preguntas acerca del proceso de planificación estratégica, puede llamar a Angeline al 919-835-1525, ext. 103 o mandarle un correo electrónico a 
   votes:
     index:
       votes: Votos
@@ -72,3 +72,4 @@ es:
   important: El más importante
   important2: Segundo más importante
   important3: Tercer más importante
+  more_info: "Mas información"
