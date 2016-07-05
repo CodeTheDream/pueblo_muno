@@ -36,10 +36,6 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     &:hover {
       background: $hover;
     }
-    // &.selected {
-    //   border-left: 3px solid #4D90FE;
-    //   padding-left: nth($card-pad, 2) - 3;
-    // }
   }
 }
 .expand {
@@ -159,9 +155,6 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 //                 opacity .5s .25s;  }
 // }
 .grayback {
-  // background: gray;
-  // background: #bdc3c7;
-  // background: #D3D6DB;
   background: #aaa;
 }
 .greenback {

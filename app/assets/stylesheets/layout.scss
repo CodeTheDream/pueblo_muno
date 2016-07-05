@@ -109,6 +109,9 @@ header {
   @include mobile {
     font-size: 16px;
   }
+  a {
+    color: #1a0dab;
+  }
 }
 .x-scroll {
   box-shadow: $card-shadow;

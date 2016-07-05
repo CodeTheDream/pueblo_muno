@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   resource :users
   resources :votes, only: [:index, :create, :update]
+
+  get 'results_en' => 'votes#index'
+  get 'results_es' => 'votes#index'
 end

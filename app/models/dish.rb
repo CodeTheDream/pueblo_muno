@@ -1,4 +1,32 @@
 class Dish < ActiveRecord::Base
+  # def self.to_csv
+  #   CSV.generate do |csv|
+  #     ary = %w(priority reach name price votes)
+  #     csv << ary
+  #     all.each do |dish|
+  #       csv << dish.attributes.values_at(*ary)
+  #     end
+  #   end
+  # end
+
+  def self.to_csv(lang)
+    I18n.locale = lang
+    CSV.generate do |csv|
+      ary = %w(Priority pages.dish_options.reach pages.dish_options.options votes.index.price votes.index.votes)
+      ary.map!{|item| I18n.translate item}
+      csv << ary
+      all.each do |dish|
+        data = []
+        data << I18n.translate("pages.menu.#{dish.priority}")
+        data << I18n.translate(to_reach dish.reach)
+        data << I18n.translate(to_name dish.name)
+        data << "$#{dish.price}"
+        data << dish.votes
+        csv << data
+      end
+    end
+  end
+
   def self.to_name(num)
     num = num.size == 2 ? num[0].to_i : num.to_i
     dishes.find{|k,v| v[:num] == num}[1][:name]

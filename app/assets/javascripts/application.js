@@ -18,7 +18,7 @@
 
 function otherCheckBox() {
   $('#user_connection_other').change(function() {
-    $('input[type="text"]').prop('disabled', !this.checked);
+    $('input.other').prop('disabled', !this.checked);
   });
 };
 
@@ -26,7 +26,7 @@ function formSubmit() {
   $("form#new_user").submit(function() {
     length = $('input:checked').length;
     if (length == 0) {
-      alert('Please choose one checkbox');
+      alert('Please choose one checkbox. Por favor escoja una opción.');
       return false;
     }
   });
@@ -71,4 +71,4 @@ function moreInformation() {
 $(formSubmit);
 $(otherCheckBox);
 $(moreInformation);
-$(setInfoHeight);
+// $(setInfoHeight);
