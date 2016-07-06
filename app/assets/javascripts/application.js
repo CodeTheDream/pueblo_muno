@@ -55,7 +55,29 @@ function moreInformation() {
 //   });
 // };
 
+function setMasonryHeight() {
+  $(window).on('load resize', function (){
+    if (screen.width > 768) {
+      var masonry = $('.masonry'),
+          height = masonry.height('auto').height(),
+          scroll = 1,
+          rows = screen.width > 992 ? 3 : 2;
+
+      $('.masonry').height(height/rows);
+
+      while (scroll > 0) {
+        height = masonry.height();
+        $('.masonry').height(height + 10);
+        scroll = $('.masonry').scrollLeft(1).scrollLeft();
+      };
+    } else {
+      $('.masonry').height('');
+    };
+  });
+};
+
 $(formSubmit);
 $(otherCheckBox);
 $(moreInformation);
 // $(setInfoHeight);
+$(setMasonryHeight);

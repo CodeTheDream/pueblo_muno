@@ -26,6 +26,8 @@ $bs-yellow-2: #8a6d3b;
 
 $hover: #f2f2f2;
 
+$card-padding: 11px 16px;
+
 // sass mixins
 @mixin mobile {
   @media only screen and (min-width: 1px) and  (max-width: #{$phone-width}) {
