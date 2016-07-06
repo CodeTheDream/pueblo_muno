@@ -1,8 +1,10 @@
 function pieChart3(target, dataset) {
   var dataset = JSON.parse(dataset);
+  var chart = '#chart-' + target;
 
   var width = width();
-  var height = 360;
+  // var height = 360;
+  var height = height();
   var radius = Math.min(width, height) / 2;
   var donutWidth = Math.min(width, height)/5;
   // var legendRectSize = 18;
@@ -10,14 +12,19 @@ function pieChart3(target, dataset) {
 
   // functions for dynamic values
   function width() {
-    return $('.chart-'+target).closest('.flex-container').width();
+    return $(chart).prev().width();
+  };
+  function height() {
+    return $(window).width() > 768 ? 360 : 200;
   };
 
   // var color = d3.scale.category20b();
   var color = d3.scale.ordinal()
     .range(['#D25F5B', '#777', '#4D90FE', '#0F9D58', '#8B69C8']);
 
-  var svg = d3.select('.chart-' + target)
+  $(chart).replaceWith("<div id='chart-"+target+"'></div>");
+
+  var svg = d3.select(chart)
     .append('svg')
     .attr('width', width)
     .attr('height', height)
@@ -80,7 +87,7 @@ function pieChart3(target, dataset) {
   //   .attr('y', legendRectSize - legendSpacing)
   //   .text(function(d) { return d; });
 
-  var tooltip = d3.select('.chart-'+target)
+  var tooltip = d3.select(chart)
     .append('div')
     .attr('class', 'tooltip');
 
