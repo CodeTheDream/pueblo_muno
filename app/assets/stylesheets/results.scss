@@ -104,3 +104,20 @@ table.small {
     margin-right: 1em;
   }
 }
+.x-scroll {
+  width: 100%;
+  @include mobile {
+    overflow-x: scroll;
+  }
+}
+.x-scroll, .x-scroll-2 {
+  margin-bottom: 1em;
+  box-shadow: $card-shadow;
+}
+.x-scroll-2 {
+  align-self: flex-start;
+  width: 50%;
+  @include mobile {
+    width: 100%;
+  }
+}

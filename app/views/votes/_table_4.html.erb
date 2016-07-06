@@ -1,12 +1,14 @@
 <% chart = 5 %>
+
 <% [:entree, :dessert, :drink].each do |priority| %>
   <% (1..5).to_a.each do |name| %>
     <% data = @dishes.where(priority: priority, name: name).group(:reach).sum(:votes) %>
+    <% any_votes = @dishes.where(priority: priority, name: name).sum(:votes) > 0 %>
 
     <div class="bg-txt"><%= t("pages.menu.#{priority}") %>: <%= t("#{Dish.to_name name}") %></div>
 
     <div class="flex-container wrap-mobile pad-bot">
-      <div class="x-scroll-2">
+      <div class="<%= any_votes ? 'x-scroll-2' : 'x-scroll' %>">
         <table>
           <thead>
             <th class="min-width"><%= t ".votes" %></th>
@@ -23,8 +25,8 @@
         </table>
       </div>
 
-      <div id="chart-<%= chart += 1 %>"></div>
-      <% if @dishes.where(priority: priority, name: name).sum(:votes) > 0 %>
+      <div id="chart-<%= chart += 1 %>" class="<%= 'empty' unless any_votes %>"></div>
+      <% if any_votes %>
         <script>
           $(window).on('load resize', function() { pieChart(<%= chart %>, '<%= pie_data data, :reach %>', 'reach')});
         </script>

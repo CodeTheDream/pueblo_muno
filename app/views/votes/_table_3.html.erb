@@ -1,7 +1,8 @@
 <% data = @dishes.where(where).group(group).sum(:votes) %>
+<% any_votes = @dishes.where(where).sum(:votes) > 0 %>
 
 <div class="flex-container wrap-mobile pad-bot">
-  <div class="x-scroll-2">
+  <div class="<%= any_votes ? "x-scroll-2" : "x-scroll" %>">
     <table class="small">
       <thead>
         <th class="min-width"><%= t ".votes" %></th>
@@ -26,8 +27,8 @@
     </table>
   </div>
 
-  <div id="chart-<%= chart %>"></div>
-  <% if @dishes.where(where).sum(:votes) > 0 %>
+  <div id="chart-<%= chart %>" class="<%= 'empty' unless any_votes %>"></div>
+  <% if any_votes %>
     <script>
       $(window).on('load resize', function() { pieChart(<%= chart %>, '<%= pie_data data, group %>', '<%= group %>')});
     </script>

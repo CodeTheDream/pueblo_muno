@@ -1,6 +1,9 @@
 en:
   menu: Menu
   pages:
+    home:
+      take_survey: Take Survey
+      results: Results
     start:
       req: Required
       notice: Please share your name and contact information if you would like to be entered into a raffle to win a Target gift card! Your name will not be associated with the opinions you express on the menu.
@@ -53,6 +56,11 @@ en:
       voters: Voters
       popular_dishes: Most popular dishes
       price: Price
+      t1: Most Popular Dishes, regardless of priority or geographic reach
+      t2: Most Popular Geographic Reach, regardless of priority or dish
+      t3: Most Popular Entrees, regardless of geographic reach
+      t4: Most Popular Drinks, regardless of geographic reach
+      t5: Most Popular Desserts, regardless of geographic reach
   policy: Policy Change
   growth: Individual Growth
   growth_action: Individual Growth & Action
@@ -78,3 +86,6 @@ en:
   none: none
   connection_other: Connection other
   more_info: "More Information"
+  layouts:
+    google_shout_out:
+      inspired_by: Inspired by

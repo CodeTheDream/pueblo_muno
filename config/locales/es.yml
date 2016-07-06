@@ -1,6 +1,9 @@
 es:
   menu: Menú
   pages:
+    home:
+      take_survey: Tomar Encuesta
+      results: Resultados
     start:
       req: Necesario
       notice: ¡Favor comparte tu nombre e información de contacto si te gustaría participar en una rifa para ganar una tarjeta de regalo de Target! Tu nombre no será asociado con las opiniones que expresas en el menú.
@@ -55,6 +58,11 @@ es:
       voters: Votantes
       popular_dishes: Platos populares
       price: Precio
+      t1: Los platos más populares, sin prioridad o alcance geográfico
+      t2: Los Alcances Geográficos más populares, sin prioridad o plato
+      t3: Los Platos Principales más populares, sin alacnce geográfico
+      t4: Los Postres más populares, sin alacnce geográfico
+      t5: Las Bebidas más populares, sin alacnce geográfico
   policy: Cambiar Políticas
   growth: Crecimiento Personal
   growth_action: Crecimiento Personal Y Acción
@@ -79,3 +87,6 @@ es:
   none: nada
   connection_other: Conexión otro
   more_info: "Mas información"
+  layouts:
+    google_shout_out:
+      inspired_by: inspirado por

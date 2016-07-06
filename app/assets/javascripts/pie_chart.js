@@ -17,13 +17,13 @@ function pieChart(target, dataset, group) {
     return $(window).width() > 768 ? 360 : 200;
   };
 
-  // var color = d3.scale.category20b();
   if (group == "name") {
     var colors = ['#D25F5B', '#777', '#4D90FE', '#0F9D58', '#8B69C8'];
   } else if (group == "reach") {
     var colors = ['#D25F5B', '#8B69C8', '#F4B400', '#0F9D58', '#4D90FE'];
   };
 
+  // var color = d3.scale.category20();
   var color = d3.scale.ordinal()
     .range(colors);
 

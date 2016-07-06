@@ -12,6 +12,9 @@
   @include mobile {
     width: 100%;
   }
+  &.empty {
+    width: 0;
+  }
 }
 .tooltip {
   color: #777;
