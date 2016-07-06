@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def pie_data(d, g)
+    d.map{|k,v|{str:t(Dish.send"to_#{g}",k),num:v}}.to_json.html_safe
+  end
+
   def connection_helper(num_str)
     t "pages.start.c#{num_str}"
   end

@@ -1,5 +1,5 @@
-<div class="x-scroll">
-  <table>
+<div class="x-scroll half flex-container">
+  <table class="small">
     <thead>
       <th class="min-width"><%= t ".votes" %></th>
       <% if group == :name %>
@@ -10,15 +10,20 @@
     </thead>
     <tbody>
       <% @dishes.where(where).group(group).sum(:votes).sort_by(&:last).reverse.each do |a| %>
-          <tr>
-            <td class="center"><%= a[1] %></td>
-            <% if group == :name %>
-              <td><%= t "#{Dish.to_name a[0]}" %></td>
-            <% elsif group == :reach %>
-              <td><%= t "#{Dish.to_reach a[0]}" %></td>
-            <% end %>
-          </tr>
+        <tr>
+          <td class="center"><%= a[1] %></td>
+          <% if group == :name %>
+            <td><%= t "#{Dish.to_name a[0]}" %></td>
+          <% elsif group == :reach %>
+            <td><%= t "#{Dish.to_reach a[0]}" %></td>
+          <% end %>
+        </tr>
       <% end %>
     </tbody>
   </table>
+  <div class="chart-<%= chart %>"></div>
+  <% data = @dishes.where(where).group(group).sum(:votes) %>
+  <script>
+    pieChart3(<%= chart %>,'<%= pie_data data, group %>');
+  </script>
 </div>

@@ -21,23 +21,23 @@
 
   <div class="bg-txt">Most popular dishes overall regardless of priority or geographic reach</div>
 
-  <%= render 'table_3', group: :name, where: nil %>
+  <%= render 'table_3', group: :name, where: nil, chart: 1 %>
 
   <div class="bg-txt">Most Popular Geographic Reach Overall, regardless of priority or dish</div>
 
-  <%= render 'table_3', group: :reach, where: nil %>
+  <%= render 'table_3', group: :reach, where: nil, chart: 2 %>
 
   <div class="bg-txt">Most Popular Entrees Overall, regardless of geographic reach</div>
 
-  <%= render 'table_3', group: :name, where: {priority: :entree} %>
+  <%= render 'table_3', group: :name, where: {priority: :entree}, chart: 3 %>
 
   <div class="bg-txt">Most Popular Drinks Overall, regardless of geographic reach</div>
 
-  <%= render 'table_3', group: :name, where: {priority: :drink} %>
+  <%= render 'table_3', group: :name, where: {priority: :drink}, chart: 4 %>
 
   <div class="bg-txt">Most Popular Desserts Overall, regardless of geographic reach</div>
 
-  <%= render 'table_3', group: :name, where: {priority: :dessert} %>
+  <%= render 'table_3', group: :name, where: {priority: :dessert}, chart: 5 %>
 
   <%= render 'table_4' %>
 
