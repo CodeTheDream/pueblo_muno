@@ -186,12 +186,17 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 }
 .dish-title {
   color: #777;
-  padding: 1em 0;
+  height: 20px;
+  line-height: 19px;
   transition: all 0.5s;
+  vertical-align: middle;
+  padding: 16px 0;
 }
-.dish-container:hover .dish-title {
-  font-size: 17px;
-  color: black;
+@include immobile {
+  .dish-container:hover .dish-title {
+    font-size: 17px;
+    color: black;
+  }
 }
 
 // body {

@@ -18,7 +18,7 @@
     <div class="dish-container">
 
       <div class="dish-title">
-        <span><%= t '.entree' %>: $<%= Dish.price entree: params[:entree].to_s %> | <%= t 'important' %></span>
+        <%= t '.entree' %>: $<%= Dish.price entree: params[:entree].to_s %> | <%= t 'important' %>
       </div>
 
       <div class="flex-container flex-column dish">
@@ -31,7 +31,7 @@
     <div class="dish-container">
 
       <div class="dish-title">
-        <span><%= t '.dessert' %>: $<%= Dish.price dessert: params[:dessert].to_s %> | <%= t 'important2' %></span>
+        <%= t '.dessert' %>: $<%= Dish.price dessert: params[:dessert].to_s %> | <%= t 'important2' %>
       </div>
 
       <div class="flex-container flex-column dish">
@@ -43,7 +43,7 @@
     <div class="dish-container">
 
       <div class="dish-title">
-        <span><%= t '.drink' %>: $<%= Dish.price drink: params[:drink].to_s %> | <%= t 'important3' %></span>
+        <%= t '.drink' %>: $<%= Dish.price drink: params[:drink].to_s %> | <%= t 'important3' %>
       </div>
 
       <div class="flex-container flex-column dish">
