@@ -2,13 +2,11 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'start' => 'pages#start'
   get 'menu' => 'pages#menu'
-  get 'thank_you' => 'pages#thank_you'
-  get 'results' => 'votes#index'
   get 'comments' => 'pages#comments'
+  get 'thank_you' => 'pages#thank_you'
+  get 'results' => 'pages#results'
+  get 'voters' => 'pages#voters'
 
   resource :users
   resources :votes, only: [:index, :create, :update]
-
-  get 'results_en' => 'votes#index'
-  get 'results_es' => 'votes#index'
 end

@@ -20,6 +20,20 @@ class PagesController < ApplicationController
     @vote = @user.votes.first
   end
 
+  def results
+    @votes = Vote.all
+    @vots = Vote.all
+    @dishes = Dish.all
+    respond_to do |format|
+      format.html
+      format.csv { render text: @votes.to_csv(params[:l])}
+    end
+  end
+
+  def voters
+    @votes = Vote.all
+  end
+
   private
 
   def authenticate_user

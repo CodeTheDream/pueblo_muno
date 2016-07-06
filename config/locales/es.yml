@@ -52,17 +52,16 @@ es:
     thank_you:
       thanks: Gracias
       message: Tus respuestas han sido guardadas. Si usted tiene más preguntas acerca del proceso de planificación estratégica, puede llamar a Angeline al 919-835-1525, ext. 103 o mandarle un correo electrónico a
-  votes:
-    index:
+    results:
       votes: Votos
       voters: Votantes
       popular_dishes: Platos populares
       price: Precio
       t1: Los platos más populares, sin prioridad o alcance geográfico
-      t2: Los Alcances Geográficos más populares, sin prioridad o plato
-      t3: Los Platos Principales más populares, sin alacnce geográfico
-      t4: Los Postres más populares, sin alacnce geográfico
-      t5: Las Bebidas más populares, sin alacnce geográfico
+      t2: Los alcances geográficos más populares, sin prioridad o plato
+      t3: Los platos principales más populares, sin alacnce geográfico
+      t4: Los postres más populares, sin alacnce geográfico
+      t5: Las bebidas más populares, sin alacnce geográfico
   policy: Cambiar Políticas
   growth: Crecimiento Personal
   growth_action: Crecimiento Personal Y Acción

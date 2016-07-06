@@ -50,17 +50,16 @@ en:
     thank_you:
       thanks: Thank you
       message: Your answers have been recorded. If you have more questions about this strategic planning process, you can speak with Angeline at 919-835-1525 ext. 103 or send her an email at
-  votes:
-    index:
+    results:
       votes: Votes
       voters: Voters
       popular_dishes: Most popular dishes
       price: Price
-      t1: Most Popular Dishes, regardless of priority or geographic reach
-      t2: Most Popular Geographic Reach, regardless of priority or dish
-      t3: Most Popular Entrees, regardless of geographic reach
-      t4: Most Popular Drinks, regardless of geographic reach
-      t5: Most Popular Desserts, regardless of geographic reach
+      t1: Most popular dishes, regardless of priority or geographic reach
+      t2: Most popular geographic reach, regardless of priority or dish
+      t3: Most popular entrees, regardless of geographic reach
+      t4: Most popular drinks, regardless of geographic reach
+      t5: Most popular desserts, regardless of geographic reach
   policy: Policy Change
   growth: Individual Growth
   growth_action: Individual Growth & Action

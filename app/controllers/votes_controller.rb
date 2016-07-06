@@ -10,7 +10,7 @@ class VotesController < ApplicationController
     @drinks = Dish.where(priority: 'drink').where.not(votes: 0).order(votes: :desc).limit 10
     respond_to do |format|
       format.html
-      format.csv { render text: @votes.to_csv(request.path[9..10])}
+      format.csv { render text: @votes.to_csv(params[:l])}
     end
   end
 

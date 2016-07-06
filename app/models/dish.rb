@@ -12,7 +12,7 @@ class Dish < ActiveRecord::Base
   def self.to_csv(lang)
     I18n.locale = lang
     CSV.generate do |csv|
-      ary = %w(Priority pages.dish_options.reach pages.dish_options.options votes.index.price votes.index.votes)
+      ary = %w(Priority pages.dish_options.reach pages.dish_options.options pages.results.price pages.results.votes)
       ary.map!{|item| I18n.translate item}
       csv << ary
       all.each do |dish|
