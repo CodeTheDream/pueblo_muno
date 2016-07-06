@@ -26,7 +26,7 @@
       <div id="chart-<%= chart += 1 %>"></div>
       <% if @dishes.where(priority: priority, name: name).sum(:votes) > 0 %>
         <script>
-          $(window).on('load resize', function() { pieChart3(<%= chart %>, '<%= pie_data data, :reach %>', 'reach')});
+          $(window).on('load resize', function() { pieChart(<%= chart %>, '<%= pie_data data, :reach %>', 'reach')});
         </script>
       <% end %>
     </div>

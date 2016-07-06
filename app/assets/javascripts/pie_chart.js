@@ -1,50 +1,107 @@
-function pieChart() {
-  var width = 960,
-      height = 500,
-      radius = Math.min(width, height) / 2;
+function pieChart(target, dataset, group) {
+  var dataset = JSON.parse(dataset);
+  var chart = '#chart-' + target;
 
-  var color = d3.scale.category20();
+  var width = width();
+  var height = height();
+  var radius = Math.min(width, height) / 2;
+  var donutWidth = Math.min(width, height)/5;
+  // var legendRectSize = 18;
+  // var legendSpacing = 4;
 
-  var pie = d3.layout.pie()
-      .value(function(d) { return d.apples; })
-      .sort(null);
+  // functions for dynamic values
+  function width() {
+    return $(chart).prev().width();
+  };
+  function height() {
+    return $(window).width() > 768 ? 360 : 200;
+  };
+
+  // var color = d3.scale.category20b();
+  if (group == "name") {
+    var colors = ['#D25F5B', '#777', '#4D90FE', '#0F9D58', '#8B69C8'];
+  } else if (group == "reach") {
+    var colors = ['#D25F5B', '#8B69C8', '#F4B400', '#0F9D58', '#4D90FE'];
+  };
+
+  var color = d3.scale.ordinal()
+    .range(colors);
+
+  $(chart).replaceWith("<div id='chart-"+target+"'></div>");
+
+  var svg = d3.select(chart)
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .append('g')
+    .attr('transform', 'translate(' + (width/2) +  ',' + (height/2) + ')');
 
   var arc = d3.svg.arc()
-      .innerRadius(radius - 100)
-      .outerRadius(radius - 20);
+    .innerRadius(radius - donutWidth)
+    .outerRadius(radius);
 
-  var svg = d3.select("body").append("svg")
-      .attr("width", width)
-      .attr("height", height)
-    .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+  var pie = d3.layout.pie()
+    .value(function(d) { return d.num; })
+    .sort(null);
 
-  d3.tsv("data.tsv", type, function(error, data) {
-    if (error) throw error;
+  var path = svg.selectAll('path')
+    .data(pie(dataset))
+    .enter()
+    .append('path')
+    .attr('d', arc)
+    .attr('fill', function(d, i) {
+      return color(d.data.str);
+    });
 
-    var path = svg.datum(data).selectAll("path")
-        .data(pie)
-      .enter().append("path")
-        .attr("fill", function(d, i) { return color(i); })
-        .attr("d", arc)
-        .each(function(d) { this._current = d; }); // store the initial angles
-
+  path.on('mouseover', function(d) {
+    var total = d3.sum(dataset.map(function(d) {
+      return d.num;
+    }));
+    var percent = Math.round(1000 * d.data.num / total) / 10;
+    tooltip.select('.label').html(d.data.str);
+    // tooltip.select('.count').html(d.data.num);
+    tooltip.select('.percent').html(percent + '%');
+    tooltip.style('display', 'block');
   });
 
-  function type(d) {
-    d.apples = +d.apples;
-    d.oranges = +d.oranges;
-    return d;
-  }
+  path.on('mouseout', function(d) {
+    tooltip.style('display', 'none');
+  });
 
-  // Store the displayed angles in _current.
-  // Then, interpolate from _current to the new angles.
-  // During the transition, _current is updated in-place by d3.interpolate.
-  function arcTween(a) {
-    var i = d3.interpolate(this._current, a);
-    this._current = i(0);
-    return function(t) {
-      return arc(i(t));
-    };
-  }
+  // var legend = svg.selectAll('.legend')
+  //   .data(color.domain())
+  //   .enter()
+  //   .append('g')
+  //   .attr('class', 'legend')
+  //   .attr('transform', function(d, i) {
+  //     var height = legendRectSize + legendSpacing;
+  //     var offset = height * color.domain().length / 2;
+  //     var horz = -3 * legendRectSize;
+  //     var vert = i * height - offset;
+  //     return 'translate(' + horz + ',' + vert + ')';
+  //   });
+  //
+  // legend.append('rect')
+  //   .attr('width', legendRectSize)
+  //   .attr('height', legendRectSize)
+  //   .style('fill', color)
+  //   .style('stroke', color);
+  //
+  // legend.append('text')
+  //   .attr('x', legendRectSize + legendSpacing)
+  //   .attr('y', legendRectSize - legendSpacing)
+  //   .text(function(d) { return d; });
+
+  var tooltip = d3.select(chart)
+    .append('div')
+    .attr('class', 'tooltip');
+
+  tooltip.append('div')
+    .attr('class', 'label');
+
+  // tooltip.append('div')
+  //   .attr('class', 'count');
+
+  tooltip.append('div')
+    .attr('class', 'percent');
 }
