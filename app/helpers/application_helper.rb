@@ -38,8 +38,8 @@ module ApplicationHelper
     HTML
   end
 
-  def option_link(dish, hash, price: nil, selected: false, info: nil)
-    options = food_options
+  def option_link(dish, hash, price: nil, selected: false, info: nil, anchor: nil)
+    options = food_options.merge(anchor: anchor)
     options.merge!(hash)
     dish_name = t dish
     info = more_information info

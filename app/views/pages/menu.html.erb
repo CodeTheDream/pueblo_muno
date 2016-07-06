@@ -16,38 +16,38 @@
   <div class="flex-container justify-between wrap-mobile flex-start pad-bot">
 
     <div class="dish-container">
-
+      <a name="entree">
       <div class="dish-title">
         <%= t '.entree' %>: $<%= Dish.price entree: params[:entree].to_s %> | <%= t 'important' %>
       </div>
 
       <div class="flex-container flex-column dish">
-        <%= render 'dish_options', priority: :entree, str: params[:entree].to_s %>
+        <%= render 'dish_options', priority: :entree, str: params[:entree].to_s, anchor: 'entree' %>
       </div>
 
     </div>
 
 
     <div class="dish-container">
-
       <div class="dish-title">
+        <a name="dessert">
         <%= t '.dessert' %>: $<%= Dish.price dessert: params[:dessert].to_s %> | <%= t 'important2' %>
       </div>
 
       <div class="flex-container flex-column dish">
-        <%= render 'dish_options', priority: :dessert, str: params[:dessert].to_s %>
+        <%= render 'dish_options', priority: :dessert, str: params[:dessert].to_s, anchor: 'dessert' %>
       </div>
 
     </div>
 
     <div class="dish-container">
-
+      <a name="drink">
       <div class="dish-title">
         <%= t '.drink' %>: $<%= Dish.price drink: params[:drink].to_s %> | <%= t 'important3' %>
       </div>
 
       <div class="flex-container flex-column dish">
-        <%= render 'dish_options', priority: :drink, str: params[:drink].to_s %>
+        <%= render 'dish_options', priority: :drink, str: params[:drink].to_s, anchor: 'drink' %>
       </div>
 
     </div>

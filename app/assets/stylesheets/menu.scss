@@ -28,7 +28,7 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   .dish-header {
     border-bottom: $thin-line;
   }
-  a {
+  a[href] {
     flex-grow: 1;
     padding: $card-pad;
     padding-right: 0;
@@ -58,26 +58,30 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   }
 }
 .en {
-  &:before {
-    content: 'Add  ';
-    // content: '\f067  '; // for + icon
-    // font: 0 FontAwesome; // for + icon
-  }
-  &.selected {
+  @include immobile {
     &:before {
-      content: 'Remove  ';
-      // content: '\f068  '; // for - icon
-      // font: 0 FontAwesome; // for - icon
+      content: 'Add  ';
+      // content: '\f067  '; // for + icon
+      // font: 0 FontAwesome; // for + icon
+    }
+    &.selected {
+      &:before {
+        content: 'Remove  ';
+        // content: '\f068  '; // for - icon
+        // font: 0 FontAwesome; // for - icon
+      }
     }
   }
 }
 .es {
-  &:before {
-    content: 'Añadir  ';
-  }
-  &.selected {
+  @include immobile {
     &:before {
-      content: 'Eliminar  ';
+      content: 'Añadir  ';
+    }
+    &.selected {
+      &:before {
+        content: 'Eliminar  ';
+      }
     }
   }
 }
