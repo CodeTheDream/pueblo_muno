@@ -133,27 +133,6 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 //     padding: 1em;
 //   }
 // }
-// .info { // Method 3
-//   padding: 1em;
-//   border-bottom: $thin-line;
-//   &:not(.active) {
-//     font-size: 0;
-//     margin: 0;
-//     opacity: 0;
-//     padding: 0;
-//     /* fade out, then shrink */
-//     transition: opacity .25s,
-//                 font-size .5s .25s,
-//                 margin .5s .25s,
-//                 padding .5s .25s;
-//   }
-//   &.active {
-//     /* unshrink, then fade in */
-//     transition: font-size .25s,
-//                 margin .25s,
-//                 padding .25s,
-//                 opacity .5s .25s;  }
-// }
 .grayback {
   background: #aaa;
 }
@@ -204,6 +183,15 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 }
 .bg-org {
   @include side-border($ggl-slides-yellow);
+}
+.dish-title {
+  color: #777;
+  padding: 1em 0;
+  transition: all 0.5s;
+}
+.dish-container:hover .dish-title {
+  font-size: 17px;
+  color: black;
 }
 
 // body {
