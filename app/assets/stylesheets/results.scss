@@ -78,6 +78,20 @@ table {
     background: $hover;
   }
 }
+table.small {
+  th {
+    padding: 5px 8px;
+  }
+  td {
+    padding: 8px 4px 7px;
+    @include mobile {
+      padding: 3px 6px;
+    }
+  }
+}
+.half {
+  width: 50%;
+}
 .min-width {
   width: 1px;
 }

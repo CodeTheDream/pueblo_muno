@@ -16,28 +16,32 @@
   </div>
 
   <!-- <div class="bg-txt"><%= t ".popular_dishes" %></div> -->
-
   <%#= render 'big_table' %>
 
-  <div class="bg-txt">Most popular dishes overall regardless of priority or geographic reach</div>
+  <div>
+    <div class="bg-txt">Most popular dishes overall regardless of priority or geographic reach</div>
+    <%= render 'table_3', group: :name, where: nil, chart: 1 %>
+  </div>
 
-  <%= render 'table_3', group: :name, where: nil %>
+  <div>
+    <div class="bg-txt">Most Popular Geographic Reach Overall, regardless of priority or dish</div>
+    <%= render 'table_3', group: :reach, where: nil, chart: 2 %>
+  </div>
 
-  <div class="bg-txt">Most Popular Geographic Reach Overall, regardless of priority or dish</div>
+  <div>
+    <div class="bg-txt">Most Popular Entrees Overall, regardless of geographic reach</div>
+    <%= render 'table_3', group: :name, where: {priority: :entree}, chart: 3 %>
+  </div>
 
-  <%= render 'table_3', group: :reach, where: nil %>
+  <div>
+    <div class="bg-txt">Most Popular Drinks Overall, regardless of geographic reach</div>
+    <%= render 'table_3', group: :name, where: {priority: :drink}, chart: 4 %>
+  </div>
 
-  <div class="bg-txt">Most Popular Entrees Overall, regardless of geographic reach</div>
-
-  <%= render 'table_3', group: :name, where: {priority: :entree} %>
-
-  <div class="bg-txt">Most Popular Drinks Overall, regardless of geographic reach</div>
-
-  <%= render 'table_3', group: :name, where: {priority: :drink} %>
-
-  <div class="bg-txt">Most Popular Desserts Overall, regardless of geographic reach</div>
-
-  <%= render 'table_3', group: :name, where: {priority: :dessert} %>
+  <div>
+    <div class="bg-txt">Most Popular Desserts Overall, regardless of geographic reach</div>
+    <%= render 'table_3', group: :name, where: {priority: :dessert}, chart: 5 %>
+  </div>
 
   <%= render 'table_4' %>
 

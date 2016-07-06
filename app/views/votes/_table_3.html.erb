@@ -1,15 +1,18 @@
-<div class="x-scroll">
-  <table>
-    <thead>
-      <th class="min-width"><%= t ".votes" %></th>
-      <% if group == :name %>
-        <th><%= t "pages.dish_options.options" %></th>
-      <% elsif group == :reach %>
-        <th><%= t "pages.dish_options.reach" %></th>
-      <% end %>
-    </thead>
-    <tbody>
-      <% @dishes.where(where).group(group).sum(:votes).sort_by(&:last).reverse.each do |a| %>
+<% data = @dishes.where(where).group(group).sum(:votes) %>
+
+<div class="flex-container wrap-mobile pad-bot">
+  <div class="x-scroll-2">
+    <table class="small">
+      <thead>
+        <th class="min-width"><%= t ".votes" %></th>
+        <% if group == :name %>
+          <th><%= t "pages.dish_options.options" %></th>
+        <% elsif group == :reach %>
+          <th><%= t "pages.dish_options.reach" %></th>
+        <% end %>
+      </thead>
+      <tbody>
+        <% @dishes.where(where).group(group).sum(:votes).sort_by(&:last).reverse.each do |a| %>
           <tr>
             <td class="center"><%= a[1] %></td>
             <% if group == :name %>
@@ -18,7 +21,15 @@
               <td><%= t "#{Dish.to_reach a[0]}" %></td>
             <% end %>
           </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="chart-<%= chart %>"></div>
+  <% if @dishes.where(where).sum(:votes) > 0 %>
+    <script>
+      $(window).on('load resize', function() { pieChart3(<%= chart %>, '<%= pie_data data, group %>', '<%= group %>')});
+    </script>
+  <% end %>
 </div>
