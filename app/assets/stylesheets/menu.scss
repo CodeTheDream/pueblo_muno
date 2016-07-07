@@ -12,33 +12,79 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
     margin: 0;
     padding: $card-pad;
     border-bottom: $thin-line;
+    font-weight: 400;
   }
 }
 .dish-container {
   color: #777;
   width: 32%;
-  a {
-    color: #777;
-  }
   @include mobile {
     width: 100%;
   }
 }
 .option {
-  border-bottom: $thin-line;
   display: flex;
-  justify-content: space-between;
-  a {
+  flex-flow: column;
+  .dish-header {
+    border-bottom: $thin-line;
+  }
+  a[href] {
     flex-grow: 1;
     padding: $card-pad;
     padding-right: 0;
     text-decoration: none;
     &:hover {
-      background: #f2f2f2;
+      background: $hover;
     }
   }
 }
-
+.expand {
+  &:before {
+    font-size: 0;
+    transition: all 0.6s;
+    vertical-align: middle;
+  }
+  &:hover {
+    &:before {
+      font-size: 1em;
+    }
+  }
+}
+.en,
+.es {
+  @extend .expand;
+  &.selected {
+    @extend .expand;
+  }
+}
+.en {
+  @include immobile {
+    &:before {
+      content: 'Add  ';
+      // content: '\f067  '; // for + icon
+      // font: 0 FontAwesome; // for + icon
+    }
+    &.selected {
+      &:before {
+        content: 'Remove  ';
+        // content: '\f068  '; // for - icon
+        // font: 0 FontAwesome; // for - icon
+      }
+    }
+  }
+}
+.es {
+  @include immobile {
+    &:before {
+      content: 'Añadir  ';
+    }
+    &.selected {
+      &:before {
+        content: 'Eliminar  ';
+      }
+    }
+  }
+}
 // Flippy stuff
 .icon-container {
   align-items: center;
@@ -47,7 +93,7 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   justify-content: center;
   width: $info-btn-width;
   &:hover {
-    background: #f2f2f2;
+    background: $hover;
   }
 }
 .info-btn {
@@ -56,7 +102,7 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   transform-style: preserve-3d;
   transition: transform 0.9s;
   width: 19px;
-  &.active {
+  &.flip {
     transform: rotateY(180deg);
   }
 }
@@ -72,16 +118,26 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
 }
 // end flippy stuff
 
-.info {
+.info { // Method 1
   border-bottom: $thin-line;
   display: none;
   line-height: 1.5em;
   padding: 1em;
+  flex-grow: 1;
 }
+// .info { // Method 2
+//   padding: 0 1em;
+//   line-height: 1.5em;
+//   display: inline-block;
+//   overflow: hidden;
+//   height: 0px;
+//   transition: height 0.6s, padding 0.6s;
+//   &.active {
+//     border-bottom: $thin-line;
+//     padding: 1em;
+//   }
+// }
 .grayback {
-  // background: gray;
-  // background: #bdc3c7;
-  // background: #D3D6DB;
   background: #aaa;
 }
 .greenback {
@@ -96,10 +152,59 @@ $info-btn-width: nth($card-pad, 1) * 2 + 18;
   cursor: not-allowed;
 }
 #total {
-  height: 40px;
+  height: 50px;
+  font-size: 1.2em;
+  @include mobile {
+    font-size: 1.1em;
+  }
 }
 #new_vote {
   @include mobile {
     width: 100%;
   }
 }
+@mixin side-border($color) {
+  color: $color;
+  &.selected {
+    border-left: 3px solid $color;
+    padding-left: nth($card-pad, 2) - 3;
+  }
+}
+.bg-red {
+  @include side-border(transparentize($ggl-drawings-red-3, .335));
+}
+.bg-blk {
+  @include side-border(#777);
+}
+.bg-blu {
+  @include side-border($ggl-form-blue);
+}
+.bg-grn {
+  @include side-border($ggl-sheets-green);
+}
+.bg-prp {
+  @include side-border(transparentize($ggl-form-purple, .24));
+}
+.bg-org {
+  @include side-border($ggl-slides-yellow);
+}
+.dish-title {
+  color: #777;
+  height: 20px;
+  line-height: 19px;
+  transition: all 0.5s;
+  vertical-align: middle;
+  padding: 16px 0;
+}
+@include immobile {
+  .dish-container:hover .dish-title {
+    font-size: 17px;
+    color: black;
+  }
+}
+
+// body {
+//   -webkit-filter: grayscale(100%);
+//   filter: grayscale(100%);
+//   background: $ggl-slides-yellow;
+// }

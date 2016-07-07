@@ -1,0 +1,51 @@
+@import 'sass';
+.column {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  column-count: 3;
+}
+.masonry {
+  // display: -ms-flexbox;
+	// -ms-flex-direction: column;
+	// -ms-flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  align-content: space-between;
+  overflow-x: scroll;
+}
+.user-card {
+  background: white;
+  box-shadow: $card-shadow;
+  margin: 0 0 1em;
+  @include mobile {
+    width: 100%;
+  }
+  @include tablet {
+    width: 49%;
+  }
+  @include tablet-plus {
+    width: 32%;
+  }
+  .card-header {
+    padding: $card-padding;
+    border-bottom: $thin-line;
+  }
+  .card-body {
+    color: #545454;
+    font-size: 15px;
+    padding: $card-padding;
+  }
+  .user {
+    color: #1a0dab;
+    font-size: 18px;
+  }
+  .user-bl {
+    color: #545454;
+    font-size: 18px;
+  }
+  .green {
+    color: #006621;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card">
+    <%= form_for @vote do |f| %>
+      <div class="ft-lg pad-bot">
+        <%= t '.comments_info' %>
+      </div>
+      <div class="pad-bot">
+        <%= f.text_area :comments, class: 'txt-area', rows: 4, placeholder: 'Comments' %>
+      </div>
+      <div class="flex-container reverse">
+        <%= f.submit t('submit'), class: 'pure-button pure-button-primary' %>
+        <%= f.submit t('.no_thanks'), class: 'pure-button', style: 'margin-right: 1em;'%>
+      </div>
+    <% end %>
+  </div>
+</div>

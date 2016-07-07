@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def pie_data(d, g)
+    d.map{|k,v|{str:t(Dish.send"to_#{g}",k),num:v}}.to_json.html_safe
+  end
+
   def connection_helper(num_str)
     t "pages.start.c#{num_str}"
   end
@@ -34,12 +38,19 @@ module ApplicationHelper
     HTML
   end
 
-  def option_link(dish, hash, price: nil)
-    options = food_options
+  def option_link(dish, hash, price: nil, selected: false, info: nil, anchor: nil)
+    options = food_options.merge(anchor: anchor)
     options.merge!(hash)
-    dish = t("#{dish}")
-    text = price ? "#{dish}: $#{price}" : dish
-    link = link_to text, options
+    dish_name = t dish
+    info = more_information info
+    text = price ? "#{dish_name}: $#{price}" : dish_name
+
+    classes = dish_background dish
+    classes << I18n.locale
+    classes << 'selected' if selected
+
+    link = link_to text.html_safe, options, class: classes.join(' ')
+
     info_btn = <<-HTML
       <div class="icon-container">
         <div class="info-btn">
@@ -48,9 +59,31 @@ module ApplicationHelper
         </div>
       </div>
     HTML
+
     <<-HTML.html_safe
-      <div class="option">#{link}#{info_btn}</div>
+      <div class="option">
+        <div class="flex-container justify-between dish-header">
+          #{link}#{info_btn}
+        </div>
+        #{info}
+      </div>
     HTML
+  end
+
+  def dish_background(dish)
+    hash = {
+      'policy' => 'bg-red',
+      'growth' => 'bg-blk',
+      'growth_action' => 'bg-blu',
+      'referrals' => 'bg-grn',
+      'diversity' => 'bg-prp',
+      'raleigh' => 'bg-red',
+      'wake' => 'bg-prp',
+      'wake_and_more' => 'bg-org',
+      'statewide' => 'bg-grn',
+      'federal' => 'bg-blu'
+    }
+    [hash[dish]]
   end
 
   def people(votes)
@@ -71,17 +104,16 @@ module ApplicationHelper
   end
 
   def total_class
-    case 100 - total
-    when 0..100 then "greenback"
-    else "redback"
-    end
+    total <= 100 ? 'greenback' : 'redback'
   end
 
   def total_header
-    balance = I18n.locale == :en ? 'BALANCE' : 'SALDO'
+    s = total
+    a = 100 - s
+    balance = I18n.locale == :en ? "AVAILABLE: $#{a} SPENT: $#{s}" : "DISPONIBLE: $#{a} GASTADO: $#{s}"
     # balance = I18n.locale == :en ? 'LEFT TO SPEND' : 'SALDO'
     <<-HTML.html_safe
-      <div id="total" class="flex-container white xy-center #{total_class}">#{balance}: $#{100 - total}</div>
+      <div id="total" class="flex-container white xy-center #{total_class}">#{balance}</div>
     HTML
   end
 

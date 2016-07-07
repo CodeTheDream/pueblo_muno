@@ -1,41 +1,53 @@
 <%= total_header %>
 
 <div class="container">
+  <div class="flex-container justify-between">
+    <% if I18n.locale == :en %>
+      <%= link_to "FAQ", "http://www.elpueblomenu.org/faq-2/", class: 'home-link' %>
+    <% else %>
+      <%= link_to "Preguntas", "http://www.elpueblomenu.org/faq/", class: 'home-link' %>
+    <% end %>
+    <div class="gray-text">
+      <i class="fa fa-question-circle-o" aria-hidden="true"></i> =
+      <%= t('more_info') %>
+    </div>
+  </div>
+
   <div class="flex-container justify-between wrap-mobile flex-start pad-bot">
 
     <div class="dish-container">
-
-      <div class="pad-bot pad-top">
-        <%= t".entree" %>: $<%= Dish.price entree: params[:entree].to_s %>
+      <a name="entree">
+      <div class="dish-title">
+        <%= t '.entree' %>: $<%= Dish.price entree: params[:entree].to_s %> | <%= t 'important' %>
       </div>
 
       <div class="flex-container flex-column dish">
-        <%= render 'dish_options', priority: :entree, str: params[:entree].to_s %>
+        <%= render 'dish_options', priority: :entree, str: params[:entree].to_s, anchor: 'entree' %>
       </div>
 
     </div>
 
 
     <div class="dish-container">
-
-      <div class="gray-text pad-bot pad-top">
-        <%= t".dessert" %>: $<%= Dish.price dessert: params[:dessert].to_s %>
+      <div class="dish-title">
+        <a name="dessert">
+        <%= t '.dessert' %>: $<%= Dish.price dessert: params[:dessert].to_s %> | <%= t 'important2' %>
       </div>
 
       <div class="flex-container flex-column dish">
-        <%= render 'dish_options', priority: :dessert, str: params[:dessert].to_s %>
+        <%= render 'dish_options', priority: :dessert, str: params[:dessert].to_s, anchor: 'dessert' %>
       </div>
 
     </div>
 
     <div class="dish-container">
-
-      <div class="gray-text pad-bot pad-top">
-        <%= t".drink" %>: $<%= Dish.price drink: params[:drink].to_s %>
+      <a name="drink">
+      <div class="dish-title">
+        <%= t '.drink' %>: $<%= Dish.price drink: params[:drink].to_s %> | <%= t 'important3' %>
       </div>
 
       <div class="flex-container flex-column dish">
-        <%= render 'dish_options', priority: :drink, str: params[:drink].to_s %>
+        <%= render 'dish_options', priority: :drink, str: params[:drink].to_s, anchor: 'drink' %>
       </div>
 
     </div>
@@ -49,14 +61,13 @@
       <%= f.hidden_field :drink, value: params[:drink].to_s %>
       <div class="flex-container card wide-mobile">
         <% if total == 0 %>
-          <%= f.submit 'Submit', class: 'pure-button pure-button-primary', title: 'You have chosen nothing', disabled: true %>
+          <%= f.submit t('submit'), class: 'pure-button pure-button-primary', title: t('.nothing'), disabled: true %>
         <% elsif total > 100 %>
-          <%= f.submit 'Submit', class: 'pure-button pure-button-primary', title: 'Too expensive', disabled: true %>
+          <%= f.submit t('submit'), class: 'pure-button pure-button-primary', title: t('.broke'), disabled: true %>
         <% else %>
-          <%= f.submit 'Submit', data: {confirm: 'Is this your final answer?', disable_with: 'Please wait...'}, class: 'pure-button pure-button-primary' %>
+          <%= f.submit t('submit'), data: {confirm: t('confirm'), disable_with: 'Please wait...'}, class: 'pure-button pure-button-primary' %>
         <% end %>
       </div>
     <% end %>
   </div>
-
 </div>

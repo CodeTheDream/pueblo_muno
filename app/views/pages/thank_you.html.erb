@@ -1,6 +1,8 @@
 <div class="container">
   <div class="card">
-    <h1>Thank you</h1>
-    <p><%= @message %></p>
+    <h1><%= t '.thanks' %></h1>
+    <p><%= t '.message' %>
+      <i><%= mail_to 'angeline@elpueblo.org', 'angeline@elpueblo.org', class: 'home-link' %></i>.
+    </p>
   </div>
 </div>

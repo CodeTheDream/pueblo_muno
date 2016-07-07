@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: [:home, :menu, :thank_you]
-  before_action :authenticate_user, only: :menu
+  before_action :set_user, only: [:home, :menu, :thank_you, :comments]
+  before_action :authenticate_user, only: [:menu, :comments]
   before_action :already_voted, only: [:menu]
 
   def start
@@ -16,12 +16,22 @@ class PagesController < ApplicationController
     @vote = Vote.new
   end
 
-  def thank_you
-    # if @user.votes.count > 0
-    #   @message = "You have already voted."
-    # else
-      @message = "Your answers have been recorded. You may leave this page now."
-    # end
+  def comments
+    @vote = @user.votes.first
+  end
+
+  def results
+    @votes = Vote.all
+    @vots = Vote.all
+    @dishes = Dish.all
+    respond_to do |format|
+      format.html
+      format.csv { render text: @votes.to_csv(params[:l])}
+    end
+  end
+
+  def voters
+    @votes = Vote.all
   end
 
   private

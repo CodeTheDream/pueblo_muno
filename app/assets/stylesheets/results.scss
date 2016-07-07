@@ -1,58 +1,5 @@
 @import "sass";
 
-$card-padding: 11px 16px;
-
-.user-card {
-  background: white;
-  box-shadow: $card-shadow;
-  margin: 0 0 1em;
-  @include immobile {
-    align-self: flex-start;
-    flex-grow: 1;
-    margin-right: 1em;
-    max-width: 49%;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  @include tablet-plus {
-    width: 31%;
-    &:nth-of-type(3n) {
-      margin-right: 0;
-    }
-  }
-  @include tablet {
-    width: 40%;
-    &:nth-of-type(2n) {
-      margin-right: 0;
-    }
-  }
-  @include mobile {
-    width: 100%;
-  }
-  .card-header {
-    padding: $card-padding;
-    border-bottom: $thin-line;
-  }
-  .card-body {
-    color: #545454;
-    font-size: 15px;
-    padding: $card-padding;
-  }
-  .user {
-    color: #1a0dab;
-    font-size: 18px;
-  }
-  .user-bl {
-    color: #545454;
-    font-size: 18px;
-  }
-  .green {
-    color: #006621;
-    font-size: 16px;
-  }
-}
-
 // table stuff
 table {
   background: white;
@@ -75,8 +22,22 @@ table {
     }
   }
   tr:hover {
-    background: #f2f2f2;
+    background: $hover;
   }
+}
+table.small {
+  th {
+    padding: 5px 8px;
+  }
+  td {
+    padding: 8px 4px 7px;
+    @include mobile {
+      padding: 3px 6px;
+    }
+  }
+}
+.half {
+  width: 50%;
 }
 .min-width {
   width: 1px;
@@ -88,5 +49,22 @@ table {
   width: 40%;
   &:first-child {
     margin-right: 1em;
+  }
+}
+.x-scroll {
+  width: 100%;
+  @include mobile {
+    overflow-x: scroll;
+  }
+}
+.x-scroll, .x-scroll-2 {
+  margin-bottom: 1em;
+  box-shadow: $card-shadow;
+}
+.x-scroll-2 {
+  align-self: flex-start;
+  width: 50%;
+  @include mobile {
+    width: 100%;
   }
 }

@@ -3,7 +3,7 @@
 body {
   margin: 0;
   background: #EEEEEE;
-  background: #F2F2F2;
+  background: $hover;
 }
 header {
   background: white;
@@ -109,11 +109,17 @@ header {
   @include mobile {
     font-size: 16px;
   }
+  a {
+    color: #1a0dab;
+  }
 }
-.x-scroll {
-  box-shadow: $card-shadow;
-  margin-bottom: 1em;
+.txt-area {
+  width: 100%;
+  resize: vertical;
+}
+.ft-lg {
+  font-size: 1.3em;
   @include mobile {
-    overflow-x: scroll;
+    font-size: 1em;
   }
 }

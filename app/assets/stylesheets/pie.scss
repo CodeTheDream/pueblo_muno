@@ -1,0 +1,29 @@
+@import 'sass';
+// .legend {
+//   font-size: 12px;
+// }
+// rect {
+//   stroke-width: 2;
+// }
+[id^="chart-"] {
+  position: relative;
+  width: 50%;
+  // height: 200px;
+  @include mobile {
+    width: 100%;
+  }
+  &.empty {
+    width: 0;
+  }
+}
+.tooltip {
+  color: #777;
+  display: none;
+  left: 50%;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}

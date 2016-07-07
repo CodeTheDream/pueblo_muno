@@ -1,11 +1,15 @@
 es:
   menu: Menú
   pages:
+    home:
+      take_survey: Tomar Encuesta
+      results: Resultados
     start:
       req: Necesario
       notice: ¡Favor comparte tu nombre e información de contacto si te gustaría participar en una rifa para ganar una tarjeta de regalo de Target! Tu nombre no será asociado con las opiniones que expresas en el menú.
       name: Ingrese su nombre
       email: Ingrese su correo electronico
+      phone_number: Numero de telefono
       c_question: ¿Cuál es su conexión con El Pueblo? (escoja todas las opciones que aplican)
       c1: Soy o he sido miembro de la junta directiva
       c2: He contribuido financieramente a El Pueblo como parte de una institución o patrocinador/a de un evento
@@ -30,7 +34,7 @@ es:
       wake_and_more_info: A nivel del Condado de Wake y algunos condados cercanos (ej. Johnston, Harnett, Nash, Franklin)
       statewide_info: A nivel estatal
       federal_info: A nivel federal (por ejemplo, el promover la reforma migratoria a nivel federal, el presionar a las autoridades federales a que paren las deportaciones, etc.)
-      dish: Platillo # Opciónes
+      options: Opciones
       Entree: Plato Principal
       reach: Alcance Geográfico
     menu:
@@ -40,12 +44,24 @@ es:
       entrees: Platos Principales populares
       desserts: Postres populares
       drinks: Bebidas populares
-  votes:
-    index:
+      nothing: You have selected nothing
+      broke: No tienes suficiente dinero
+    comments:
+      comments_info: Por favor comparte con nosotrxs cualquier comentario que tengas acerca de este proceso.
+      no_thanks: No gracias
+    thank_you:
+      thanks: Gracias
+      message: Tus respuestas han sido guardadas. Si usted tiene más preguntas acerca del proceso de planificación estratégica, puede llamar a Angeline al 919-835-1525, ext. 103 o mandarle un correo electrónico a
+    results:
       votes: Votos
       voters: Votantes
       popular_dishes: Platos populares
       price: Precio
+      t1: Los platos más populares, sin prioridad o alcance geográfico
+      t2: Los alcances geográficos más populares, sin prioridad o plato
+      t3: Los platos principales más populares, sin alacnce geográfico
+      t4: Los postres más populares, sin alacnce geográfico
+      t5: Las bebidas más populares, sin alacnce geográfico
   policy: Cambiar Políticas
   growth: Crecimiento Personal
   growth_action: Crecimiento Personal Y Acción
@@ -59,3 +75,17 @@ es:
   submit: Enviar
   total_spent: Total gastado
   Priority: Prioridad
+  confirm: ¿Es su respuesta final?
+  important: El más importante
+  important2: Segundo más importante
+  important3: Tercer más importante
+  entree_reach: Plato Principal Alcance
+  dessert_reach: Postre Alcance
+  drink_reach: Bebida Alcance
+  connection: Conexión
+  none: nada
+  connection_other: Conexión otro
+  more_info: "Mas información"
+  layouts:
+    google_shout_out:
+      inspired_by: inspirado por

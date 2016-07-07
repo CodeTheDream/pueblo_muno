@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="bg-txt">Voters: <%= @votes.count %></div>
+  <div class="flex-container masonry">
+    <% @votes.each do |vote| %>
+      <div class="user-card">
+        <div class="card-header">
+          <%= user vote %>
+          <% vote.user.connections.each do |connection| %>
+            <div class="green"><%= connection_helper connection %></div>
+          <% end %>
+          <% if vote.user.connection_other %>
+            <div class="green">Other: <%= vote.user.connection_other %></div>
+          <% end %>
+        </div>
+        <% if vote.comments.present? %>
+          <div class="card-body">
+            <div>
+              Comments: <%= vote.comments %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
