@@ -6,6 +6,7 @@
     <table class="small">
       <thead>
         <th class="min-width"><%= t ".votes" %></th>
+        <th class="min-width">%</th>
         <% if group == :name %>
           <th><%= t "pages.dish_options.options" %></th>
         <% elsif group == :reach %>
@@ -13,9 +14,10 @@
         <% end %>
       </thead>
       <tbody>
-        <% @dishes.where(where).group(group).sum(:votes).sort_by(&:last).reverse.each do |a| %>
+        <% data.sort_by(&:last).reverse.each do |a| %>
           <tr>
             <td class="center"><%= a[1] %></td>
+            <td class="center"><%= ( a[1]*100.0/data.map(&:last).sum ).round(1) %>%</td>
             <% if group == :name %>
               <td><%= t "#{Dish.to_name a[0]}" %></td>
             <% elsif group == :reach %>

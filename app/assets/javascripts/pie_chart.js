@@ -14,7 +14,8 @@ function pieChart(target, dataset, group) {
     return $(chart).prev().width();
   };
   function height() {
-    return $(window).width() > 768 ? 360 : 200;
+    // return $(window).width() > 768 ? 360 : 200;
+    return $(window).width() > 768 ? 300 : 200;
   };
 
   if (group == "name") {
@@ -37,7 +38,7 @@ function pieChart(target, dataset, group) {
     .attr('transform', 'translate(' + (width/2) +  ',' + (height/2) + ')');
 
   var arc = d3.svg.arc()
-    .innerRadius(radius - donutWidth)
+    // .innerRadius(radius - donutWidth)
     .outerRadius(radius);
 
   var pie = d3.layout.pie()
@@ -53,21 +54,23 @@ function pieChart(target, dataset, group) {
       return color(d.data.str);
     });
 
-  path.on('mouseover', function(d) {
-    var total = d3.sum(dataset.map(function(d) {
-      return d.num;
-    }));
-    var percent = Math.round(1000 * d.data.num / total) / 10;
-    tooltip.select('.label').html(d.data.str);
-    // tooltip.select('.count').html(d.data.num);
-    tooltip.select('.percent').html(percent + '%');
-    tooltip.style('display', 'block');
-  });
+  // This if for the hover effects
+  // path.on('mouseover', function(d) {
+  //   var total = d3.sum(dataset.map(function(d) {
+  //     return d.num;
+  //   }));
+  //   var percent = Math.round(1000 * d.data.num / total) / 10;
+  //   tooltip.select('.label').html(d.data.str);
+  //   // tooltip.select('.count').html(d.data.num);
+  //   tooltip.select('.percent').html(percent + '%');
+  //   tooltip.style('display', 'block');
+  // });
+  //
+  // path.on('mouseout', function(d) {
+  //   tooltip.style('display', 'none');
+  // });
 
-  path.on('mouseout', function(d) {
-    tooltip.style('display', 'none');
-  });
-
+  // This if for the legend/key
   // var legend = svg.selectAll('.legend')
   //   .data(color.domain())
   //   .enter()
