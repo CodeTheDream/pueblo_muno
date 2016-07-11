@@ -5,7 +5,7 @@ label {
     display: inline !important;
   }
 }
-.email {
+.email, .phone {
   width: 33%;
   @include mobile {
     width: 100%;
