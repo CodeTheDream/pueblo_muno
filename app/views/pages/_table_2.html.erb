@@ -7,23 +7,21 @@
 
     <div class="bg-txt"><%= t("pages.menu.#{priority}") %>: <%= t("#{Dish.to_name name}") %></div>
 
-    <div class="flex-container wrap-mobile pad-bot">
-      <div class="<%= any_votes ? 'x-scroll-2' : 'x-scroll' %>">
-        <table>
-          <thead>
-            <th class="min-width"><%= t ".votes" %></th>
-            <th><%= t "pages.dish_options.reach" %></th>
-          </thead>
-          <tbody>
-            <% @dishes.where(priority: priority, name: name).order(votes: :desc).each do |dish| %>
-                <tr>
-                  <td class="center"><%= dish.votes %></td>
-                  <td><%= t "#{Dish.to_reach dish.reach}" %></td>
-                </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+    <div class="flex-container wrap-mobile pad-bot justify-between">
+      <table class="small">
+        <thead>
+          <th class="min-width"><%= t ".votes" %></th>
+          <th><%= t "pages.dish_options.reach" %></th>
+        </thead>
+        <tbody>
+          <% @dishes.where(priority: priority, name: name).order(votes: :desc).each do |dish| %>
+              <tr>
+                <td class="center"><%= dish.votes %></td>
+                <td><%= t "#{Dish.to_reach dish.reach}" %></td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
 
       <div id="chart-<%= chart += 1 %>" class="<%= 'empty' unless any_votes %>"></div>
       <% if any_votes %>

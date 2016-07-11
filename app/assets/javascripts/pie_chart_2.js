@@ -1,18 +1,17 @@
-function pieChart(target, dataset, group) {
+function pieChart2(target, dataset, group) {
   var dataset = JSON.parse(dataset);
   var chart = '#chart-' + target;
 
   var width = width();
-  var height = height();
+  var height = 200;
   var radius = Math.min(width, height) / 2;
   var donutWidth = Math.min(width, height)/5;
+  var legendRectSize = 18;
+  var legendSpacing = 4;
 
   // functions for dynamic values
   function width() {
     return $(chart).prev().width();
-  };
-  function height() {
-    return $(window).width() > 768 ? 300 : 200;
   };
 
   if (group == "name") {
@@ -36,49 +35,46 @@ function pieChart(target, dataset, group) {
 
   var arc = d3.svg.arc()
     .outerRadius(radius)
-    .innerRadius(radius - donutWidth);
+    // .innerRadius(radius - donutWidth);
+    .innerRadius(0);
 
   var pie = d3.layout.pie()
     .value(function(d) { return d.num; })
     .sort(null);
 
-  var path = svg.selectAll('path')
+  // var path = svg.selectAll('path')
+  //   .data(pie(dataset))
+  //   .enter()
+  //   .append('path')
+  //   .attr('d', arc)
+  //   .attr('fill', function(d, i) {
+  //     return color(d.data.str);
+  //   });
+
+  // This is the next legend
+  var arcs = svg.selectAll(".arc")
     .data(pie(dataset))
     .enter()
-    .append('path')
-    .attr('d', arc)
-    .attr('fill', function(d, i) {
+    .append("g")
+    .attr("class", "arc");
+
+  arcs.append("path")
+    .attr("d", arc)
+    .attr("fill", function(d, i) {
       return color(d.data.str);
     });
 
-  // This if for the hover effects
-  path.on('mouseover', function(d) {
-    var total = d3.sum(dataset.map(function(d) {
-      return d.num;
-    }));
-    var percent = Math.round(1000 * d.data.num / total) / 10;
-    tooltip.select('.label').html(d.data.str);
-    // tooltip.select('.count').html(d.data.num);
-    tooltip.select('.percent').html(percent + '%');
-    tooltip.style('display', 'block');
-  });
-
-  path.on('mouseout', function(d) {
-    tooltip.style('display', 'none');
-  });
-
-
-  // Hover effect stuff
-  var tooltip = d3.select(chart)
-    .append('div')
-    .attr('class', 'tooltip');
-
-  tooltip.append('div')
-    .attr('class', 'label');
-
-  // tooltip.append('div')
-  //   .attr('class', 'count');
-
-  tooltip.append('div')
-    .attr('class', 'percent');
+  arcs.append("text")
+    .attr("transform", function(d) {
+      var c = arc.centroid(d);
+      return "translate(" + c[0]*1.5 + "," + c[1]*1.5 + ")";
+    })
+    .attr("dy", ".35em")
+    .text(function(d){
+      var total = d3.sum(dataset.map(function(d) {
+        return d.num;
+      }));
+      var percent = Math.round(1000 * d.data.num / total) / 10;
+      if (percent != 0){ return percent + "%"; };
+    })
 }

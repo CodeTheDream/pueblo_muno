@@ -6,9 +6,10 @@
 //   stroke-width: 2;
 // }
 [id^="chart-"] {
+  background: white;
   position: relative;
-  width: 50%;
-  // height: 200px;
+  width: 49%;
+  box-shadow: $card-shadow;
   @include mobile {
     width: 100%;
   }
@@ -26,4 +27,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+}
+text {
+  text-anchor: middle;
+  fill: white;
+  text-shadow: 1px 1px 1px black;
 }

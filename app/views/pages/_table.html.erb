@@ -1,38 +1,34 @@
 <% data = @dishes.where(where).group(group).sum(:votes) %>
 <% any_votes = @dishes.where(where).sum(:votes) > 0 %>
 
-<div class="flex-container wrap-mobile pad-bot">
-  <div class="<%= any_votes ? "x-scroll-2" : "x-scroll" %>">
-    <table class="small">
-      <thead>
-        <th class="min-width"><%= t ".votes" %></th>
-        <th class="min-width">%</th>
-        <% if group == :name %>
-          <th><%= t "pages.dish_options.options" %></th>
-        <% elsif group == :reach %>
-          <th><%= t "pages.dish_options.reach" %></th>
-        <% end %>
-      </thead>
-      <tbody>
-        <% data.sort_by(&:last).reverse.each do |a| %>
-          <tr>
-            <td class="center"><%= a[1] %></td>
-            <td class="center"><%= ( a[1]*100.0/data.map(&:last).sum ).round(1) %>%</td>
-            <% if group == :name %>
-              <td><%= t "#{Dish.to_name a[0]}" %></td>
-            <% elsif group == :reach %>
-              <td><%= t "#{Dish.to_reach a[0]}" %></td>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<div class="flex-container wrap-mobile pad-bot justify-between">
+  <table class="small">
+    <thead>
+      <th class="min-width"><%= t ".votes" %></th>
+      <% if group == :name %>
+        <th><%= t "pages.dish_options.options" %></th>
+      <% elsif group == :reach %>
+        <th><%= t "pages.dish_options.reach" %></th>
+      <% end %>
+    </thead>
+    <tbody>
+      <% data.sort_by(&:last).reverse.each do |a| %>
+        <tr>
+          <td class="center"><%= a[1] %></td>
+          <% if group == :name %>
+            <td><%= t "#{Dish.to_name a[0]}" %></td>
+          <% elsif group == :reach %>
+            <td><%= t "#{Dish.to_reach a[0]}" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
   <div id="chart-<%= chart %>" class="<%= 'empty' unless any_votes %>"></div>
   <% if any_votes %>
     <script>
-      $(window).on('load resize', function() { pieChart(<%= chart %>, '<%= pie_data data, group %>', '<%= group %>')});
+      $(window).on('load resize', function() { pieChart2(<%= chart %>, '<%= pie_data data, group %>', '<%= group %>')});
     </script>
   <% end %>
 </div>
