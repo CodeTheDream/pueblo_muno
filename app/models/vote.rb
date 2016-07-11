@@ -4,6 +4,8 @@ class Vote < ActiveRecord::Base
   validates :dessert, length: {is: 2}, allow_blank: true
   validates :drink, length: {is: 2}, allow_blank: true
 
+  # delegate :name, to: :user, allow_nil: true
+
   before_validation do
     self.entree = entree.size == 2 ? entree : nil if entree
     self.dessert = dessert.size == 2 ? dessert : nil if dessert

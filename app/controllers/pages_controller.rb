@@ -31,7 +31,7 @@ class PagesController < ApplicationController
   end
 
   def voters
-    @votes = Vote.all
+    @votes = Vote.joins(:user)
   end
 
   private

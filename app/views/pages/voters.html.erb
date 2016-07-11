@@ -1,10 +1,22 @@
 <div class="container">
   <div class="bg-txt">Voters: <%= @votes.count %></div>
-  <div class="flex-container masonry">
-    <% @votes.each do |vote| %>
+
+  <div class="flex-container justify-between wrap">
+    <% @votes.order('name asc').each do |vote| %>
       <div class="user-card">
         <div class="card-header">
           <%= user vote %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="bg-txt">Connections/Comments</div>
+  <div class="flex-container masonry">
+    <% @votes.reverse.each do |vote| %>
+      <div class="user-card">
+        <div class="card-header">
+          <!-- <div class="user">Connections</div> -->
           <% if vote.user.connections %>
             <% vote.user.connections.each do |connection| %>
               <div class="green"><%= connection_helper connection %></div>
@@ -16,9 +28,7 @@
         </div>
         <% if vote.comments.present? %>
           <div class="card-body">
-            <div>
-              Comments: <%= vote.comments %>
-            </div>
+            <span class="gray-text">Comments - </span><%= vote.comments %>
           </div>
         <% end %>
       </div>
