@@ -59,9 +59,9 @@ es:
       price: Precio
       t1: Los platos más populares, sin prioridad o alcance geográfico
       t2: Los alcances geográficos más populares, sin prioridad o plato
-      t3: Los platos principales más populares, sin alacnce geográfico
-      t4: Los postres más populares, sin alacnce geográfico
-      t5: Las bebidas más populares, sin alacnce geográfico
+      t3: Los platos principales más populares, sin alcance geográfico
+      t4: Los postres más populares, sin alcance geográfico
+      t5: Las bebidas más populares, sin alcance geográfico
   policy: Cambiar Políticas
   growth: Crecimiento Personal
   growth_action: Crecimiento Personal Y Acción
@@ -89,3 +89,6 @@ es:
   layouts:
     google_shout_out:
       inspired_by: inspirado por
+  ph1: Nombre
+  ph2: Correo electrónico
+  ph3: Número de teléfono 

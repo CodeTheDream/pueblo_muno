@@ -88,3 +88,6 @@ en:
   layouts:
     google_shout_out:
       inspired_by: Inspired by
+  ph1: Name
+  ph2: Email
+  ph3: Phone number
