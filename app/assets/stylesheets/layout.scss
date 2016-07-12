@@ -25,6 +25,7 @@ header {
 #logo {
   position: absolute;
   left: 0;
+  top: 0;
   height: 40px;
   margin: 20px 0 20px 1em;
   @include mobile {
