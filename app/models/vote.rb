@@ -26,7 +26,7 @@ class Vote < ActiveRecord::Base
         data << I18n.translate(Dish.to_reach vote.dessert_reach)
         data << I18n.translate(Dish.to_name vote.drink_name)
         data << I18n.translate(Dish.to_reach vote.drink_reach)
-        data << vote.user.connections.map{|x| I18n.translate("pages.start.c#{x}")}.join("\n")
+        data << vote.user.connections.to_a.map{|x| I18n.translate("pages.start.c#{x}")}.join("\n")
         data << vote.user.connection_other
         csv << data
       end
