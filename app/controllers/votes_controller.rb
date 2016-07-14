@@ -26,15 +26,10 @@ class VotesController < ApplicationController
   end
 
   def update
-    bad_commits = ['No thanks', 'No gracias']
-    if bad_commits.include? params['commit']
+    if @vote.update(vote_params)
       redirect_to thank_you_path
     else
-      if @vote.update(vote_params)
-        redirect_to thank_you_path
-      else
-        redirect_to comments_path
-      end
+      redirect_to comments_path
     end
   end
 

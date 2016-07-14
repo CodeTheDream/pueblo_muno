@@ -48,7 +48,6 @@ es:
       broke: No tienes suficiente dinero
     comments:
       comments_info: Por favor comparte con nosotrxs cualquier comentario que tengas acerca de este proceso.
-      no_thanks: No gracias
     thank_you:
       thanks: Gracias
       message: Tus respuestas han sido guardadas. Si usted tiene más preguntas acerca del proceso de planificación estratégica, puede llamar a Angeline al 919-835-1525, ext. 103 o mandarle un correo electrónico a
@@ -91,4 +90,4 @@ es:
       inspired_by: inspirado por
   ph1: Nombre
   ph2: Correo electrónico
-  ph3: Número de teléfono 
+  ph3: Número de teléfono
