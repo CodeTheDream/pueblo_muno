@@ -117,16 +117,17 @@ module ApplicationHelper
     HTML
   end
 
-  def user(vote)
-    if vote.user.name.present? && vote.user.email.present?
-      mail_to vote.user.email, vote.user.name, class: 'user'
-    elsif vote.user.email.present?
-      mail_to vote.user.email, vote.user.email, class: 'user'
-    elsif vote.user.name.present?
-      "<span class='user-bl'>#{vote.user.name}</span>".html_safe
-    else
-      '<span class="user-bl">Anonymous</span>'.html_safe
-    end
+  def user_info(u)
+    name = content_tag :div, u.name.blank? ? 'Anonymous' : u.name, class: 'user'
+    email = content_tag :div, u.email, class: 'green' if u.email.present?
+    phone = content_tag :div, u.phone_number, class: 'card-body' if u.phone_number.present?
+
+    <<-HTML.html_safe
+      <div class="card-header">
+        #{name}#{email}
+      </div>
+      #{phone}
+    HTML
   end
 
   def votes(votes)

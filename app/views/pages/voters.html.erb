@@ -4,12 +4,7 @@
   <div class="flex-container justify-between wrap">
     <% @votes.order('name asc').each do |vote| %>
       <div class="user-card self-start">
-        <div class="card-header">
-          <%= user vote %>
-        </div>
-        <% if vote.user.phone_number.present? %>
-          <div class="card-body"><%= vote.user.phone_number %></div>
-        <% end %>
+        <%= user_info vote.user %>
       </div>
     <% end %>
   </div>
