@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Home</h1>
+  <%= request.ip %>
   <div class="flex-container justify-between">
     <%= link_to t('.take_survey'), start_path, class: 'card fro home-link' %>
     <%= link_to t('.results'), results_path, class: 'card fro home-link' %>

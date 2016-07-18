@@ -15,7 +15,7 @@ class Vote < ActiveRecord::Base
   def self.to_csv(lang)
     I18n.locale = lang
     CSV.generate do |csv|
-      a = %w(pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection connection_other)
+      a = %w(contact_info pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection connection_other)
       a.map!{|item| I18n.translate item}
       csv << a
       all.each do |vote|

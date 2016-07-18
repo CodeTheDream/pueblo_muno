@@ -9,23 +9,23 @@ class Dish < ActiveRecord::Base
   #   end
   # end
 
-  def self.to_csv(lang)
-    I18n.locale = lang
-    CSV.generate do |csv|
-      ary = %w(Priority pages.dish_options.reach pages.dish_options.options pages.results.price pages.results.votes)
-      ary.map!{|item| I18n.translate item}
-      csv << ary
-      all.each do |dish|
-        data = []
-        data << I18n.translate("pages.menu.#{dish.priority}")
-        data << I18n.translate(to_reach dish.reach)
-        data << I18n.translate(to_name dish.name)
-        data << "$#{dish.price}"
-        data << dish.votes
-        csv << data
-      end
-    end
-  end
+  # def self.to_csv(lang)
+  #   I18n.locale = lang
+  #   CSV.generate do |csv|
+  #     ary = %w(Priority pages.dish_options.reach pages.dish_options.options pages.results.price pages.results.votes)
+  #     ary.map!{|item| I18n.translate item}
+  #     csv << ary
+  #     all.each do |dish|
+  #       data = []
+  #       data << I18n.translate("pages.menu.#{dish.priority}")
+  #       data << I18n.translate(to_reach dish.reach)
+  #       data << I18n.translate(to_name dish.name)
+  #       data << "$#{dish.price}"
+  #       data << dish.votes
+  #       csv << data
+  #     end
+  #   end
+  # end
 
   def self.to_name(num)
     return 'none' unless num
