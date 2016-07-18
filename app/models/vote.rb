@@ -19,15 +19,20 @@ class Vote < ActiveRecord::Base
       a.map!{|item| I18n.translate item}
       csv << a
       all.each do |vote|
+        user = vote.user
+        contact_info = [user.name, user.email, user.phone_number]
+        contact_info.delete('')
+
         data = []
+        data << contact_info.join("\n")
         data << I18n.translate(Dish.to_name vote.entree_name)
         data << I18n.translate(Dish.to_reach vote.entree_reach)
         data << I18n.translate(Dish.to_name vote.dessert_name)
         data << I18n.translate(Dish.to_reach vote.dessert_reach)
         data << I18n.translate(Dish.to_name vote.drink_name)
         data << I18n.translate(Dish.to_reach vote.drink_reach)
-        data << vote.user.connections.to_a.map{|x| I18n.translate("pages.start.c#{x}")}.join("\n")
-        data << vote.user.connection_other
+        data << user.connections.to_a.map{|x| I18n.translate("pages.start.c#{x}")}.join("\n")
+        data << user.connection_other
         csv << data
       end
     end
