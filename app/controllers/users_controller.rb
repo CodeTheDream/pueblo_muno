@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def create
-    special_ips = ['::1']
+    special_ips = ['::1', '98.27.51.234']
 
     email = params[:user][:email]
     ip = special_ips.include?(request.ip) ? 'none' : request.ip
