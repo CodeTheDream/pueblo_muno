@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_user, only: [:home, :menu, :thank_you, :comments]
-  before_action :authenticate_user, only: [:menu, :comments]
+  before_action :authenticate_user, only: [:menu]
   before_action :already_voted, only: [:menu]
 
   def start
@@ -17,6 +17,9 @@ class PagesController < ApplicationController
   end
 
   def comments
+    if @user.votes.first.comments.present?
+      redirect_to thank_you_path
+    end
     @vote = @user.votes.first
   end
 
@@ -37,7 +40,9 @@ class PagesController < ApplicationController
   private
 
   def authenticate_user
-    redirect_to(thank_you_path) && return unless session[:user]
+    if @user.votes.size == 1
+      redirect_to thank_you_path
+    end
   end
 
   def already_voted

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622190657) do
+ActiveRecord::Schema.define(version: 20160718202912) do
 
   create_table "dishes", force: :cascade do |t|
     t.string  "priority"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160622190657) do
     t.boolean  "complete"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "ip_address"
   end
 
   create_table "votes", force: :cascade do |t|

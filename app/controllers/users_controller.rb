@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
 
   def create
-    @connections = params[:user][:connections]
-    if params[:user][:email].present? && User.find_by_email(params[:user][:email])
-      @user = User.find_by_email(params[:user][:email])
+    special_ips = ['::1']
+
+    email = params[:user][:email]
+    ip = special_ips.include?(request.ip) ? 'none' : request.ip
+
+    if email.present? && User.find_by_email(email)
+      @user = User.find_by_email(email)
+    elsif User.find_by_ip_address(ip)
+      @user = User.find_by_ip_address(ip)
     else
-      @user = User.new(user_params)
+      @user = User.new(user_params.merge(ip_address: request.ip))
     end
 
     if @user.save
