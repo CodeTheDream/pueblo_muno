@@ -28,7 +28,7 @@
   <div id="chart-<%= chart %>" class="<%= 'empty' unless any_votes %>"></div>
   <% if any_votes %>
     <script>
-      $(window).on('load resize', function() { pieChart2(<%= chart %>, '<%= pie_data data, group %>', '<%= group %>')});
+      $(window).on('load resize', function() { pieChart(<%= chart %>, '<%= pie_data data, group %>', '<%= group %>')});
     </script>
   <% end %>
 </div>
