@@ -25,16 +25,20 @@ class PagesController < ApplicationController
 
   def results
     @votes = Vote.all
-    @vots = Vote.all
+    @voters = User.all
     @dishes = Dish.all
     respond_to do |format|
       format.html
-      format.csv { render text: @votes.to_csv(params[:l])}
+      format.csv { render text: @votes.votes_to_csv(params[:l])}
     end
   end
 
   def voters
     @votes = Vote.joins(:user)
+    respond_to do |format|
+      format.html
+      format.csv { render text: @votes.voters_to_csv(params[:l])}
+    end
   end
 
   private

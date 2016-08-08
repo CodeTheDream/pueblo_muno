@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Home</h1>
-  <div class="flex-container justify-between">
+  <div class="flex-container justify-between wrap">
     <%= link_to t('.take_survey'), start_path, class: 'card fro home-link' %>
     <%= link_to t('.results'), results_path, class: 'card fro home-link' %>
+    <%= link_to t('pages.results.voters'), voters_path, class: 'card fro home-link' %>
   </div>
 </div>

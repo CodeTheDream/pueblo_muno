@@ -118,7 +118,7 @@ module ApplicationHelper
   end
 
   def user_info(u)
-    name = content_tag :div, u.name.blank? ? 'Anonymous' : u.name, class: 'user'
+    name = content_tag :div, u.name.blank? ? t('anon') : u.name, class: 'user'
     email = content_tag :div, u.email, class: 'green' if u.email.present?
     phone = content_tag :div, u.phone_number, class: 'card-body' if u.phone_number.present?
 

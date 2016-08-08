@@ -1,4 +1,7 @@
 es:
+  en: Ingles
+  es: Español
+  lang: Idioma
   menu: Menú
   pages:
     home:
@@ -92,3 +95,4 @@ es:
   ph2: Correo electrónico
   ph3: Número de teléfono
   contact_info: Datos de Contacto
+  anon: Anónimo

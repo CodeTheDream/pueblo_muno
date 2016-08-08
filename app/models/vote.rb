@@ -12,19 +12,32 @@ class Vote < ActiveRecord::Base
     self.drink = drink.size == 2 ? drink : nil if drink
   end
 
-  def self.to_csv(lang)
+  def self.voters_to_csv(lang)
+    I18n.locale = lang
+
+    CSV.generate do |csv|
+      a = %w(ph1 ph2 ph3)
+
+      csv << a.map { |item| I18n.translate item }
+
+      all.each do |vote|
+        u = vote.user
+        csv << [u.name, u.email, u.phone_number]
+      end
+    end
+  end
+
+  def self.votes_to_csv(lang)
     I18n.locale = lang
     CSV.generate do |csv|
-      a = %w(contact_info pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection connection_other)
-      a.map!{|item| I18n.translate item}
-      csv << a
+      a = %w(pages.menu.entree entree_reach pages.menu.dessert dessert_reach pages.menu.drink drink_reach connection connection_other)
+
+      csv << a.map{ |item| I18n.translate item }
+
       all.each do |vote|
         user = vote.user
-        contact_info = [user.name, user.email, user.phone_number]
-        contact_info.delete('')
 
         data = []
-        data << contact_info.join("\n")
         data << I18n.translate(Dish.to_name vote.entree_name)
         data << I18n.translate(Dish.to_reach vote.entree_reach)
         data << I18n.translate(Dish.to_name vote.dessert_name)

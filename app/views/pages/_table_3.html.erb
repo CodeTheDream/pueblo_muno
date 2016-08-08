@@ -1,0 +1,23 @@
+<% data = @voters.group(:language).count %>
+
+<div class="flex-container wrap-mobile pad-bot justify-between">
+  <table class="small">
+    <thead>
+      <th class="min-width"><%= t ".votes" %></th>
+      <th><%= t 'lang' %></th>
+    </thead>
+    <tbody>
+      <% data.each do |a| %>
+        <tr>
+          <td class="center"><%= a[1] %></td>
+          <td><%= t a[0] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div id="chart-0" class="<%= 'empty' %>"></div>
+  <script>
+    $(window).on('load resize', function() { pieChart(0, '<%= data.map{ |x| {str: t(x[0]), num: x[1]} }.to_json.html_safe %>', 'name')});
+  </script>
+</div>

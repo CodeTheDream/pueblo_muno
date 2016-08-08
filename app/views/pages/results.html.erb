@@ -10,8 +10,10 @@
 
   <div class="bg-txt">
     Download:
-    <%= link_to 'CSV (en)', results_path(format: 'csv', l: 'en') %> |
-    <%= link_to 'CSV (es)', results_path(format: 'csv', l: 'es') %>
+    <%= link_to 'Votes', results_path(format: 'csv', l: 'en'), download: 'Votes' %> |
+    <%= link_to 'Votos', results_path(format: 'csv', l: 'es'), download: 'Votos' %> |
+    <%= link_to 'Voters', voters_path(format: 'csv', l: 'en'), download: 'Voters' %>
+    <%#= link_to 'Votantes', voters_path(format: 'csv', l: 'es'), download: 'Votantes' %>
     <%#= link_to "Excel", results_en_path(format: "xls") %>
   </div>
 
@@ -41,4 +43,6 @@
   </div>
 
   <%= render 'table_2' %>
+
+  <%= render 'table_3' %>
 </div>

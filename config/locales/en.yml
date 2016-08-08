@@ -1,4 +1,7 @@
 en:
+  en: English
+  es: Spanish
+  lang: Language
   menu: Menu
   pages:
     home:
@@ -91,3 +94,4 @@ en:
   ph2: Email
   ph3: Phone number
   contact_info: Contact Info
+  anon: Anonymous
