@@ -3,12 +3,8 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
 
   def self.to_csv
-    I18n.locale = :en
-
     CSV.generate do |csv|
-      a = %w(ph1 ph2 ph3)
-
-      csv << a.map{ |item| I18n.translate item }
+      csv << %w(Name Email Phone\ Number IP\ Address)
 
       all.order(name: :asc).group_by{|x|x.votes.count}.sort.each do |group|
         if group.first == 0
