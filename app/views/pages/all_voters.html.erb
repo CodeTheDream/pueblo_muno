@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="bg-txt">Total: <%= @voters.count %></div>
+
+  <% @voters.order('name asc').group_by{|x|x.votes.count}.each do |group| %>
+    <% if group.first == 0 %>
+      <div class="bg-txt">Non-voters: <%= group.last.count %></div>
+    <% else %>
+      <div class="bg-txt">Voters: <%= group.last.count %></div>
+    <% end %>
+    <div class="flex-container justify-between wrap">
+      <% group.last.each do |user| %>
+        <div class="user-card self-start">
+          <%= user_info_2 user %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

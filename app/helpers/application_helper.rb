@@ -130,6 +130,29 @@ module ApplicationHelper
     HTML
   end
 
+  def user_info_2(u)
+    name = content_tag :div, u.name.blank? ? t('anon') : u.name, class: 'user'
+    email = content_tag :div, u.email, class: 'green' if u.email.present?
+    phone = content_tag :div, u.phone_number if u.phone_number.present?
+    ip = content_tag :div, "IP: #{u.ip_address}" if u.ip_address.present?
+    if ip || phone
+      card_body = <<-HTML.html_safe
+        <div class="card-body">
+          #{phone}
+          #{ip}
+        </div>
+      HTML
+    end
+
+    <<-HTML.html_safe
+      <div class="card-header">
+        #{name}#{email}
+      </div>
+      #{card_body}
+    HTML
+  end
+
+
   def votes(votes)
     count = 0
     votes.each do |vote|

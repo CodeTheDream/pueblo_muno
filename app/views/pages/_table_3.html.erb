@@ -1,4 +1,4 @@
-<% data = @voters.group(:language).count %>
+<% data = @votes.map(&:user).group_by(&:language) %>
 
 <div class="flex-container wrap-mobile pad-bot justify-between">
   <table class="small">
@@ -9,7 +9,7 @@
     <tbody>
       <% data.each do |a| %>
         <tr>
-          <td class="center"><%= a[1] %></td>
+          <td class="center"><%= a.last.count %></td>
           <td><%= t a[0] %></td>
         </tr>
       <% end %>
@@ -18,6 +18,6 @@
 
   <div id="chart-0" class="<%= 'empty' %>"></div>
   <script>
-    $(window).on('load resize', function() { pieChart(0, '<%= data.map{ |x| {str: t(x[0]), num: x[1]} }.to_json.html_safe %>', 'name')});
+    $(window).on('load resize', function() { pieChart(0, '<%= data.map{ |x| {str: t(x[0]), num: x[1].count} }.to_json.html_safe %>', 'name')});
   </script>
 </div>

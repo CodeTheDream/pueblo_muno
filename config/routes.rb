@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'thank_you' => 'pages#thank_you'
   get 'results' => 'pages#results'
   get 'voters' => 'pages#voters'
+  get 'voters/all' => 'pages#all_voters'
 
   resource :users
   resources :votes, only: [:index, :create, :update]

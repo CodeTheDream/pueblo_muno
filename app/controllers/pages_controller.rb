@@ -25,7 +25,6 @@ class PagesController < ApplicationController
 
   def results
     @votes = Vote.all
-    @voters = User.all
     @dishes = Dish.all
     respond_to do |format|
       format.html
@@ -39,6 +38,10 @@ class PagesController < ApplicationController
       format.html
       format.csv { render text: @votes.voters_to_csv(params[:l])}
     end
+  end
+
+  def all_voters
+    @voters = User.all
   end
 
   private
