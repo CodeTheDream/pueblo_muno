@@ -1,4 +1,11 @@
+<a name="top"></a>
+
 <div class="container">
+  <div class="bg-txt">
+    Scroll to:
+    <a href="#connections">Connections</a>
+  </div>
+
   <div class="bg-txt">Voters: <%= @votes.count %></div>
 
   <div class="flex-container justify-between wrap">
@@ -9,7 +16,17 @@
     <% end %>
   </div>
 
-  <div class="bg-txt">Connections/Comments</div>
+  <a name="connections"></a>
+
+  <div class="bg-txt">
+    Connections/Comments
+  </div>
+
+  <div class="bg-txt">
+    Scroll to:
+    <a href="#top">Top</a>
+  </div>
+
   <div class="flex-container masonry">
     <% @votes.reverse.each do |vote| %>
       <div class="user-card">
@@ -31,5 +48,10 @@
         <% end %>
       </div>
     <% end %>
+  </div>
+
+  <div class="bg-txt">
+    Scroll to:
+    <a href="#top">Top</a>
   </div>
 </div>

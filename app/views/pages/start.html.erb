@@ -60,7 +60,7 @@
       <div class="check-box">
         <%= f.check_box :connection_other, {}, 12, nil %>
         <%= f.label :connection_other, t('.other') %>
-        <%= f.text_field :connection_other, disabled: true, class: 'other' %>
+        <%= f.text_field :connection_other, disabled: true, required: true, class: 'other' %>
       </div>
       <%= f.submit t('submit'), class: 'pure-button pure-button-primary' %>
     <% end %>

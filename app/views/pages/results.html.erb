@@ -13,7 +13,6 @@
     <%= link_to 'Votes', results_path(format: 'csv', l: 'en') %> |
     <%= link_to 'Votos', results_path(format: 'csv', l: 'es') %> |
     <%= link_to 'Voters', voters_path(format: 'csv', l: 'en') %>
-    <%#= link_to 'Votantes', voters_path(format: 'csv', l: 'es'), download: 'Votantes' %>
     <%#= link_to "Excel", results_en_path(format: "xls") %>
   </div>
 
@@ -38,7 +37,7 @@
   </div>
 
   <div>
-    <div class="bg-txt"><%= t('.t5') %>Most Popular Desserts Overall, regardless of geographic reach</div>
+    <div class="bg-txt"><%= t('.t5') %></div>
     <%= render 'table', group: :name, where: {priority: :dessert}, chart: 5 %>
   </div>
 
