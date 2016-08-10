@@ -1,4 +1,10 @@
+<a name="top"></a>
+
 <div class="container">
+  <div class="bg-txt">
+    Scroll to:
+    <a href="#voters">Voters</a>
+  </div>
 
   <div class="bg-txt">Total: <%= @voters.count %></div>
 
@@ -6,7 +12,12 @@
     <% if group.first == 0 %>
       <div class="bg-txt">Non-voters: <%= group.last.count %></div>
     <% else %>
+      <a name="voters"></a>
       <div class="bg-txt">Voters: <%= group.last.count %></div>
+      <div class="bg-txt">
+        Scroll to:
+        <a href="#top">Top</a>
+      </div>
     <% end %>
     <div class="flex-container justify-between wrap">
       <% group.last.each do |user| %>
@@ -17,4 +28,9 @@
     </div>
   <% end %>
 
+  <div class="bg-txt">
+    Scroll to:
+    <a href="#top">Top</a> |
+    <a href="#voters">Voters</a>
+  </div>
 </div>
