@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
           csv << ["Non-voters (#{group.first} votes): #{group.last.count}"]
         else
           p "group.first: #{group.first}"
-          csv << ["Voters (#{'vote'.pluralize(group.first)}): #{group.last.count}"]
+          csv << ["Voters (#{group.first 'vote'.pluralize(group.first)}): #{group.last.count}"]
         end
 
         group.last.each do |u|
