@@ -11,11 +11,12 @@ class User < ActiveRecord::Base
           csv << ["Non-voters (#{group.first} votes): #{group.last.count}"]
         else
           p "group.first: #{group.first}"
-          csv << ["Voters (#{group.first 'vote'.pluralize(group.first)}): #{group.last.count}"]
+          csv << ["Voters (#{group.first} #{'vote'.pluralize(group.first)}): #{group.last.count}"]
         end
 
         group.last.each do |u|
-          csv << [u.name, u.email, u.phone_number, u.ip_address]
+          name = u.name.present? ? u.name : 'Anonymous'
+          csv << [name, u.email, u.phone_number, u.ip_address]
         end
       end
     end
