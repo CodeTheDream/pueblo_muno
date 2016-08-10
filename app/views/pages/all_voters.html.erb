@@ -10,10 +10,10 @@
 
   <% @voters.order('name asc').group_by{|x|x.votes.count}.each do |group| %>
     <% if group.first == 0 %>
-      <div class="bg-txt">Non-voters: <%= group.last.count %></div>
+      <div class="bg-txt">Non-voters (<%= group.first %> votes): <%= group.last.count %></div>
     <% else %>
       <a name="voters"></a>
-      <div class="bg-txt">Voters: <%= group.last.count %></div>
+      <div class="bg-txt">Voters (<%= group.first %> votes): <%= group.last.count %></div>
       <div class="bg-txt">
         Scroll to:
         <a href="#top">Top</a>
