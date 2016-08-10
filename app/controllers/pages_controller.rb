@@ -41,7 +41,7 @@ class PagesController < ApplicationController
   end
 
   def all_voters
-    @voters = User.all
+    @voters = User.all.order(name: :asc).group_by{|x|x.votes.count}.sort
   end
 
   private

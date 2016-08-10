@@ -6,9 +6,9 @@
     <a href="#voters">Voters</a>
   </div>
 
-  <div class="bg-txt">Total: <%= @voters.count %></div>
+  <div class="bg-txt">Total: <%= User.count %></div>
 
-  <% @voters.order('name asc').group_by{|x|x.votes.count}.each do |group| %>
+  <% @voters.each do |group| %>
     <% if group.first == 0 %>
       <div class="bg-txt">Non-voters (<%= group.first %> votes): <%= group.last.count %></div>
     <% else %>
