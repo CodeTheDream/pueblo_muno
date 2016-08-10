@@ -42,6 +42,10 @@ class PagesController < ApplicationController
 
   def all_voters
     @voters = User.all.order(name: :asc).group_by{|x|x.votes.count}.sort
+    respond_to do |format|
+      format.html
+      format.csv { render text: User.to_csv}
+    end
   end
 
   private
